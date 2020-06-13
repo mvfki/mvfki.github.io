@@ -5,19 +5,26 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>WYC - Blog</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/js/html5shiv.js"></script><![endif]-->
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/skel.min.js"></script>
-		<script src="../js/skel-layers.min.js"></script>
-		<script src="../js/init.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
-		<script type="text/javascript">
-			function loadArticle(name, divID) {
+ <head>
+  <title>
+   WYC - Blog
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
+  <!--[if lte IE 8]><script src="https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/js/html5shiv.js"></script><![endif]-->
+  <script src="../js/jquery.min.js">
+  </script>
+  <script src="../js/skel.min.js">
+  </script>
+  <script src="../js/skel-layers.min.js">
+  </script>
+  <script src="../js/init.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js">
+  </script>
+  <script type="text/javascript">
+   function loadArticle(name, divID) {
 				var request = new XMLHttpRequest();
 				var converter = new showdown.Converter();
 				var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
@@ -38,58 +45,91 @@
 					}
 				}
 			}
-		</script>
-	</head>
-	<body id="top">
-
-		<!-- Header -->
-			<header id="header" class="skel-layers-fixed">
-				<h1><a href="../index.html">Home</a></h1>
-			</header>
-
-		<!-- Main -->
-			<section id="main" class="wrapper style1">
-				<header class="major">
-					<h2>Yichen Wang's Blog</h2>
-					<p>Hopefully I might update these someday?</p>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="4u">
-							<section>
-								<h3>Contents</h3>
-								<p>These will all go to the same place for now</p>
-								<ul class="alt">
-									<li><a href="coding/index.html">Maybe about coding</a></li>
-									<li><a href="music/index.html">Maybe about music</a></li>
-									<li><a href="anime/index.html">Maybe about Anime</a></li>
-									<li><a href="cooking/index.html">Maybe about cooking</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="8u skel-cell-important">
-							<h1> Most Recent</h2>
-							<section>
-								<div id="recentUpdate" class="image fit">
-									<script type="text/javascript">
-										window.onload = function(){loadArticle('blog/coding/_posts/2020_06_13_14_02.md', 'recentUpdate');}
-									</script>
-								</div>
-							</section>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="copyright">
-						<li>&copy; WYC. All rights reserved.</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-					</ul>
-				</div>
-			</footer>
-
-	</body>
+  </script>
+ </head>
+ <body id="top">
+  <!-- Header -->
+  <header class="skel-layers-fixed" id="header">
+   <h1>
+    <a href="../index.html">
+     Home
+    </a>
+   </h1>
+  </header>
+  <!-- Main -->
+  <section class="wrapper style1" id="main">
+   <header class="major">
+    <h2>
+     Yichen Wang's Blog
+    </h2>
+    <p>
+     Hopefully I might update these someday?
+    </p>
+   </header>
+   <div class="container">
+    <div class="row">
+     <div class="4u">
+      <section>
+       <h3>
+        Contents
+       </h3>
+       <p>
+        These will all go to the same place for now
+       </p>
+       <ul class="alt">
+        <li>
+         <a href="coding/index.html">
+          Maybe about coding
+         </a>
+        </li>
+        <li>
+         <a href="music/index.html">
+          Maybe about music
+         </a>
+        </li>
+        <li>
+         <a href="anime/index.html">
+          Maybe about Anime
+         </a>
+        </li>
+        <li>
+         <a href="cooking/index.html">
+          Maybe about cooking
+         </a>
+        </li>
+       </ul>
+      </section>
+     </div>
+     <div class="8u skel-cell-important">
+      <h1>
+       Most Recent
+      </h1>
+      <section>
+       <div class="image fit" id="recentUpdate">
+        <script type="text/javascript">
+         loadArticle('blog/coding/_posts/2020_06_13_19_20.md', 'recentUpdate');
+        </script>
+       </div>
+      </section>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer id="footer">
+   <div class="container">
+    <ul class="copyright">
+     <li>
+      &copy; WYC. All rights reserved.
+     </li>
+     <li>
+      Design:
+      <a href="http://templated.co">
+       TEMPLATED
+      </a>
+     </li>
+    </ul>
+   </div>
+  </footer>
+ </body>
 </html>
