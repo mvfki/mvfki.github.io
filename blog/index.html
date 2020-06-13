@@ -15,6 +15,8 @@
 		<script src="../js/skel.min.js"></script>
 		<script src="../js/skel-layers.min.js"></script>
 		<script src="../js/init.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+
 	</head>
 	<body id="top">
 
@@ -44,14 +46,30 @@
 							</section>
 						</div>
 						<div class="8u skel-cell-important">
+							<h1> Most Recent</h2>
 							<section>
-								<h2>One of My Favorite Song</h2>
-								<a href="#" class="image fit"><img src="articles/images/thesecretyoullneverknow.jpg" alt="" /></a>
-								<p>The original name of this song is 君の知らない物語 (Japanese), which I would translate as The Secret You'll Never Know. This song is first released as the ending theme song of 
-								TV animation 化物語 (Bakemonogatari. I love the translation "Monstories", which is the mix of "monster" and "story", and corresponds to "化け物" and "物語" exactly as what these 
-								words means.)</p>
-								<p>The song is composed by Ryo, from Supercell, and sang by やなぎなぎ (Yanaginagi) in 2009. The figure is the cover of the single.</p>
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/eLPs_w-FepA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<div id="recentUpdate">
+									<script>
+										var request = new XMLHttpRequest();
+										var converter = new showdown.Converter();
+										request.open('GET', 'articles/_posts/2020_6_13_14_02.md', true);
+										request.send(null);
+										request.onreadystatechange = function () {
+											if (request.readyState === 4 && request.status === 200) {
+												var type = request.getResponseHeader('Content-Type');
+												if (type.indexOf("text") !== 1) {
+													var text = request.responseText;
+													var html = converter.makeHtml(text);
+													document.getElementById("recentUpdate").innerHTML = html;
+												} else {
+													document.getElementById("recentUpdate").innerHTML = "Not text file";
+												}
+											} else {
+												document.getElementById("recentUpdate").innerHTML = "Request state error";
+											}
+										}
+									</script>
+								</div>
 							</section>
 						</div>
 					</div>
