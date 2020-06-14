@@ -20,6 +20,7 @@ import time
 import argparse
 import re
 import shutil
+import datetime
 
 #DIVISION = 'coding' # "coding", "music", "cooking", 'anime"
 #filename = "../temp.md"
@@ -35,7 +36,7 @@ DIVISION = args.division
 
 if DIVISION not in ['coding', 'music', 'cooking', 'anime']:
     raise ValueError("DIVISION must be in {'coding', 'music', 'cooking', 'anime'}")
-    
+
 DIVISIONDic = {'coding': 'cd', 'music': 'ms', 'cooking': 'ck', 'anime': 'an'}
 filePath = os.path.dirname(filename)
 # First check if paths and files exists
@@ -45,11 +46,10 @@ if not os.path.isfile(filename):
 if not os.path.exists(os.path.join('blog', DIVISION)):
     raise PermissionError("Given division not valid")
 
-
 # Rewrite Markdown with correct img path
 newFileName = time.strftime('%Y_%m_%d_%H_%M') + '.md'
 newFileName = os.path.join('blog', DIVISION, '_posts', newFileName)
-#mdLines = open(filename, 'r').read().splitlines()
+
 mdDoc = open(filename, 'r').read()
 imgSearcher = re.compile(r'!\[.*?\]\(.*?\)')
 allImgExp = imgSearcher.findall(mdDoc)
@@ -70,7 +70,6 @@ for imgExp in allImgExp:
             shutil.copy(realPath, newName)
             newName = 'https://mvfki.github.io/' + newName
             replaceDic[imgPath] = newName
-
 for old, new in replaceDic.items():
     mdDoc = mdDoc.replace(old, new)
 
@@ -81,14 +80,11 @@ recUpDiv = blogSoup.find('div', id='recentUpdate')
 newScriptStr = "loadArticle('%s', 'recentUpdate');" % newFileName.replace("\\","/")
 recUpDiv.script.string.replaceWith(newScriptStr)
 
-
 # division main page update, to append a new post
 divisionPage = open(os.path.join('blog', DIVISION, 'index.html'), 'r').read()
 divisionSoup = BeautifulSoup(divisionPage, features='lxml')
+## Article part
 articleReg = divisionSoup.find('div', attrs='container')
-if len(articleReg.find_all('section')) > 0:
-    hr = divisionSoup.new_tag('hr')
-    articleReg.append(hr)
 newDivID = DIVISIONDic[DIVISION] + str(len(articleReg.find_all('section')) + 1)
 scrTag = divisionSoup.new_tag('script', type="text/javascript")
 scrTag.string = "loadArticle('%s', '%s');" % (newFileName.replace("\\","/"), newDivID)
@@ -97,17 +93,28 @@ divTag['class'] = 'image fit'
 divTag.append(scrTag)
 secTag = divisionSoup.new_tag('section')
 secTag.append(divTag)
+hr = divisionSoup.new_tag('hr')
+secTag.append(hr)
+secTag['class'] = 'article ' + time.strftime('%Y_%m')
 articleReg.append(secTag)
+## Month selection part
+selReg = divisionSoup.find("select")
+selOptions = selReg.findAll('option')
+selValues = [i['value'] for i in selOptions]
+if time.strftime('%Y_%m') not in selValues:
+    newOption = divisionSoup.new_tag('option', value=time.strftime('%Y_%m'))
+    newOption.string = datetime.datetime.now().strftime('%Y %B')
+    selReg.append(newOption)
 
-# Write to n0ew file only after no error is raised
+# Write to new file only after no error is raised
 with open(newFileName, 'w') as newFile:
     newFile.write(mdDoc)
 newFile.close()
 
-with open('blog/index2.html', 'w', encoding='utf8') as blogFile:
+with open('blog/index.html', 'w', encoding='utf8') as blogFile:
     blogFile.write(blogSoup.prettify(formatter="html"))
 blogFile.close()
 
-with open(f'blog/{DIVISION}/index2.html', 'w', encoding='utf8') as artFile:
+with open(f'blog/{DIVISION}/index.html', 'w', encoding='utf8') as artFile:
     artFile.write(divisionSoup.prettify(formatter="html"))
 artFile.close()

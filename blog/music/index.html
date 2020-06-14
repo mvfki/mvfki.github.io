@@ -1,90 +1,141 @@
 <!DOCTYPE HTML>
 <!--
-	Ion by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+  Ion by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>WYC - Music shares</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="../../js/jquery.min.js"></script>
-		<script src="../../js/skel.min.js"></script>
-		<script src="../../js/skel-layers.min.js"></script>
-		<script src="../../js/init.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
-		<script type="text/javascript">
-			function loadArticle(name, divID) {
-				var request = new XMLHttpRequest();
-				var converter = new showdown.Converter();
-				var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
-				request.open('GET', url, true);
-				request.send(null);
-				request.onreadystatechange = function () {
-					if (request.readyState === 4 && request.status === 200) {
-						var type = request.getResponseHeader('Content-Type');
-						if (type.indexOf("text") !== 1) {
-							var text = request.responseText;
-							var html = converter.makeHtml(text);
-							document.getElementById(divID).innerHTML = html;
-						} else {
-							document.getElementById(divID).innerHTML = "Not text file";
-						}
-					} else {
-						document.getElementById(divID).innerHTML = "Request state error";
-					}
-				}
-			}
-		</script>
-		<noscript>
-			<link rel="stylesheet" href="../../css/skel.css" />
-			<link rel="stylesheet" href="../../css/style.css" />
-			<link rel="stylesheet" href="../../css/style-xlarge.css" />
-		</noscript>
-	</head>
-	<body id="top">
+ <head>
+  <title>
+   WYC - Music shares
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
+  <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+  <script src="../../js/jquery.min.js">
+  </script>
+  <script src="../../js/skel.min.js">
+  </script>
+  <script src="../../js/skel-layers.min.js">
+  </script>
+  <script src="../../js/init.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js">
+  </script>
+  <script type="text/javascript">
+    function loadArticle(name, divID) {
+        var request = new XMLHttpRequest();
+        var converter = new showdown.Converter();
+        var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
+        request.open('GET', url, true);
+        request.send(null);
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var type = request.getResponseHeader('Content-Type');
+                if (type.indexOf("text") !== 1) {
+                    var text = request.responseText;
+                    var html = converter.makeHtml(text);
+                    document.getElementById(divID).innerHTML = html;
+                } else {
+                    document.getElementById(divID).innerHTML = "Not text file";
+                }
+            } else {
+                document.getElementById(divID).innerHTML = "Request state error";
+            }
+        }
+    };
 
-		<!-- Header -->
-			<header id="header" class="skel-layers-fixed">
-				<h1><a href="../../index.html">Home</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="../index.html">Blog</a></li>
-					</ul>
-				</nav>
-			</header>
-
-		<!-- Main -->
-			<section id="main" class="wrapper style1">
-				<header class="major">
-					<h2>Yichen's Music Sharings</h2>
-					<p>Yes, I love playing the drums in the air.</p>
-				</header>
-				<div class="container">
-					<!-- Articles -->
-					<section>
-						<div id="ms1" class="image fit">
-							<script type="text/javascript">
-								loadArticle('blog/music/_posts/2020_06_13_00_30.md', 'ms1');
-							</script>
-						</div>
-					</section>
-					</br></br></br>
-				</div>
-			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="copyright">
-						<li>&copy; WYC. All rights reserved.</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-					</ul>
-				</div>
-			</footer>
-
-	</body>
+    function showMonth() {
+        var sel = document.getElementById("selMonth").value;
+        var allArt = document.getElementsByClassName("article");
+        if (sel == 'all'){
+            // Just display all articles
+            for (var i = 0; i < allArt.length; i++){
+                allArt[i].style.display = 'block';
+            }
+        } else {
+            // Don't show anything but the selected month
+            for (var i = 0; i < allArt.length; i++){
+                allArt[i].style.display = 'none';
+            }
+            var month = document.getElementsByClassName(sel);
+            for (var i = 0; i < month.length; i++){
+                month[i].style.display = 'block';
+            }
+        }
+    }
+  </script>
+  <noscript>
+   <link href="../../css/skel.css" rel="stylesheet"/>
+   <link href="../../css/style.css" rel="stylesheet"/>
+   <link href="../../css/style-xlarge.css" rel="stylesheet"/>
+  </noscript>
+ </head>
+ <body id="top">
+  <!-- Header -->
+  <header class="skel-layers-fixed" id="header">
+   <h1>
+    <a href="../../index.html">
+     Home
+    </a>
+   </h1>
+   <nav id="nav">
+    <ul>
+     <li>
+       Select Month
+     </li>
+     <li>
+      <select name="selMonth" id="selMonth" onchange="showMonth();">
+       <option value="all" selected>All</option>
+       <option value="2020_06">2020 June</option>
+      </select>
+     </li>
+     <li>
+      <a href="../index.html">
+       Blog
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <!-- Main -->
+  <section class="wrapper style1" id="main">
+   <header class="major">
+    <h2>
+     Yichen's Music Sharings
+    </h2>
+    <p>
+     Yes, I love playing the drums in the air.
+    </p>
+   </header>
+   <div class="container">
+    <!-- Articles -->
+    <section class="article 2020_06">
+     <div id="ms1" class="image fit">
+      <script type="text/javascript">
+       loadArticle('blog/music/_posts/2020_06_13_00_30.md', 'ms1');
+      </script>
+     </div>
+     <hr/>
+    </section>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer id="footer">
+   <div class="container">
+    <ul class="copyright">
+     <li>
+      &copy; WYC. All rights reserved.
+     </li>
+     <li>
+      Design:
+      <a href="http://templated.co">
+       TEMPLATED
+      </a>
+     </li>
+    </ul>
+   </div>
+  </footer>
+ </body>
 </html>
