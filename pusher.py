@@ -25,20 +25,17 @@ import shutil
 #filename = "../temp.md"
 
 parser = argparse.ArgumentParser(description='Update html pages with new posts')
-
-# 添加参数步骤
 parser.add_argument('-f', '--filename', metavar="Markdown", type=str, required=True,
                    help='Text file of new post in Markdown format')
 parser.add_argument('-d', '--division', required=True,
                    help='sum the integers')
-# 解析参数步骤  
 args = parser.parse_args()
-
-
-
 filename = args.filename
 DIVISION = args.division
 
+if DIVISION not in ['coding', 'music', 'cooking', 'anime']:
+    raise ValueError("DIVISION must be in {'coding', 'music', 'cooking', 'anime'}")
+    
 DIVISIONDic = {'coding': 'cd', 'music': 'ms', 'cooking': 'ck', 'anime': 'an'}
 filePath = os.path.dirname(filename)
 # First check if paths and files exists
@@ -52,30 +49,30 @@ if not os.path.exists(os.path.join('blog', DIVISION)):
 # Rewrite Markdown with correct img path
 newFileName = time.strftime('%Y_%m_%d_%H_%M') + '.md'
 newFileName = os.path.join('blog', DIVISION, '_posts', newFileName)
-mdLines = open(filename, 'r').read().splitlines()
-imgSearcher = re.compile(r'!\[.*\]\(.*\)')
-for nline in range(len(mdLines)):
-    line = mdLines[nline]
-    match = imgSearcher.match(line)
-    if match:
-        span = match.span()
-        imgExp = line[span[0]:span[1]]
-        imgPathIdx = re.search(r'\(.*\)', imgExp).span()
-        imgPath = imgExp[imgPathIdx[0]+1:imgPathIdx[1]-1]
-        if imgPath.startswith('http'):
-            continue
-        extName = imgPath.split('.')[-1]
-        imgPath = os.path.join(filePath, imgPath)
-        if os.path.isfile(imgPath):
-            newName = str(len(os.listdir(f'blog/{DIVISION}/images/')) + 1) + '.' + extName
-            newName = os.path.join(f'blog/{DIVISION}/images', newName)
-            shutil.copy(imgPath, newName)
-            newURL = 'https://mvfki.github.io/' + newName
-            newImgExp = imgExp[:imgPathIdx[0]] + f'({newURL})'.replace('\\', '/')
-            mdLines[nline] = line[:span[0]] + newImgExp + line[span[1]:]
-        else:
-            raise FileNotFoundError("Image file referred to '" + imgPath + "' not valid.")
-newMDContent = '\n'.join(mdLines)
+#mdLines = open(filename, 'r').read().splitlines()
+mdDoc = open(filename, 'r').read()
+imgSearcher = re.compile(r'!\[.*?\]\(.*?\)')
+allImgExp = imgSearcher.findall(mdDoc)
+replaceDic = {}
+newNameInc = len(os.listdir(f'blog/{DIVISION}/images/'))
+for imgExp in allImgExp:
+    imgPathIdx = re.search(r'\(.*\)', imgExp).span()
+    imgPath = imgExp[imgPathIdx[0]+1:imgPathIdx[1]-1]
+    if imgPath not in replaceDic:
+        if not imgPath.startswith('http'):
+            realPath = os.path.join(filePath, imgPath)
+            if not os.path.isfile(realPath):
+                raise FileNotFoundError(f"Local imgae path '{realPath}' not found")
+            extName = imgPath.split('.')[-1]
+            newNameInc += 1
+            newName = str(newNameInc) + '.' + extName
+            newName = os.path.join(f'blog/{DIVISION}/images', newName).replace('\\', '/')
+            shutil.copy(realPath, newName)
+            newName = 'https://mvfki.github.io/' + newName
+            replaceDic[imgPath] = newName
+
+for old, new in replaceDic.items():
+    mdDoc = mdDoc.replace(old, new)
 
 # blog main page update, to show the latest post
 blogPage = open('blog/index.html', 'r').read()
@@ -102,9 +99,9 @@ secTag = divisionSoup.new_tag('section')
 secTag.append(divTag)
 articleReg.append(secTag)
 
-# Write to new file only after no error is raised
+# Write to n0ew file only after no error is raised
 with open(newFileName, 'w') as newFile:
-    newFile.write(newMDContent)
+    newFile.write(mdDoc)
 newFile.close()
 
 with open('blog/index2.html', 'w', encoding='utf8') as blogFile:
