@@ -23,9 +23,9 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js">
   </script>
-  <link rel="shortcut icon" type="image/png" href="../../images/icon.png">
+  <link href="../../images/icon.png" rel="shortcut icon" type="image/png"/>
   <script type="text/javascript">
-    function loadArticle(name, divID) {
+   function loadArticle(name, divID) {
         var request = new XMLHttpRequest();
         var converter = new showdown.Converter();
         var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
@@ -84,12 +84,16 @@
    <nav id="nav">
     <ul>
      <li>
-       Select Month
+      Select Month
      </li>
      <li>
-      <select name="selMonth" id="selMonth" onchange="showMonth();">
-       <option value="all" selected>All</option>
-       <option value="2020_06">2020 June</option>
+      <select id="selMonth" name="selMonth" onchange="showMonth();">
+       <option selected="" value="all">
+        All
+       </option>
+       <option value="2020_06">
+        2020 June
+       </option>
       </select>
      </li>
      <li>
@@ -113,9 +117,17 @@
    <div class="container">
     <!-- Articles -->
     <section class="article 2020_06">
-     <div id="ms1" class="image fit">
+     <div class="image fit" id="ms1">
       <script type="text/javascript">
        loadArticle('blog/music/_posts/2020_06_13_00_30.md', 'ms1');
+      </script>
+     </div>
+     <hr/>
+    </section>
+    <section class="article 2020_06">
+     <div class="image fit" id="ms2">
+      <script type="text/javascript">
+       loadArticle('blog/music/_posts/2020_06_19_10_51.md', 'ms2');
       </script>
      </div>
      <hr/>
