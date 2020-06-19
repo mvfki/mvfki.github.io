@@ -1086,3 +1086,10 @@
 		#footer .icons a {
 			color: #bbb;
 		}
+	iframe {
+		width: 60%;
+    	height: 400px;
+    	margin-left: 20%;
+    	margin-top: 30px;
+    	margin-bottom: 30px;
+	}
