@@ -485,6 +485,25 @@
 				display: block;
 				width: 100%;
 			}
+		.image.post {
+			margin: 0 0 2em 0;
+			width: 100%;
+			display: block;
+		}
+			.image.post iframe {
+				display: block;
+				width: 80%;
+				margin: 0 auto;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
+			.image.post img {
+				display: block;
+				max-width: 80%;
+				margin: 0 auto;
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 
 /* List */
 
