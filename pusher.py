@@ -148,4 +148,5 @@ while not confirmed:
 
 print("Making a git push to", repo.branches[0].name)
 repo.git.add(all=True)
-#repo.git.commit(f"New post updated {time.strftime('%Y_%m_%d_%H_%M')}")
+print(repo.git.status())
+repo.git.commit('-m', f"Test Git Python API {time.strftime('%Y_%m_%d_%H_%M')}")
