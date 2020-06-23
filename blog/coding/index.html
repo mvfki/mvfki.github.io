@@ -23,9 +23,9 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js">
   </script>
-  <link rel="shortcut icon" type="image/png" href="../../images/icon.png">
+  <link href="../../images/icon.png" rel="shortcut icon" type="image/png"/>
   <script type="text/javascript">
-    function loadArticle(name, divID) {
+   function loadArticle(name, divID) {
         var request = new XMLHttpRequest();
         var converter = new showdown.Converter();
         var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
@@ -114,7 +114,7 @@
       </a>
      </li>
      <li>
-       Select Month
+      Select Month
      </li>
      <li>
       <select id="selMonth" name="selMonth" onchange="showMonth();">
@@ -169,6 +169,14 @@
      <div class="image post" id="cd4">
       <script type="text/javascript">
        loadArticle('blog/coding/_posts/2020_06_13_23_46.md', 'cd4');
+      </script>
+     </div>
+     <hr/>
+    </section>
+    <section class="article 2020_06">
+     <div class="image fit" id="cd5">
+      <script type="text/javascript">
+       loadArticle('blog/coding/_posts/2020_06_23_19_05.md', 'cd5');
       </script>
      </div>
      <hr/>
