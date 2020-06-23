@@ -28,7 +28,7 @@
    function loadArticle(name, divID) {
         var request = new XMLHttpRequest();
         var converter = new showdown.Converter();
-        var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
+        var url = name;
         request.open('GET', url, true);
         request.send(null);
         request.onreadystatechange = function () {
@@ -144,7 +144,7 @@
     <section class="article 2020_06">
      <div class="image post" id="cd1">
       <script type="text/javascript">
-       loadArticle('blog/coding/_posts/2020_06_13_01_00.md', 'cd1');
+       loadArticle('blog/coding/posts/2020_06_13_01_00.md', 'cd1');
       </script>
      </div>
      <hr/>
@@ -152,7 +152,7 @@
     <section class="article 2020_06">
      <div class="image post" id="cd2">
       <script type="text/javascript">
-       loadArticle('blog/coding/_posts/2020_06_13_14_02.md', 'cd2');
+       loadArticle('blog/coding/posts/2020_06_13_14_02.md', 'cd2');
       </script>
      </div>
      <hr/>
@@ -160,7 +160,7 @@
     <section class="article 2020_06">
      <div class="image post" id="cd3">
       <script type="text/javascript">
-       loadArticle('blog/coding/_posts/2020_06_13_19_20.md', 'cd3');
+       loadArticle('blog/coding/posts/2020_06_13_19_20.md', 'cd3');
       </script>
      </div>
      <hr/>
@@ -168,15 +168,15 @@
     <section class="article 2020_06">
      <div class="image post" id="cd4">
       <script type="text/javascript">
-       loadArticle('blog/coding/_posts/2020_06_13_23_46.md', 'cd4');
+       loadArticle('blog/coding/posts/2020_06_13_23_46.md', 'cd4');
       </script>
      </div>
      <hr/>
     </section>
     <section class="article 2020_06">
-     <div class="image fit" id="cd5">
+     <div class="image post" id="cd5">
       <script type="text/javascript">
-       loadArticle('blog/coding/_posts/2020_06_23_19_05.md', 'cd5');
+       loadArticle('blog/coding/posts/2020_06_23_19_05.md', 'cd5');
       </script>
      </div>
      <hr/>

@@ -57,15 +57,15 @@ if not os.path.exists(os.path.join(repoPath, 'blog', DIVISION)):
 # Rewrite Markdown with correct img path
 newFileName = time.strftime('%Y_%m_%d_%H_%M') + '.md'
 newFileNameRel = os.path.join('blog', DIVISION, 
-                              '_posts', newFileName).replace("\\","/")
+                              'posts', newFileName).replace("\\","/")
 newFileNameAbs = os.path.join(repoPath, 'blog', DIVISION, 
-                              '_posts', newFileName)
+                              'posts', newFileName)
 
 mdDoc = open(filename, 'r').read()
 imgSearcher = re.compile(r'!\[.*?\]\(.*?\)')
 allImgExp = imgSearcher.findall(mdDoc)
 replaceDic = {}
-newNameInc = len(os.listdir(os.path.join(repoPath, 'blog', DIVISION, '_posts')))
+newNameInc = len(os.listdir(os.path.join(repoPath, 'blog', DIVISION, 'posts')))
 for imgExp in allImgExp:
     imgPathIdx = re.search(r'\(.*\)', imgExp).span()
     imgPath = imgExp[imgPathIdx[0]+1:imgPathIdx[1]-1]
