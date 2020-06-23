@@ -21,10 +21,18 @@ import argparse
 import re
 import shutil
 import datetime
+import webbrowser
+from git import Repo, InvalidGitRepositoryError
 
 #DIVISION = 'coding' # "coding", "music", "cooking", 'anime"
 #filename = "../temp.md"
-
+repoPath = os.path.dirname(__file__)
+try:
+    repo = Repo(repoPath)
+except InvalidGitRepositoryError:
+    print("pusher.py must be put at root path or the repo.")
+    exit()
+'''
 parser = argparse.ArgumentParser(description='Update html pages with new posts')
 parser.add_argument('-f', '--filename', metavar="Markdown", type=str, required=True,
                    help='Text file of new post in Markdown format')
@@ -118,3 +126,26 @@ blogFile.close()
 with open(f'blog/{DIVISION}/index.html', 'w', encoding='utf8') as artFile:
     artFile.write(divisionSoup.prettify(formatter="html"))
 artFile.close()
+
+'''
+# Check the result, though you won't be able to see the new post since it is 
+# not yet committed.
+print("Default browser will pop up in 3 seconds, have a check of the local"
+      " updated web page.")
+homePagePath = os.path.join(repoPath, 'blog\\index.html')
+print("File path:", homePagePath)
+time.sleep(3)
+webbrowser.open(homePagePath)
+
+# commit and push
+confirmed = False
+while not confirmed:
+    ans = input("OK to commit and push? [Yes/No] ")
+    if ans == 'Yes':
+        confirmed = True
+    elif ans == 'No':
+        exit()
+
+print("Making a git push to", repo.branches[0].name)
+repo.git.add(all=True)
+#repo.git.commit(f"New post updated {time.strftime('%Y_%m_%d_%H_%M')}")
