@@ -23,30 +23,9 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js">
   </script>
-  <link href="../images/icon.png" rel="shortcut icon" type="image/png"/>
-  <script type="text/javascript">
-   function loadArticle(name, divID) {
-				var request = new XMLHttpRequest();
-				var converter = new showdown.Converter();
-				var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
-				request.open('GET', url, true);
-				request.send(null);
-				request.onreadystatechange = function () {
-					if (request.readyState === 4 && request.status === 200) {
-						var type = request.getResponseHeader('Content-Type');
-						if (type.indexOf("text") !== 1) {
-							var text = request.responseText;
-							var html = converter.makeHtml(text);
-							document.getElementById(divID).innerHTML = html;
-						} else {
-							document.getElementById(divID).innerHTML = "Not text file";
-						}
-					} else {
-						document.getElementById(divID).innerHTML = "Request state error";
-					}
-				}
-			}
+  <script src="../js/posts.js">
   </script>
+  <link href="../images/icon.png" rel="shortcut icon" type="image/png"/>
  </head>
  <body id="top">
   <!-- Header -->
@@ -137,7 +116,7 @@
       <section>
        <div class="image post" id="recentUpdate">
         <script type="text/javascript">
-         loadArticle('blog/coding/posts/2020_06_23_19_05.md', 'recentUpdate');
+         loadArticle('coding/posts/2020_06_23_19_05.md', 'recentUpdate');
         </script>
        </div>
       </section>

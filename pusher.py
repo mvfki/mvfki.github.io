@@ -56,7 +56,8 @@ if not os.path.exists(os.path.join(repoPath, 'blog', DIVISION)):
 
 # Rewrite Markdown with correct img path
 newFileName = time.strftime('%Y_%m_%d_%H_%M') + '.md'
-newFileNameRel = os.path.join('blog', DIVISION, 
+newFileNameDivRel = os.path.join('posts', newFileName).replace("\\","/")
+newFileNameBlogRel = os.path.join(DIVISION, 
                               'posts', newFileName).replace("\\","/")
 newFileNameAbs = os.path.join(repoPath, 'blog', DIVISION, 
                               'posts', newFileName)
@@ -89,7 +90,7 @@ blogPagePath = os.path.join(repoPath, 'blog\\index.html')
 blogPage = open(blogPagePath, 'r').read()
 blogSoup = BeautifulSoup(blogPage, features="lxml")
 recUpDiv = blogSoup.find('div', id='recentUpdate')
-newScriptStr = f"loadArticle('{newFileNameRel}', 'recentUpdate');"
+newScriptStr = f"loadArticle('{newFileNameBlogRel}', 'recentUpdate');"
 recUpDiv.script.string.replaceWith(newScriptStr)
 
 # division main page update, to append a new post
@@ -100,7 +101,7 @@ divisionSoup = BeautifulSoup(divisionPage, features='lxml')
 articleReg = divisionSoup.find('div', attrs='container')
 newDivID = DIVISIONDic[DIVISION] + str(len(articleReg.find_all('section')) + 1)
 scrTag = divisionSoup.new_tag('script', type="text/javascript")
-scrTag.string = f"loadArticle('{newFileNameRel}', '{newDivID}');"
+scrTag.string = f"loadArticle('{newFileNameDivRel}', '{newDivID}');"
 divTag = divisionSoup.new_tag('div', id=newDivID)
 divTag['class'] = 'image fit'
 divTag.append(scrTag)

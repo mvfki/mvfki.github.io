@@ -23,50 +23,9 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js">
   </script>
-  <link href="../../images/icon.png" rel="shortcut icon" type="image/png"/>
-  <script type="text/javascript">
-   function loadArticle(name, divID) {
-        var request = new XMLHttpRequest();
-        var converter = new showdown.Converter();
-        var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;
-        request.open('GET', url, true);
-        request.send(null);
-        request.onreadystatechange = function () {
-            if (request.readyState === 4 && request.status === 200) {
-                var type = request.getResponseHeader('Content-Type');
-                if (type.indexOf("text") !== 1) {
-                    var text = request.responseText;
-                    var html = converter.makeHtml(text);
-                    document.getElementById(divID).innerHTML = html;
-                } else {
-                    document.getElementById(divID).innerHTML = "Not text file";
-                }
-            } else {
-                document.getElementById(divID).innerHTML = "Request state error";
-            }
-        }
-    };
-
-    function showMonth() {
-        var sel = document.getElementById("selMonth").value;
-        var allArt = document.getElementsByClassName("article");
-        if (sel == 'all'){
-            // Just display all articles
-            for (var i = 0; i < allArt.length; i++){
-                allArt[i].style.display = 'block';
-            }
-        } else {
-            // Don't show anything but the selected month
-            for (var i = 0; i < allArt.length; i++){
-                allArt[i].style.display = 'none';
-            }
-            var month = document.getElementsByClassName(sel);
-            for (var i = 0; i < month.length; i++){
-                month[i].style.display = 'block';
-            }
-        }
-    }
+  <script src="../../js/posts.js">
   </script>
+  <link href="../../images/icon.png" rel="shortcut icon" type="image/png"/>
   <noscript>
    <link href="../../css/skel.css" rel="stylesheet"/>
    <link href="../../css/style.css" rel="stylesheet"/>
@@ -144,7 +103,7 @@
     <section class="article 2020_06">
      <div class="image post" id="ms1">
       <script type="text/javascript">
-       loadArticle('blog/music/posts/2020_06_13_00_30.md', 'ms1');
+       loadArticle('posts/2020_06_13_00_30.md', 'ms1');
       </script>
      </div>
      <hr/>
@@ -152,7 +111,7 @@
     <section class="article 2020_06">
      <div class="image post" id="ms2">
       <script type="text/javascript">
-       loadArticle('blog/music/posts/2020_06_19_10_51.md', 'ms2');
+       loadArticle('posts/2020_06_19_10_51.md', 'ms2');
       </script>
      </div>
      <hr/>
