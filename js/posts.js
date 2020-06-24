@@ -1,5 +1,4 @@
 function loadArticle(name, divID) {
-    console.log(window.location.href)
     if(window.location.href.startsWith('file://')){
         document.getElementById(divID).innerHTML = "<input type='file' id='in" + divID + "' onchange='readLocal(\"in" + divID + "\", \""+ divID + "\")'/>";
     } else if(window.location.href.startsWith('https://')){
@@ -8,7 +7,6 @@ function loadArticle(name, divID) {
 };
 
 function readLocal(inid, divID) {
-    console.log("Reading local posts");
     var converter = new showdown.Converter();
     var files = document.getElementById(inid).files;
     var file = files[0];
@@ -26,7 +24,6 @@ function readLocal(inid, divID) {
 };
 
 function readOnline(filename, divID) {
-    console.log("Reading online posts");
     var converter = new showdown.Converter();
     var request = new XMLHttpRequest();
     //var url = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/' + name;

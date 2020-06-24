@@ -489,6 +489,7 @@
 			margin: 0 0 2em 0;
 			width: 100%;
 			display: block;
+			user-select: none;
 		}
 			.image.post iframe {
 				display: block;
