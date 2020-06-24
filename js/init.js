@@ -8,7 +8,6 @@
 	var loc = window.location.href;
 	var n = loc.indexOf("mvfki.github.io/");
 	var root = loc.slice(0, n) + "mvfki.github.io/";
-	console.log(root);
 	skel.init({
 		reset: 'full',
 		breakpoints: {
