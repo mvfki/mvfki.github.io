@@ -2,7 +2,7 @@
 This repository is for my home page. It's all because I suddenly got interested in owning a home page... 
 
 ## HTML template
-The template used for the web pages is called [Ion](https://templated.co/ion), downloaded for free from [TEMPLATED](https://templated.co/). 
+The template used for the web pages is called [Ion](https://templated.co/ion), designed [TEMPLATED](https://templated.co/). 
 The template provides the most basic layouts and widges styles and colorings.  
 ## Original design
 The substructure of this web site is the simplest tree style:
@@ -50,7 +50,9 @@ pip install beautifulSoup4 gitpython
 ```
 
 ## Copyright
-Currently there is nothing smart in coding (all taken from stackoverflow LOL), and very few articles. 
+The original HTML template, ION, by Templated, is distributed under a [CCPL lisence](https://github.com/mvfki/mvfki.github.io/blob/master/LICENSE.txt).  
+
+As for my personal addition, currently there is nothing smart in coding (all taken from stackoverflow LOL), and very few articles. 
 Image contents in-repo (you can tell by image URL) are all screenshots except specially stated (e.g. album covers).
 Thus I'm not planning to work to much on copyright issue until I really push something special.  
 So feel free to refer to anything here or give me a kind advice in [Issues](https://github.com/mvfki/mvfki.github.io/issues/new)!
