@@ -146,7 +146,7 @@ function loadFromContentFile(topic) {
             var mds = text.split('\n');
             loadMDs(mds, topic);
         } else {
-            document.getElementById("articleDiv").innerHTML = "Loading Error";
+            document.getElementById("articleDiv").innerHTML = "";
         }
     }
 };
