@@ -17,9 +17,21 @@ function insertFile(file, divID){
             var html = converter.makeHtml(text);
             document.getElementById(divID).innerHTML = html;
             hideArticle(divID);
-            var title = document.getElementById(divID).getElementsByTagName('*')[0];
+            var contents = document.getElementById(divID).getElementsByTagName("*");
+            var title = contents[0];
+            title.id = 'h1' + divID;
+            var titleLink = document.createElement("a")
+            titleLink.href = '#' +divID;
+            titleLink.appendChild(title);
+            document.getElementById(divID).prepend(titleLink);
+            //document.getElementById('h1' + divID).outerHTML = titleLink.toString();
             title.onclick = function(){
-                showArticle(divID);
+                var contentElement = getFirstContentElement(divID);
+                if (contentElement.style.display == 'none') {
+                    showArticle(divID);
+                } else {
+                    hideArticle(divID);
+                }
             }
         }
     }
@@ -50,8 +62,10 @@ function loadInputContents(topicAbbr){
         insertFile(file, postDiv.id);
         
         var hider = document.createElement("a");
+        hider.className = "image post hider";
         setHider(hider, postDiv.id);
         hider.id = "hide" + postDiv.id;
+        hider.href = '#' + postDiv.id;
         var hiderText = document.createTextNode("Hide");
         hider.appendChild(hiderText);
 
@@ -82,8 +96,18 @@ function insertOnlineMD(filename, divID) {
                 document.getElementById(divID).innerHTML = html;
                 hideArticle(divID);
                 var title = document.getElementById(divID).getElementsByTagName('*')[0];
+                title.id = 'h1' + divID;
+                var titleLink = document.createElement("a")
+                titleLink.href = '#' +divID;
+                titleLink.appendChild(title);
+                document.getElementById(divID).prepend(titleLink);
                 title.onclick = function(){
-                    showArticle(divID);
+                    var contentElement = getFirstContentElement(divID);
+                    if (contentElement.style.display == 'none') {
+                        showArticle(divID);
+                    } else {
+                        hideArticle(divID);
+                    }
                 }
             } else {
                 document.getElementById(divID).innerHTML = "Not text file";
@@ -109,6 +133,7 @@ function loadMDs(mds, topicAbbr) {
         var hider = document.createElement("a");
         setHider(hider, postDiv.id);
         hider.id = "hide" + postDiv.id;
+        hider.href = '#' + postDiv.id;
         var hiderText = document.createTextNode("Hide");
         hider.appendChild(hiderText);
 
@@ -196,27 +221,33 @@ function showMonth() {
 }
 
 function hideArticle(id) {
-    var contents = document.getElementById(id).getElementsByTagName("*");
+    var parentDiv = document.getElementById(id) 
+    var contents = parentDiv.getElementsByTagName("*");
     for (var i = 1; i < contents.length; i++) {            
-        contents[i].style.display = 'none';
+        if (contents[i].parentElement == parentDiv){
+            contents[i].style.display = "none";
+        }
     }
     document.getElementById("hide"+id).style.display = 'none';
 }
 
 function showArticle(id) {
-    var contents = document.getElementById(id).getElementsByTagName("*");
+    var parentDiv = document.getElementById(id) 
+    var contents = parentDiv.getElementsByTagName("*");
     for (var i = 1; i < contents.length; i++) {
-        if (contents[i].tagName == "CODE"){
-            if(contents[i-1].tagName != "PRE"){
-                contents[i].style.display = "unset";
-            } else {
-                contents[i].style.display = 'block';
-            }
-        } else {
-            contents[i].style.display = 'block';
+        if (contents[i].parentElement == parentDiv){
+            contents[i].style.display = "block";
         }
     }
     document.getElementById("hide"+id).style.display = 'block';
 }
 
-
+function getFirstContentElement(divID) {
+    var parentDiv = document.getElementById(divID);
+    var contents = parentDiv.getElementsByTagName("*");
+    for (var i = 1; i < contents.length; i++) {
+        if (contents[i].parentElement == parentDiv){
+            return contents[i];
+        }
+    }
+}

@@ -90,9 +90,9 @@ blogPagePath = os.path.join(repoPath, 'blog\\index.html')
 blogPage = open(blogPagePath, 'r').read()
 blogSoup = BeautifulSoup(blogPage, features="lxml")
 recUpDiv = blogSoup.find('div', id='recentUpdate')
-newScriptStr = f"loadArticle('{newFileNameBlogRel}', 'recentUpdate');"
+newScriptStr = f"loadRecent('{newFileNameBlogRel}', 'recentUpdate');"
 recUpDiv.script.string.replaceWith(newScriptStr)
-
+'''
 # division main page update, to append a new post
 divPagePath = os.path.join(repoPath, 'blog', DIVISION, 'index.html')
 divisionPage = open(divPagePath, 'r').read()
@@ -119,7 +119,7 @@ if time.strftime('%Y_%m') not in selValues:
     newOption = divisionSoup.new_tag('option', value=time.strftime('%Y_%m'))
     newOption.string = datetime.datetime.now().strftime('%Y %B')
     selReg.append(newOption)
-
+'''
 # Write to new file only after no error is raised
 with open(newFileNameAbs, 'w') as newFile:
     newFile.write(mdDoc)
@@ -130,9 +130,9 @@ with open(blogPagePath, 'w', encoding='utf8') as blogFile:
 blogFile.close()
 
 
-with open(divPagePath, 'w', encoding='utf8') as artFile:
-    artFile.write(divisionSoup.prettify(formatter="html"))
-artFile.close()
+#with open(divPagePath, 'w', encoding='utf8') as artFile:
+#    artFile.write(divisionSoup.prettify(formatter="html"))
+#artFile.close()
 
 # Check the result, though you won't be able to see the new post since it is 
 # not yet committed.
