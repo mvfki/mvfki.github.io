@@ -125,6 +125,10 @@ with open(newFileNameAbs, 'w') as newFile:
     newFile.write(mdDoc)
 newFile.close()
 
+with open(os.path.join('blog', DIVISION, 'posts/CONTENTS.txt'), 'a') as contFile:
+    contFile.write('\n'+newFileName)
+contFile.close()
+
 with open(blogPagePath, 'w', encoding='utf8') as blogFile:
     blogFile.write(blogSoup.prettify(formatter="html"))
 blogFile.close()
