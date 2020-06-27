@@ -142,18 +142,37 @@ function loadFromContentFile(topic) {
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
             var type = request.getResponseHeader('Content-Type');
-            if (type.indexOf("text") !== 1) {
-                var text = request.responseText;
-                var mds = text.split('\n');
-                loadMDs(mds, topic);
-            } else {
-                document.getElementById("articleDiv").innerHTML = "Loading Error";
-            }
+            var text = request.responseText;
+            var mds = text.split('\n');
+            loadMDs(mds, topic);
         } else {
             document.getElementById("articleDiv").innerHTML = "Loading Error";
         }
     }
 };
+
+// Load specific article
+function loadRecent(path, divID){
+    var converter = new showdown.Converter();
+    var request = new XMLHttpRequest();
+    //var path = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/blog/' + path;
+    request.open('GET', path, true);
+    request.send(null);
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var type = request.getResponseHeader('Content-Type');
+            if (type.indexOf("text") !== 1) {
+                var text = request.responseText;
+                var html = converter.makeHtml(text);
+                document.getElementById(divID).innerHTML = html;
+            } else {
+                document.getElementById(divID).innerHTML = "Not text file";
+            }
+        } else {
+            document.getElementById(divID).innerHTML = "Request state error";
+        }
+    }
+}
 
 // Dynamic effect functions
 function showMonth() {
