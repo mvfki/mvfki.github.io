@@ -1154,6 +1154,9 @@
 			margin-left: -0.5em;
 			margin-right: 1em;
 		}
+	#selMonth {
+		width: 140px;
+	}
 }
 @media (max-width: 980px) {
 	.dropdownContent {
@@ -1164,3 +1167,4 @@
 .dropdown:hover .dropdownContent {
 		display: block;
 	}
+

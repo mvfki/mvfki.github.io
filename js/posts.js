@@ -48,11 +48,15 @@ function setHider(hider, divID) {
 function loadInputContents(topicAbbr){
     var files = document.getElementById("readContIn").files;
     var artDiv = document.getElementById("articleDiv");
+    var allMonths = [];
     for (let i = 0; i < files.length; i++) {
         var file = files[i];
         // Create section
         var sec = document.createElement("section");
         var month = file.name.substring(0,7);
+        if (!allMonths.includes(month)) {
+            allMonths.push(month);
+        }
         sec.className = "article " + month;
         // Create div
         var postDiv = document.createElement("div");
@@ -60,7 +64,7 @@ function loadInputContents(topicAbbr){
         postDiv.id = topicAbbr + (i+1).toString();
         // Read MD file and convert to HTML
         insertFile(file, postDiv.id);
-        
+
         var hider = document.createElement("a");
         hider.className = "image post hider";
         setHider(hider, postDiv.id);
@@ -76,7 +80,7 @@ function loadInputContents(topicAbbr){
         sec.appendChild(hr);
         artDiv.appendChild(sec);
     }
-    
+    insertMonths(allMonths);
 }
 
 // Online loader functions
@@ -120,9 +124,13 @@ function insertOnlineMD(filename, divID) {
 
 function loadMDs(mds, topicAbbr) {
     var artDiv = document.getElementById("articleDiv");
+    var allMonths = [];
     for(var i = 0; i < mds.length; i++) {
         var sec = document.createElement("section");
         var month = mds[i].substring(0,7);
+        if (!allMonths.includes(month)) {
+            allMonths.push(month);
+        }
         sec.className = "article " + month;
         // Create div
         var postDiv = document.createElement("div");
@@ -144,6 +152,7 @@ function loadMDs(mds, topicAbbr) {
         sec.appendChild(hr);
         artDiv.appendChild(sec);
     }
+    insertMonths(allMonths);
 }
 
 function loadFromContentFile(topic) {
@@ -199,6 +208,26 @@ function loadRecent(path, divID){
     }
 }
 
+// Load month show/hide selection
+function insertMonths(months){
+    var sel = document.getElementById('selMonth')
+    for (var i = 0; i < months.length; i++) {
+        var newMon = document.createElement('option');
+        newMon.value = months[i];
+        var newMonTxt = document.createTextNode(monID2Txt(months[i]));
+        newMon.appendChild(newMonTxt);
+        sel.appendChild(newMon);
+    }
+}
+
+function monID2Txt(month){
+    var MON = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var year = month.substring(0, 4);
+    var monNum = parseInt(month.substring(5, 7));
+    var monTxt = MON[monNum-1];
+    return year + ' ' + monTxt
+}
+
 // Dynamic effect functions
 function showMonth() {
     var sel = document.getElementById("selMonth").value;
@@ -221,9 +250,9 @@ function showMonth() {
 }
 
 function hideArticle(id) {
-    var parentDiv = document.getElementById(id) 
+    var parentDiv = document.getElementById(id)
     var contents = parentDiv.getElementsByTagName("*");
-    for (var i = 1; i < contents.length; i++) {            
+    for (var i = 1; i < contents.length; i++) {
         if (contents[i].parentElement == parentDiv){
             contents[i].style.display = "none";
         }
@@ -232,7 +261,7 @@ function hideArticle(id) {
 }
 
 function showArticle(id) {
-    var parentDiv = document.getElementById(id) 
+    var parentDiv = document.getElementById(id)
     var contents = parentDiv.getElementsByTagName("*");
     for (var i = 1; i < contents.length; i++) {
         if (contents[i].parentElement == parentDiv){

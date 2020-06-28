@@ -92,34 +92,7 @@ blogSoup = BeautifulSoup(blogPage, features="lxml")
 recUpDiv = blogSoup.find('div', id='recentUpdate')
 newScriptStr = f"loadRecent('{newFileNameBlogRel}', 'recentUpdate');"
 recUpDiv.script.string.replaceWith(newScriptStr)
-'''
-# division main page update, to append a new post
-divPagePath = os.path.join(repoPath, 'blog', DIVISION, 'index.html')
-divisionPage = open(divPagePath, 'r').read()
-divisionSoup = BeautifulSoup(divisionPage, features='lxml')
-## Article part
-articleReg = divisionSoup.find('div', attrs='container')
-newDivID = DIVISIONDic[DIVISION] + str(len(articleReg.find_all('section')) + 1)
-scrTag = divisionSoup.new_tag('script', type="text/javascript")
-scrTag.string = f"loadArticle('{newFileNameDivRel}', '{newDivID}');"
-divTag = divisionSoup.new_tag('div', id=newDivID)
-divTag['class'] = 'image fit'
-divTag.append(scrTag)
-secTag = divisionSoup.new_tag('section')
-secTag.append(divTag)
-hr = divisionSoup.new_tag('hr')
-secTag.append(hr)
-secTag['class'] = 'article ' + time.strftime('%Y_%m')
-articleReg.append(secTag)
-## Month selection part
-selReg = divisionSoup.find("select")
-selOptions = selReg.findAll('option')
-selValues = [i['value'] for i in selOptions]
-if time.strftime('%Y_%m') not in selValues:
-    newOption = divisionSoup.new_tag('option', value=time.strftime('%Y_%m'))
-    newOption.string = datetime.datetime.now().strftime('%Y %B')
-    selReg.append(newOption)
-'''
+
 # Write to new file only after no error is raised
 with open(newFileNameAbs, 'w') as newFile:
     newFile.write(mdDoc)
@@ -132,11 +105,6 @@ contFile.close()
 with open(blogPagePath, 'w', encoding='utf8') as blogFile:
     blogFile.write(blogSoup.prettify(formatter="html"))
 blogFile.close()
-
-
-#with open(divPagePath, 'w', encoding='utf8') as artFile:
-#    artFile.write(divisionSoup.prettify(formatter="html"))
-#artFile.close()
 
 # Check the result, though you won't be able to see the new post since it is 
 # not yet committed.
