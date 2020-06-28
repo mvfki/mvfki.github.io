@@ -43,42 +43,59 @@
    <nav id="nav">
     <ul>
      <li>
+      Select Month
+     </li>
+     <li>
+      <select id="selMonth" name="selMonth" onchange="showMonth();">
+       <option selected="" value="all">
+        All
+       </option>
+       <option value="2020_06">
+        2020 June
+       </option>
+      </select>
+     </li>
+     <li>
       <a href="../../index.html">
        Home
       </a>
      </li>
-     <li>
+     <li class='dropdown'>
       <a href="../index.html">
        Blog
       </a>
+      <ul class='dropdownContent'>
+        <li>
+          <a href="../coding/index.html">
+            Coding
+          </a>
+        </li>
+        <li>
+          <a href="../music/index.html">
+            Music
+          </a>
+        </li>
+        <li>
+          <a href="../anime/index.html">
+            Anime
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Cooking
+          </a>
+        </li>
+      </ul>
      </li>
      <li>
-      <a href="../coding/index.html">
-       Coding
+      <a href="https://github.com/mvfki">
+       GitHub
       </a>
      </li>
      <li>
-      <a href="../music/index.html">
-       Music
+      <a href="https://bangumi.tv/user/541876">
+       Bangumi
       </a>
-     </li>
-     <li>
-      <a href="../anime/index.html">
-       Anime
-      </a>
-     </li>
-     <li>
-      <a href="../cooking/index.html">
-       Cooking
-      </a>
-     </li>
-     <li>
-       Select Month
-     </li>
-     <li>
-      <select name="selMonth" id="selMonth" onchange="showMonth();">
-       <option value="all" selected>All</option>
-      </select>
      </li>
     </ul>
    </nav>
