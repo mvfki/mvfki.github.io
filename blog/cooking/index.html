@@ -37,8 +37,8 @@
       margin: 0 0 4em 0;
       background-image: url(images/banner.jpg);
       padding: 6em 0 4em 0;
-      background-position: -50em -45em;
-      opacity: 0.7;
+      background-size: cover;
+      opacity: 0.8;
     }
       header.major h2 {
         color: white;
@@ -48,6 +48,11 @@
       }
     .wrapper {
       padding: 0 0 0 0;
+    }
+    @media (max-width: 515px) {
+      header.major {
+        background-position: right;
+      }
     }
   </style>
  </head>
