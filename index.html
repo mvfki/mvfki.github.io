@@ -45,6 +45,19 @@
 		</header>
 		<!-- Banner -->
 			<section id="banner">
+				<script>
+					function changeBG() {
+						var banner = document.getElementById('banner');
+						var imgs = ['blog/music/images/banner.png', 
+									'blog/coding/images/banner.png', 
+									'blog/cooking/images/banner.jpg', 
+									'blog/anime/images/banner.jpg'];
+						var img = imgs[Math.floor(Math.random()*imgs.length)];
+						banner.style.backgroundImage = "url('" + img + "')";
+						setTimeout(changeBG, 5000);
+					}
+					changeBG();
+				</script>
 				<div class="inner">
 					<h2>Yichen Wang's Homepage</h2>
 					<p>Call me 三土 if you like</p>
