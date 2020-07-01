@@ -169,7 +169,7 @@ function loadMDs(mds, topicAbbr) {
 
         var hiddenValue = document.createElement('input');
         hiddenValue.type = 'text';
-        hiddenValue.value = file.name;
+        hiddenValue.value = mds[i];
         hiddenValue.name = 'postName';
         hiddenValue.style.display = 'none';
 
