@@ -66,7 +66,7 @@ mdDoc = open(filename, 'r').read()
 imgSearcher = re.compile(r'!\[.*?\]\(.*?\)')
 allImgExp = imgSearcher.findall(mdDoc)
 replaceDic = {}
-newNameInc = len(os.listdir(os.path.join(repoPath, 'blog', DIVISION, 'posts')))
+newNameInc = len(os.listdir(os.path.join(repoPath, 'blog', DIVISION, 'images')))
 for imgExp in allImgExp:
     imgPathIdx = re.search(r'\(.*\)', imgExp).span()
     imgPath = imgExp[imgPathIdx[0]+1:imgPathIdx[1]-1]
