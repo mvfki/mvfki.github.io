@@ -65,18 +65,41 @@ function loadInputContents(topicAbbr){
         // Read MD file and convert to HTML
         insertFile(file, postDiv.id);
 
-        var hider = document.createElement("a");
-        hider.className = "image post hider";
+        var opDiv = document.createElement("form");
+        opDiv.className = "image post opDiv";
+        opDiv.id = "opDiv" + postDiv.id;
+        opDiv.action = "post.html";
+        opDiv.method = 'get';
+
+        var hiddenValue = document.createElement('input');
+        hiddenValue.type = 'text';
+        hiddenValue.value = file.name;
+        hiddenValue.name = 'postName';
+        hiddenValue.style.display = 'none';
+
+        var hider = document.createElement("button");
+        hider.className = "image post opDiv hider";
+        hider.type = "button";
         setHider(hider, postDiv.id);
         hider.id = "hide" + postDiv.id;
         hider.href = '#' + postDiv.id;
         var hiderText = document.createTextNode("Hide");
         hider.appendChild(hiderText);
 
+        var showOne = document.createElement("input");
+        showOne.type = "submit"
+        showOne.className = "image post opDiv showOne";
+        showOne.id = 'show' + postDiv.id;
+        showOne.value = "Show this only";
+
+        opDiv.appendChild(hiddenValue);
+        opDiv.appendChild(hider);
+        opDiv.appendChild(showOne);
+
         var hr = document.createElement("hr");
 
         sec.appendChild(postDiv);
-        sec.appendChild(hider);
+        sec.appendChild(opDiv);
         sec.appendChild(hr);
         artDiv.appendChild(sec);
     }
@@ -138,17 +161,40 @@ function loadMDs(mds, topicAbbr) {
         postDiv.id = topicAbbr + (i+1).toString();
         // Read MD file and convert to HTML
         insertOnlineMD(mds[i], postDiv.id);
-        var hider = document.createElement("a");
+        var opDiv = document.createElement("form");
+        opDiv.className = "image post opDiv";
+        opDiv.id = "opDiv" + postDiv.id;
+        opDiv.action = "post.html";
+        opDiv.method = 'get';
+
+        var hiddenValue = document.createElement('input');
+        hiddenValue.type = 'text';
+        hiddenValue.value = file.name;
+        hiddenValue.name = 'postName';
+        hiddenValue.style.display = 'none';
+
+        var hider = document.createElement("button");
+        hider.className = "image post opDiv hider";
+        hider.type = "button";
         setHider(hider, postDiv.id);
         hider.id = "hide" + postDiv.id;
         hider.href = '#' + postDiv.id;
         var hiderText = document.createTextNode("Hide");
         hider.appendChild(hiderText);
 
+        var showOne = document.createElement("input");
+        showOne.type = "submit"
+        showOne.className = "image post opDiv showOne";
+        showOne.id = 'show' + postDiv.id;
+        showOne.value = "Show this only";
+
+        opDiv.appendChild(hiddenValue);
+        opDiv.appendChild(hider);
+        opDiv.appendChild(showOne);
         var hr = document.createElement("hr");
 
         sec.appendChild(postDiv);
-        sec.appendChild(hider);
+        sec.appendChild(opDiv);
         sec.appendChild(hr);
         artDiv.appendChild(sec);
     }
@@ -189,7 +235,7 @@ function loadFromContentFile(topic) {
 function loadRecent(path, divID){
     var converter = new showdown.Converter();
     var request = new XMLHttpRequest();
-    //var path = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/blog/' + path;
+    var path = 'https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/blog/' + path;
     request.open('GET', path, true);
     request.send(null);
     request.onreadystatechange = function () {
@@ -253,11 +299,12 @@ function hideArticle(id) {
     var parentDiv = document.getElementById(id)
     var contents = parentDiv.getElementsByTagName("*");
     for (var i = 1; i < contents.length; i++) {
+
         if (contents[i].parentElement == parentDiv){
             contents[i].style.display = "none";
         }
     }
-    document.getElementById("hide"+id).style.display = 'none';
+    document.getElementById("opDiv"+id).style.display = 'none';
 }
 
 function showArticle(id) {
@@ -268,7 +315,7 @@ function showArticle(id) {
             contents[i].style.display = "block";
         }
     }
-    document.getElementById("hide"+id).style.display = 'block';
+    document.getElementById("opDiv"+id).style.display = 'inline-flex';
 }
 
 function getFirstContentElement(divID) {
@@ -279,4 +326,14 @@ function getFirstContentElement(divID) {
             return contents[i];
         }
     }
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
