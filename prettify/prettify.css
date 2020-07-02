@@ -1,0 +1,80 @@
+.pln {
+	color: rgba(248, 248, 220, 1);
+}
+@media screen {
+	.str {
+		color: rgba(231, 219, 96, 1);
+	}
+	.kwd {
+		color: rgba(249, 36, 114, 1);
+	}
+	.com {
+		color: rgba(106, 112, 78, 1);
+	}
+	.typ {
+		color: rgba(103, 216, 239, 1);
+	}
+	.lit {
+		color: rgba(140, 128, 232, 1);
+	}
+	.pun, .opn, .clo {
+		color: rgba(248, 248, 220, 1);
+	}
+	.tag {
+		color:#008
+	}
+	.atn {
+		color:#606
+	}
+	.atv {
+		color:#080
+	}
+	.dec, .var {
+		color:#606
+	}
+	.fun {
+		color:red
+	}
+}
+@media print, projection {
+	.str {
+		color: rgba(231, 219, 96, 1);
+	}
+	.kwd {
+		color: rgba(249, 36, 114, 1);
+		font-weight:bold
+	}
+	.com {
+		color: rgba(106, 112, 78, 1);
+		font-style:italic}
+	.typ {
+		color: rgba(103, 216, 239, 1);
+		font-weight:bold
+	}
+	.lit {
+		color: rgba(140, 128, 232, 1);
+	}
+	.pun, .opn, .clo {
+		color: rgba(248, 248, 220, 1);
+	}
+	.tag {
+		color:#006;
+		font-weight:bold
+	}
+	.atn {
+		color:#404
+	}
+	.atv {
+		color:#060
+	}
+}
+ol.linenums {
+	margin-top:0;
+	margin-bottom:0
+}
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
+	list-style-type:none
+}
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+	background:#eee
+}

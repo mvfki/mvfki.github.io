@@ -24,6 +24,13 @@ function insertFile(file, divID){
             titleLink.href = '#' +divID;
             titleLink.appendChild(title);
             document.getElementById(divID).prepend(titleLink);
+
+            var allPres = document.getElementsByTagName('pre');
+            for (let i = 0; i < allPres.length; i++){
+                allPres[i].className = 'prettyprint';
+            }
+
+            PR.prettyPrint();
             //document.getElementById('h1' + divID).outerHTML = titleLink.toString();
             title.onclick = function(){
                 var contentElement = getFirstContentElement(divID);
@@ -128,6 +135,13 @@ function insertOnlineMD(filename, divID) {
                 titleLink.href = '#' +divID;
                 titleLink.appendChild(title);
                 document.getElementById(divID).prepend(titleLink);
+
+                var allPres = document.getElementsByTagName('pre');
+                for (let i = 0; i < allPres.length; i++){
+                    allPres[i].className += ' prettyprint';
+                }
+
+                PR.prettyPrint();
                 title.onclick = function(){
                     var contentElement = getFirstContentElement(divID);
                     if (contentElement.style.display == 'none') {
@@ -245,6 +259,12 @@ function loadRecent(path, divID){
                 var text = request.responseText;
                 var html = converter.makeHtml(text);
                 document.getElementById(divID).innerHTML = html;
+                var allPres = document.getElementsByTagName('pre');
+                for (let i = 0; i < allPres.length; i++){
+                    allPres[i].className += ' prettyprint';
+                }
+
+                PR.prettyPrint();
             } else {
                 document.getElementById(divID).innerHTML = "Not text file";
             }
