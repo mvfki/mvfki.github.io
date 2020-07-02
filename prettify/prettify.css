@@ -1,24 +1,24 @@
 .pln {
-	color: rgba(248, 248, 220, 1);
+	color: #000;
 }
 @media screen {
 	.str {
-		color: rgba(231, 219, 96, 1);
+		color: #ac4742;
 	}
 	.kwd {
-		color: rgba(249, 36, 114, 1);
+		color: #3f7acf;
 	}
 	.com {
-		color: rgba(106, 112, 78, 1);
+		color: #74ae49;
 	}
 	.typ {
-		color: rgba(103, 216, 239, 1);
+		color: #57bcc5;
 	}
 	.lit {
 		color: rgba(140, 128, 232, 1);
 	}
 	.pun, .opn, .clo {
-		color: rgba(248, 248, 220, 1);
+		color: #240e0a;
 	}
 	.tag {
 		color:#008
@@ -38,24 +38,24 @@
 }
 @media print, projection {
 	.str {
-		color: rgba(231, 219, 96, 1);
+		color: #ac4742;
 	}
 	.kwd {
-		color: rgba(249, 36, 114, 1);
+		color: #3f7acf;
 		font-weight:bold
 	}
 	.com {
-		color: rgba(106, 112, 78, 1);
+		color: #74ae49;
 		font-style:italic}
 	.typ {
-		color: rgba(103, 216, 239, 1);
+		color: #57bcc5;
 		font-weight:bold
 	}
 	.lit {
 		color: rgba(140, 128, 232, 1);
 	}
 	.pun, .opn, .clo {
-		color: rgba(248, 248, 220, 1);
+		color: #240e0a;
 	}
 	.tag {
 		color:#006;
