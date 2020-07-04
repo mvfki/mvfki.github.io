@@ -1219,9 +1219,9 @@
 		display: none;
 	}
 }
-.dropdown:hover .dropdownContent {
+/*.dropdown:hover .dropdownContent {
 		display: block;
-	}
+	}*/
 
 .shareRegion{
 	position: relative;

@@ -394,3 +394,11 @@ $(document).mouseup(function (e) {
         $(".shareContent").hide();
     }
 });
+
+$( document ).ready(function() {
+    $('#blogMenu').hover(function() {
+        $('#dropdownContent').stop(true, true).slideDown(200);
+    }, function() {
+        $('#dropdownContent').stop(true, true).slideUp(200);
+    });
+})
