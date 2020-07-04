@@ -260,6 +260,11 @@ function loadRecent(path, divID){
                 var html = converter.makeHtml(text);
                 document.getElementById(divID).innerHTML = html;
                 var allPres = document.getElementsByTagName('pre');
+                var contents = document.getElementById(divID).getElementsByTagName("h1");
+                var articleTitle = contents[0].textContent;
+                if (document.title != 'WYC - Blog') {
+                    document.title = articleTitle;
+                }
                 for (let i = 0; i < allPres.length; i++){
                     allPres[i].className += ' prettyprint';
                 }
@@ -357,3 +362,35 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+function insertQRCode(id) {
+    var qrcode = new QRCode(document.getElementById(id), {
+                            width : 100,
+                            height : 100
+                            });
+    qrcode.makeCode(window.location.href);
+}
+
+function insertURL(id) {
+    var inputBox = document.getElementById(id);
+    inputBox.value = window.location.href;
+    inputBox.setAttribute('readonly', 'readonly');
+}
+
+function showShareContent(id){
+    var content = document.getElementById(id);
+    content.style.display = "block";
+}
+
+function copyURL(id) {
+    var ib = document.getElementById(id);
+    ib.select();
+    document.execCommand('copy');
+}
+
+$(document).mouseup(function (e) {
+    if ($(e.target).closest(".shareContent").length
+                === 0) {
+        $(".shareContent").hide();
+    }
+});

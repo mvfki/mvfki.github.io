@@ -85,6 +85,17 @@ header.major {
 				<p>Spaghetti can be cooked with all flavors you can ever know.</p>
 			</header>
 			<div class="container" id="articleDiv">
+				<div class='shareRegion'>
+					<button class="shareBtn" id="shareBtn1" type="button" value="Share" onclick="showShareContent('shareContent1');">Share</button>
+					<div class="shareContent" id="shareContent1">
+						<span>Scan me!</span>
+						<div class="qrcode" id="qrcode1"></div>
+						<hr/>
+						<button value='Copy' onclick="copyURL('copyUrl1');">Copy</button>
+						<input type="text" id="copyUrl1"/>
+					</div>
+				</div>
+				<hr/>
 				<!-- Articles -->
 				<section>
 					<div class="image post" id="articleContent">
@@ -93,21 +104,11 @@ var filename = getParameterByName('postName');
 loadRecent('cooking/posts/' + filename, 'articleContent');
 						</script>
 					</div>
-					<div id='shareRegion'>
-						<button id="shareBtn" type="button" value="Share">Share</button>
-						<div id="shareContent">
-							<span>Scan me!</span>
-							<div id="qrcode"></div>
-						</div>
-					</div>
-					<script type="text/javascript">
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-                            width : 100,
-                            height : 100
-                       });
-qrcode.makeCode(window.location.href);
-					</script>
 				</section>
+				<script type="text/javascript">
+insertQRCode('qrcode1');
+insertURL('copyUrl1');
+				</script>
 			</div>
 		</section>
 		<!-- Footer -->
