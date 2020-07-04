@@ -593,11 +593,10 @@
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
-		padding-left: 1em;
 	}
 
 		ul li {
-			padding-left: 0.5em;
+			padding-left: 1.5em;
 		}
 
 		ul.alt {
@@ -1198,13 +1197,16 @@
 		z-index: 1;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 		background: white;
-		margin-left: -1.5em;
+		margin-left: -2em;
 	}
 		.dropdownContent li {
 			list-style: none;
-			margin-left: -0.5em;
 			margin-right: 1em;
+			width: 100%;
 		}
+			.dropdownContent li:hover {
+				background-color: #e9f0f5;
+			}
 	#selMonth {
 		width: 140px;
 	}
