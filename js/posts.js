@@ -154,7 +154,7 @@ function insertOnlineMD(filename, divID) {
                 document.getElementById(divID).innerHTML = "Not text file";
             }
         } else {
-            document.getElementById(divID).innerHTML = "Request state error";
+            document.getElementById(divID).innerHTML = "<h3>Requested Document Not Found :)</h3>";
         }
     }
 }
