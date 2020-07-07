@@ -2,7 +2,7 @@ function loadArticle(topic) {
     //document.getElementById("articleDiv").innerHTML = "<input type='file' id='readContIn' onchange='loadFromContentFile(\"" + topic + "\");'/>";
     if(window.location.href.startsWith('file://')){
         document.getElementById("articleDiv").innerHTML = "<input type='file' id='readContIn' onchange='loadInputContents(\"" + topic + "\");' multiple>All MD to load</input>";
-    } else if(window.location.href.startsWith('https://')){
+    } else if(window.location.href.startsWith('http')){
         loadFromContentFile(topic);
     }
 };
