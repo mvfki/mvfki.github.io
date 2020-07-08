@@ -5,7 +5,6 @@ Created on Tue Jul  7 11:38:01 2020
 @author: Yichen Wang
 """
 from bs4 import BeautifulSoup
-from git import Repo
 import markdown
 import os
 import time
@@ -22,8 +21,6 @@ EXT = ['markdown.extensions.extra',
        'markdown.extensions.tables']
 TOPICS = {'coding': 'cd', 'cooking': 'ck', 'music': 'ms', 'anime': 'an'}
 TOPIC_FULLNAMES = list(TOPICS.keys())
-repoPath = os.path.dirname(__file__)
-repo = Repo(repoPath)
 MD_IMG_REGEX = re.compile(r'!\[.*?\]\(.*?\)')
 IMG_URL_REGEX = re.compile(r'\(.*?\)')
 
