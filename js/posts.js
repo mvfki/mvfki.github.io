@@ -39,26 +39,6 @@ function showMonth() {
     }
 }
 
-function getFirstContentElement(divID) {
-    var parentDiv = document.getElementById(divID);
-    var contents = parentDiv.getElementsByTagName("*");
-    for (var i = 1; i < contents.length; i++) {
-        if (contents[i].parentElement == parentDiv){
-            return contents[i];
-        }
-    }
-}
-
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
 function insertQRCode(id) {
     var qrcode = new QRCode(document.getElementById(id), {
                             width : 100,

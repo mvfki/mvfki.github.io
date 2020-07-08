@@ -175,14 +175,15 @@ def rewriteAll():
         # Prepare content element
         contentList = BeautifulSoup('<ul></ul>', features='lxml')
         for post in allPosts:
-            li = contentList.new_tag('li', attrs={'class': ['content', 'cItem']})
-            li_a = contentList.new_tag('a', attrs={'class': ['content', 'cItem', 'cLink'], 
-                                                   'href': post.ID})
-            li_a_inner = BeautifulSoup(post.title, features='lxml')
-            li_a.append(li_a_inner.p)
+            li = contentList.new_tag('li', attrs={'class': ['content', 'cItem'],
+                                                  'onclick': f"location.href='{post.ID}'"})
+            li_div = contentList.new_tag('div', attrs={'class': ['content', 'cItem', 'cTitle'], 
+                                                       'href': post.ID})
+            li_div_inner = BeautifulSoup(post.title, features='lxml')
+            li_div.append(li_div_inner.p)
             li_span = contentList.new_tag('span', attrs={'class': ['content', 'cItem', 'cTime']})
             li_span.string = post.time
-            li.append(li_a)
+            li.append(li_div)
             li.append(li_span)
             contentList.ul.append(li)
         # Write content page
