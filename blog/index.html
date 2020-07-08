@@ -142,11 +142,29 @@
        Most Recent
       </h1>
       <section>
-       <div class="image post" id="recentUpdate">
-        <script type="text/javascript">
-         loadRecent('coding/posts/2020_07_01_00_05.md', 'recentUpdate');
-        </script>
-       </div>
+<div class="image post"><h1 id="create-colormap-cmap-for-matplotlib">Create Colormap (cmap) for Matplotlib</h1><p>When plotting, people definitely care about the color of the dots in there scatter plots. </p><pre class="prettyprint"><code class="python">import matplotlib.pyplot as plt
+# For example, the 2-D data we want to plot comes this way
+x, y = list(range(100)), list(range(100))
+</code></pre><p>Usually there are two ways to set this feature:<br/>
+1. Know the exact color representation of each dot and give it to <code>color</code> argument</p><pre class="prettyprint"><code class="python">plt.scatter(x, y, color=['red', 'blue']*50)
+plt.show()
+</code></pre><p><img alt="redBlue color setting" src="coding/create-colormap-cmap-for-matplotlib/4.jpg"/>
+Note that you can also say <code>color='red'</code> for set all dots to "red".  </p><ol>
+<li>When you have some sort of continuous value, and you want a color gradient to reflect the value, set <code>c</code> to this value and use <code>cmap</code> to choose the color palette.  </li>
+</ol><pre class="prettyprint"><code class="python">c = list(range(100))
+plt.scatter(x, y, c=c, cmap='Pastel1')
+plt.show()
+</code></pre><p><img alt="Pastel cmap" src="coding/create-colormap-cmap-for-matplotlib/5.jpg"/>
+A classic scenario is that in Bioinformatics, when you have a PCA embedding of a set of samples and you plot the first two components as the <code>x</code> and <code>y</code> dimension, and then you want to use the color to represent the expression level of a gene of interests for these samples, you can directly throw the array of expression value to <code>c</code>.  </p><p>However, though there has already been a long list of preset colormaps in matplotlib (use <code>dir(matplotlib.cm)</code> to have a quick look, this also gives you other functions and constants though), I still think it's good to have an access to define customized colormap with maximum flexibility. Therefore, I wrote myself a simple script for this functionality, which you can find <a href="https://github.com/mvfki/assignments/blob/master/matplotlib_cmap_generator.py">here</a>. Detailed documents and usage has already been stated in the script. Let's have a quick check on the example data above.  </p><pre class="prettyprint"><code class="python">import generateCmap from matplotlib_cmap_generator
+cmap1 = generateCmap(['blue', 'white', 'red'])
+cmap2 = generateCmap(['blue', 'red', 'yellow', 'green'], [0, 1, 2, 6])
+cms = [cmap1, cmap2]
+fig, axs = plt.subplots(1, 2, figsize=(6, 3), constrained_layout=True)
+for [ax, cmap] in zip(axs, cms):
+    ax.scatter(x, y, c=x, cmap=cmap)
+plt.show()
+</code></pre><p><img alt="Customized cmap" src="coding/create-colormap-cmap-for-matplotlib/6.png"/>
+So the point of this function is that, you can set gradients varying from any colors you have in mind, and you can set as many colors as you can identify. Furthermore, the width of the interval of each gradient can also be set by the second argument, which stands for the relative value that each color should occur.  </p><p>Jul. 1st, 2020  </p><p>BTW, this is the first post in July. Finally I can have a real test on the "showMonth" feature of this website.</p></div>
       </section>
      </div>
     </div>

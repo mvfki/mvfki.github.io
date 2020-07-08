@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <!--
-  Ion by TEMPLATED
-  templated.co @templatedco
-  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+Ion by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
 	<head>
-		<title>WYC - Anime Tears</title>
+		<title>WYC - Coding notes</title>
 		<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
 		<meta content="" name="description"/>
 		<meta content="" name="keywords"/>
@@ -15,8 +15,6 @@
 		<script src="/js/skel.min.js"></script>
 		<script src="/js/skel-layers.min.js"></script>
 		<script src="/js/init.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
-		<script src="/js/qrcode.js"></script>
 		<script src="/js/posts.js"></script>
 		<link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
 		<link rel="stylesheet" type="text/css" href="/prettify/prettify.css">
@@ -30,10 +28,11 @@
 header.major {
 	text-align: center;
 	margin: 0 0 4em 0;
-	background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.4)), url(images/banner.jpg);
+	background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.4)), url(/blog/coding/images/banner.png);
 	padding: 6em 0 4em 0;
-	background-position: right -5em;
-	opacity: 0.9;
+	background-position: left center;
+	background-size: cover;
+	opacity: 0.8;
 }
 	header.major h2 {
 		color: white;
@@ -47,25 +46,25 @@ header.major {
 		</style>
 	</head>
 	<body id="top">
-	<!-- Header -->
+		<!-- Header -->
 		<header class="skel-layers-fixed" id="header">
-			<h1><a href="/index.html">WYC - Home Page</a></h1>
+			<h1><a href="/">WYC - Home Page</a></h1>
 			<nav id="nav">
 				<ul>
-					<li>Select Month</li>
+					<!--<li>Select Month</li>
 					<li>
 						<select id="selMonth" name="selMonth" onchange="showMonth();">
 							<option selected="" value="all">All</option>
 						</select>
-					</li>
-					<li><a href="/index.html">Home</a></li>
-					<li class='dropdown' id='blogMenu'>
-						<a href="../index.html">Blog</a>
+					</li>-->
+					<li><a href="/">Home</a></li>
+					<li class="dropdown" id="blogMenu">
+						<a href="/blog">Blog</a>
 						<ul class='dropdownContent' id="dropdownContent">
-							<li><a href="../coding/index.html">Coding</a></li>
-							<li><a href="../music/index.html">Music</a></li>
-							<li><a href="index.html">Anime</a></li>
-							<li><a href="../cooking/index.html">Cooking</a></li>
+							<li><a href="/blog/coding">Coding</a></li>
+							<li><a href="/blog/music">Music</a></li>
+							<li><a href="/blog/anime">Anime</a></li>
+							<li><a href="/blog/cooking">Cooking</a></li>
 						</ul>
 					</li>
 					<li><a href="https://github.com/mvfki">GitHub</a></li>
@@ -76,42 +75,34 @@ header.major {
 		<!-- Main -->
 		<section class="wrapper style1" id="main">
 			<header class="major">
-				<h2>Yichen's Anime Tears</h2>
-				<p>Well, I'm already 24.</p>
+				<h2>Yichen's Coding Notes</h2>
+				<p>Some experience and complains ;D</p>
 			</header>
-			<div class="container" id="articleDiv">
-				<div class='shareRegion'>
-					<button class="shareBtn" id="shareBtn1" type="button" value="Share" onclick="showShareContent('shareContent1');">Share</button>
-					<div class="shareContent" id="shareContent1">
-						<span>Scan me!</span>
-						<div class="qrcode" id="qrcode1"></div>
-						<hr/>
-						<button value='Copy' onclick="copyURL('copyUrl1');">Copy</button>
-						<input type="text" id="copyUrl1"/>
-					</div>
-				</div>
-				<hr/>
-				<!-- Articles -->
-				<section>
-					<div class="image post" id="articleContent">
-						<script type="text/javascript">
-var filename = getParameterByName('postName');
-loadRecent('anime/posts/' + filename, 'articleContent');
-						</script>
-					</div>
-				</section>
-				<script type="text/javascript">
-insertQRCode('qrcode1');
-insertURL('copyUrl1');
-				</script>
+			<div class="container operation" id="upperOperation">
+				<!--Last  &  Next-->
+				<a href='..' class="operation button" id='backBtn'>Back</a>
+				<a class="operation button right" id='shareBtn'>share</a>
 			</div>
+			<hr/>
+			<div class="container" id="articleDiv">
+				<!-- Articles -->
+			</div>
+			<hr/>
+			<div class="container operation" id="lowerOperation">
+				<!--Last  &  Next-->
+				<a class="operation button" id='lastBtn'>Last</a>
+				<a class="operation button right" id='nextBtn'>Next</a>
+			</div>
+			<script>
+PR.prettyPrint();
+			</script>
 		</section>
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="container">
 				<ul class="copyright">
-					<li>&copy; WYC. All rights reserved.</li>
-					<li>Design:<a href="http://templated.co">TEMPLATED</a></li>
+				<li>&copy; WYC. All rights reserved.</li>
+				<li>Design:	<a href="http://templated.co">TEMPLATED</a></li>
 				</ul>
 			</div>
 		</footer>
