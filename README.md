@@ -4,55 +4,69 @@ This repository is for my home page. It's all because I suddenly got interested 
 ## HTML template
 The template used for the web pages is called [Ion](https://templated.co/ion), designed [TEMPLATED](https://templated.co/). 
 The template provides the most basic layouts and widges styles and colorings.  
-## Original design
+## Design
 The substructure of this web site is the simplest tree style:
 ```
 /index.html
-/<JS and styles folders>
-/blog
- --/index.html
- --/<topic folders>
-    --/index.html
-    --/<content folders>
+/<JS and styles folders>/
+/blog/
+|-----index.html
+|-----<topic folders>/
+      |---------------index.html
+      |---------------<article1 folder>/
+                      |-----------------index.html
+                      |-----------------<images>
+      |---------------<article2 folder>/
+                      |-----------------index.html
+      |---------------_src/
+                      |----<markdown files>
+                      |----<images>
+                      |----template.html
 ```
 Though the [Jekyll](https://jekyllrb.com/) solution for distributing a static blog is really convenient, I still prefer a customized HTML layout. 
-Thus in order to optimize the future debugging and posting process, I added two simple features:
+So I write my customized deployment code, which simply works by convert Markdown files to HTML script and insert to the proper `<div>` in `template.html`.
 
-#### Automatically render Markdown posts to web pages
-Since using a Jekyll theme seems like we can post a Markdown article and soon see it deployed. I tried to implement a similar feature in `js/posts.js`.
-In this way, we only need to insert a short formated block into topic page and the new article in the content folder will be rendered. 
-The good thing about this is that there won't be any long paragraphs within an HTML document and I don't get confused if I want to update or debug the functionality. 
-
-#### Automatically deploy post files
-Since I would like to render article contents from Markdown files, I would have to be careful of file paths, as well as any image path associated with Markdown articles.
-Therefore, renaming and moving files to correct directory, inserting short block into HTML documents, and commiting and pushing the changes to remote are all done by `pusher.py`. 
-I didn't write this script in a formal coding style because it's just a one-way run.
+## Dependency
+The article page deployments are done specially with: [markdown](https://python-markdown.github.io/) and [BeautifulSoup4](http://www.crummy.com/software/BeautifulSoup/).
+```
+pip install markdown beautifulsoup4
+```
 
 ## How to post
 Well, this might only be useful for myself, but let me still take a note here, in case I forget it years later.  
-- Prepare a Markdown document anywhere you like, called `myPost.md`
-```
-## Dinner for today
+- Prepare a Markdown document, and name it with a strftime format such as `2020_07_07_22_26.md`
+```markdown
+# Dinner for today
+![Photo of a home made pizza](pizza.png)
 I made a **pizza** on my own today.
-Jun. 24th, 2020
+Jul. 7th, 2020
+```
+- Put `2020_07_07_22_26.md` and `pizza.png` together in the `_src` folder of the topic
+```bash
+$ mv 2020_07_07_22_26.md blog/cooking/_src/
+$ mv pizza.png blog/cooking/_src/
 ```
 
-- Run pusher script in command line tool.  
-Note that `-f` is for the MD filename and `-d` for the topic.
-```{shell}
-$ python pusher.py -f myPost.md -d cooking
+- Run deployer script in command line tool.  
+```shell
+$ python deploy.py
 ```
-Follow the prompts on the screen and everything will be done.
+When the deployment is done, a localhost server will be started for debugging.  
 
-- Python script dependencies, in case.
-```
-pip install beautifulSoup4 gitpython
+- After you are totally satisfied with the outcome, commit and push
+```shell
+git add *
+git commit -m 'SAY SOMETHING'
+git push origin master
 ```
 
 ## Copyright
 The original HTML template, ION, by Templated, is distributed under a [CCPL lisence](https://github.com/mvfki/mvfki.github.io/blob/master/LICENSE.txt).  
 
-As for my personal addition, currently there is nothing smart in coding (all taken from stackoverflow LOL), and very few articles. 
+As for my personal addition, currently there is nothing smart in coding, and very few articles. 
 Image contents in-repo (you can tell by image URL) are all screenshots except specially stated (e.g. album covers).
 Thus I'm not planning to work to much on copyright issue until I really push something special.  
 So feel free to refer to anything here or give me a kind advice in [Issues](https://github.com/mvfki/mvfki.github.io/issues/new)!
+
+## Others
+Before this version, where I use local program to deploy real static pages, I actually was using another weird way, which you can have a look at [this branch](https://github.com/mvfki/mvfki.github.io/tree/clientSideDeploy). In that version, the page a visitor finally see is actually fully deployed on the visitor's browser. A JavaScript code was written to request and parse all the Markdown files in the repo and automatically render them to an empty page already loaded on the client side.  
