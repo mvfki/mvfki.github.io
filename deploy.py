@@ -74,8 +74,8 @@ class myPost():
         pres = soup.findAll('pre')
         for i in pres:
             i.attrs['class'] = 'prettyprint'
-        artID = soup.find('div', id=self.insertID).findAll('h1')[0].attrs['id']
-        soup.title.string = artID.replace('-', ' ').title() + ' - WYC\'s Blog'
+        titleHTML = soup.find('div', id=self.insertID).findAll('h1')[0]
+        soup.title.string = re.sub(r'<.*?>', '', str(titleHTML)) + ' - WYC\'s Blog'
         self.soup = soup
         
     
@@ -99,11 +99,7 @@ class myPost():
         '''
         ad = self.soup.find('div', id=self.insertID)
         h1 = ad.findAll('h1')[0]
-        title = ''
-        for i in h1.children:
-            title += str(i)
-        return title
-        
+        return re.findall(r'<h.*?>(.*?)</h[0-9]>', str(h1))[0]        
     
     @property
     def ID(self):
