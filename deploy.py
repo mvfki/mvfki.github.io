@@ -221,6 +221,5 @@ def startServer():
         httpd.serve_forever()
 
 if __name__ == '__main__':
-    #rewriteAll()
-    #startServer()
-    pass
+    rewriteAll()
+    startServer()
