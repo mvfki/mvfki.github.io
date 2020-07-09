@@ -62,28 +62,28 @@
 		}
 
 	h2 {
-		font-size: 1.5em;
-		line-height: 1.5em;
+		font-size: 1.3em;
+		line-height: 1.3em;
 	}
 
 	h3 {
 		font-size: 1.25em;
-		line-height: 1.5em;
+		line-height: 1.25em;
 	}
 
 	h4 {
-		font-size: 1em;
-		line-height: 1.5em;
+		font-size: 1.2em;
+		line-height: 1.2em;
 	}
 
 	h5 {
-		font-size: 0.9em;
-		line-height: 1.5em;
+		font-size: 1.15em;
+		line-height: 1.15em;
 	}
 
 	h6 {
-		font-size: 0.7em;
-		line-height: 1.5em;
+		font-size: 1.1em;
+		line-height: 1.1em;
 	}
 
 	sub {
@@ -520,71 +520,15 @@
 				}
 			}
 			.image.post h1 {
-				font-size: large;
-				font-weight: bolder;
-				margin: 0 1em 1em 1em;
+				font-size: 2em;
 				line-height: 1.5em;
-				margin-top: -60px;
-				padding-top: 60px;
+				font-weight: 400;
+				border-bottom: solid 1px #e0e0e0;
 			}
-				#articleContent h1 {
-					cursor: auto;
-				}
-				#recentUpdate h1 {
-					cursor: auto;
-				}
-			.image.post h2 {
-				font-size: larger;
-				text-transform: none;
-				margin: 0 0 1em 0;
-				line-height: 1.5em;
+			.image.post h2, h3, h4, h5, h6 {
+				padding-top: 70px;
+				margin-top: -70px;
 			}
-			.image.post h3 {
-				font-size: large;
-				text-transform: none;
-				margin: 0 0 1em 0;
-				line-height: 1.5em;
-			}
-			.imgae.post.opDiv {
-				    display: inline-flex;
-			}
-			.image.post.opDiv input {
-				margin: 0 1em;
-			}
-			.image.post.opDiv button {
-				margin: 0 1em;
-				-moz-appearance: none;
-				-webkit-appearance: none;
-				-o-appearance: none;
-				-ms-appearance: none;
-				appearance: none;
-				-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-				-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-				-o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-				-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-				transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-				background-color: #192024;
-				border-radius: 6px;
-				border: 0;
-				color: #ffffff !important;
-				cursor: pointer;
-				display: inline-block;
-				font-weight: 300;
-				text-transform: uppercase;
-				letter-spacing: 0.125em;
-				font-size: 0.9em;
-				height: 2.85em;
-				line-height: 2.85em;
-				padding: 0 1.75em;
-				text-align: center;
-				text-decoration: none;
-				white-space: nowrap;
-				text-indent: 0.25em;
-			}
-
-				.image.post.opDiv button:hover {
-					background-color: #232d33;
-				}
 
 /* List */
 
@@ -1373,3 +1317,18 @@
 	.operation.button.right {
 		float: right;
 	}
+
+a.anchor {
+	float: left;
+    padding-right: 4px;
+    margin-left: -20px;
+    line-height: 1;
+}
+svg.octicon {
+	color: #1b1f23;
+    vertical-align: middle;
+    visibility: hidden;
+}
+#baking-a-dry-bread:hover #link-baking-a-dry-bread svg{
+	visibility: visible;
+}

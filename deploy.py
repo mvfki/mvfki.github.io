@@ -12,6 +12,7 @@ import re
 import shutil
 import http.server
 import socketserver
+import copy
 
 PORT = 2333
 Handler = http.server.SimpleHTTPRequestHandler
@@ -24,6 +25,11 @@ TOPIC_FULLNAMES = list(TOPICS.keys())
 MD_IMG_REGEX = re.compile(r'!\[.*?\]\(.*?\)')
 IMG_URL_REGEX = re.compile(r'\(.*?\)')
 
+ANCHOR = BeautifulSoup(open('images/anchor_htmlElement.txt', 'r').read(), features='lxml').svg
+ANCHOR_STYLE = '''#%s:hover #anchor-%s svg{
+	visibility: visible;
+}
+'''
 class myPost():
     def __init__(self, filename, topic, template, insertID='articleDiv'):
         if not os.path.isfile(filename):
@@ -74,8 +80,21 @@ class myPost():
         pres = soup.findAll('pre')
         for i in pres:
             i.attrs['class'] = 'prettyprint'
-        titleHTML = soup.find('div', id=self.insertID).findAll('h1')[0]
+        titleHTML = ad.findAll('h1')[0]
         soup.title.string = re.sub(r'<.*?>', '', str(titleHTML)) + ' - WYC\'s Blog'
+        
+        allHeaders = ad.find_all(re.compile('^h[1-6]$'))
+        for header in allHeaders[1:]:
+            try:
+                headerID = header.attrs['id']
+                anchorA = soup.new_tag('a', attrs={'id': 'anchor-'+headerID, 
+                                                   'class': 'anchor', 
+                                                   'href': '#'+headerID})
+                anchorA.append(copy.copy(ANCHOR))
+                header.insert(0, anchorA)
+                soup.style.string += ANCHOR_STYLE % (headerID, headerID)
+            except KeyError:
+                continue
         self.soup = soup
         
     
@@ -202,5 +221,6 @@ def startServer():
         httpd.serve_forever()
 
 if __name__ == '__main__':
-    rewriteAll()
-    startServer()
+    #rewriteAll()
+    #startServer()
+    pass
