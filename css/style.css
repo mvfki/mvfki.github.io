@@ -135,6 +135,8 @@
 	    font-size: 13px;
 	    background-color: #f5f5f5;
 	    border-radius: 5px;
+	    user-select: text;
+	    -webkit-user-select: text;
 	}
 
 		pre code {
@@ -497,7 +499,8 @@
 			margin: 0 0 2em 0;
 			width: 100%;
 			display: block;
-			/*user-select: none;*/
+			user-select: none;
+			-webkit-user-select: none;
 		}
 			.image.post iframe {
 				display: block;
