@@ -25,8 +25,9 @@ TOPIC_FULLNAMES = list(TOPICS.keys())
 MD_IMG_REGEX = re.compile(r'!\[.*?\]\(.*?\)')
 IMG_URL_REGEX = re.compile(r'\(.*?\)')
 
-ANCHOR = BeautifulSoup(open('images/anchor_htmlElement.txt', 'r').read(), features='lxml').svg
-ANCHOR_STYLE = '''#%s:hover #anchor-%s svg{
+ANCHOR = BeautifulSoup('<i aria-hidden="true" class="icon fa-link"></i>', 
+                       features='lxml').i
+ANCHOR_STYLE = '''#%s:hover #anchor-%s i {
 	visibility: visible;
 }
 '''
