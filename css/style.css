@@ -1263,3 +1263,6 @@ a.anchor {
 span.bold  {
 	font-weight: bold;
 }
+a.title {
+	text-decoration: none;
+}
