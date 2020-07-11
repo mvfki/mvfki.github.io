@@ -20,7 +20,7 @@
 	body, input, select, textarea {
 		color: #555f66;
 		font-family: "Roboto", Helvetica, sans-serif;
-		font-size: 14pt;
+		font-size: 13pt;
 		font-weight: 300;
 		line-height: 1.75em;
 	}
@@ -923,6 +923,9 @@
 					color: #a3a5a7;
 				}
 
+.style2 section.special.box:hover {
+	background: #3c3c3c;
+}
 /* Header */
 
 	#skel-layers-wrapper {
@@ -1109,7 +1112,6 @@
 	#footer {
 		background: #f8f8f8;
 		padding: 4em 0 6em 0;
-		margin-top: 2em;
 	}
 
 		#footer a {
@@ -1212,14 +1214,31 @@
 		margin-left: 0.5em;
 		font-size: small;
 	}
-	
+div.content-top {
+	margin-bottom: 0.5em;
+}
+	.content-top h1 {
+		display: inline;
+	}
+	.content-top button {
+		height: 2.4em;
+		line-height: unset;
+	}
+
 @media (max-width: 736px) {
 	.content.cItem {
 		display: block;
 	}
 	.content.cItem.cTitle {
 		padding: 1em 0;
-	}	
+	}
+	div.content-top.right {
+	    position: relative;
+	    bottom: 5px;
+	    display: block;
+	    margin-top: 0.5em;
+	}
+
 }
 @media (min-width: 737px) {
 	.content {
@@ -1234,16 +1253,13 @@
 	.content.cItem.cTime {
 		float: right;
 	}
-}
-div.content-top {
-	margin-bottom: 1.5em;
-}
-	.content-top h1 {
-		display: inline;
-	}
-	.content-top.right {
+	div.content-top.right {
+		position: relative;
+		bottom: 5px;
 		float: right;
 	}
+}
+
 
 /* Article page lower buttons */
 .operation.button {

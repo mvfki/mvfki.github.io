@@ -4,6 +4,18 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
+console.log(`//             //             //
+ /      //     /              /
+ //    / /    //   //////    //    //////    //////    // // //    //////
+  /    / //   /   /     //   /    /     //  /     //   //  // //  /     //
+  //  //  /  //  /////////  //   //        //      /  //  //  /  /////////
+   /  /   // /   //         /    //        /      //  /   /  //  //
+    //     //     //////    ///   //////    //////   //  //  //   //////
+
+                     The word "mvfki" does not linguistically mean anything. 
+                        Try type the five letters in order on your keyboard, 
+                                  and you will find it comfortable to type:)`);
+
 (function($) {
 	skel.init({
 		reset: 'full',
