@@ -1266,3 +1266,35 @@ span.bold  {
 a.title {
 	text-decoration: none;
 }
+
+div.corner {
+	display: none;
+	color: #a9acad;
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	transition: -webkit-transform .2s ease;
+	-webkit-transition: -webkit-transform .2s ease;
+	transition: transform .2s ease;
+	transition: transform .2s ease,-webkit-transform .2s ease;
+	will-change: transfrom;
+	-webkit-transition: height .2s ease;
+	transition: height .2s ease;
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;*/
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 38px;
+	height: 57px;
+	cursor: pointer;
+	opacity: 0.8;
+}

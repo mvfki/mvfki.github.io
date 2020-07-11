@@ -77,4 +77,16 @@ $( document ).ready(function() {
     }, function() {
         $('#dropdownContent').stop(true, true).slideUp(200);
     });
+    $('.corner').click(function() {
+        window.scrollTo(0,0);
+    });
 })
+
+$(window).scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 350) {
+        $('.corner').fadeIn();
+    } else {
+        $('.corner').fadeOut();
+    }
+});
