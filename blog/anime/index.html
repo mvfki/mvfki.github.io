@@ -63,16 +63,6 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
    <nav id="nav">
     <ul>
      <li>
-      Select Month
-     </li>
-     <li>
-      <select id="selMonth" name="selMonth" onchange="showMonth();">
-       <option selected="" value="all">
-        All
-       </option>
-      </select>
-     </li>
-     <li>
       <a href="/">
        Home
       </a>
@@ -129,12 +119,20 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
    </header>
    <div class="container" id="contentDiv">
     <div class="content">
-     <h1>
-      Contents
-     </h1>
+     <div class="content-top">
+      <h1>
+       Contents
+      </h1>
+      <div class="content-top right">
+       <input id="monthSelect" max="2020-07" min="2020-07" type="month"/>
+       <button class="button" id="clearMonth" value="clear">
+        Clear
+       </button>
+      </div>
+     </div>
      <!-- Content -->
      <ul>
-      <li class="content cItem" onclick="location.href='finally-comes-rezero-starting-life-in-another-world-season-2'">
+      <li class="content cItem 2020-07" onclick="location.href='finally-comes-rezero-starting-life-in-another-world-season-2'">
        <div class="content cItem cTitle" href="finally-comes-rezero-starting-life-in-another-world-season-2">
         <p>
          Finally comes, Re:Zero − Starting Life in Another World Season 2

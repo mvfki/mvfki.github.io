@@ -68,16 +68,6 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
    <nav id="nav">
     <ul>
      <li>
-      Select Month
-     </li>
-     <li>
-      <select id="selMonth" name="selMonth" onchange="showMonth();">
-       <option selected="" value="all">
-        All
-       </option>
-      </select>
-     </li>
-     <li>
       <a href="/">
        Home
       </a>
@@ -134,12 +124,20 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
    </header>
    <div class="container" id="contentDiv">
     <div class="content">
-     <h1>
-      Contents
-     </h1>
+     <div class="content-top">
+      <h1>
+       Contents
+      </h1>
+      <div class="content-top right">
+       <input id="monthSelect" max="2020-06" min="2020-06" type="month"/>
+       <button class="button" id="clearMonth" value="clear">
+        Clear
+       </button>
+      </div>
+     </div>
      <!-- Content -->
      <ul>
-      <li class="content cItem" onclick="location.href='general-flour-using-notes'">
+      <li class="content cItem 2020-06" onclick="location.href='general-flour-using-notes'">
        <div class="content cItem cTitle" href="general-flour-using-notes">
         <p>
          General Flour Using Notes

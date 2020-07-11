@@ -1235,6 +1235,15 @@
 		float: right;
 	}
 }
+div.content-top {
+	margin-bottom: 1.5em;
+}
+	.content-top h1 {
+		display: inline;
+	}
+	.content-top.right {
+		float: right;
+	}
 
 /* Article page lower buttons */
 .operation.button {

@@ -145,6 +145,7 @@ class myPost():
         return f"<Post object, {self.ID}, {self.time}>"
 
 def rewriteAll():
+    allAllPosts = []
     for topic in TOPIC_FULLNAMES:
         allPosts = []
         try:
@@ -160,6 +161,7 @@ def rewriteAll():
             post = myPost(md, topic, template)
             allPosts.append(post)
         allPosts = sorted(allPosts, key=lambda x: x.strptime)
+        allAllPosts += allPosts
         # Write next/last button property
         if len(allPosts) > 1:
             for i in range(len(allPosts)):
@@ -191,7 +193,7 @@ def rewriteAll():
         # Prepare content element
         contentList = BeautifulSoup('<ul></ul>', features='lxml')
         for post in allPosts:
-            li = contentList.new_tag('li', attrs={'class': ['content', 'cItem'],
+            li = contentList.new_tag('li', attrs={'class': ['content', 'cItem', time.strftime('%Y-%m', post.strptime)],
                                                   'onclick': f"location.href='{post.ID}'"})
             li_div = contentList.new_tag('div', attrs={'class': ['content', 'cItem', 'cTitle'], 
                                                        'href': post.ID})
@@ -202,6 +204,10 @@ def rewriteAll():
             li.append(li_div)
             li.append(li_span)
             contentList.ul.append(li)
+        allTime = [i.strptime for i in allPosts]
+        maxTime = time.strftime('%Y-%m', max(allTime))
+        minTime = time.strftime('%Y-%m', min(allTime))
+
         # Write content page
         try:
             with open(os.path.join('blog', topic, 'index.html'), 'r', encoding='UTF-8') as contentFile:
@@ -210,11 +216,22 @@ def rewriteAll():
             contentFile.close()
             contentSoup = BeautifulSoup(contentPage, features='lxml')
             contentSoup.find('div', id='contentDiv').ul.replace_with(contentList.ul)
+            contentSoup.find('input', id='monthSelect').attrs['max'] = maxTime
+            contentSoup.find('input', id='monthSelect').attrs['min'] = minTime
             with open(os.path.join('blog', topic, 'index.html'), 'w', encoding='UTF-8') as contentFile:
                 contentFile.write(contentSoup.prettify())
             contentFile.close()
         except:
             pass
+    allAllPosts = sorted(allPosts, key=lambda x: x.strptime)
+    latest = allAllPosts[-1]
+    latestArtBlock = latest.soup.find('div', id="articleDiv")
+    blogSoup = BeautifulSoup(open('blog/index.html', 'r', encoding='UTF-8').read(), features='lxml')
+    blogSoup.find('div', id="articleDiv").section.replace_with(latestArtBlock.section)
+    print('writing blog')
+    with open('blog/index.html', 'w', encoding='UTF-8') as outBlog:
+        outBlog.write(str(blogSoup))
+    outBlog.close()
 
 def startServer():
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
