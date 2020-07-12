@@ -223,13 +223,18 @@ def rewriteAll():
             contentFile.close()
         except:
             pass
-    allAllPosts = sorted(allPosts, key=lambda x: x.strptime)
+    allAllPosts = sorted(allAllPosts, key=lambda x: x.strptime)
     latest = allAllPosts[-1]
     latestArtBlock = latest.soup.find('div', id="articleDiv")
     blogSoup = BeautifulSoup(open('blog/index.html', 'r', encoding='UTF-8').read(), features='lxml')
-    blogSoup.find('div', id="articleDiv").section.replace_with(latestArtBlock.section)
-    print('writing blog')
+    blogSoup.find('a', id='viewAll').attrs['href'] = latest.topic+'/'+latest.ID
+    preview = BeautifulSoup('<section><div class="image post"></div></section>', features='lxml')
+    for i in list(latestArtBlock.div.children)[:4]:
+        preview.div.append(i)
+    blogSoup.find('div', id="articleDiv").section.replace_with(preview.section)
+    
     with open('blog/index.html', 'w', encoding='UTF-8') as outBlog:
+        print('writing blog')
         outBlog.write(str(blogSoup))
     outBlog.close()
 

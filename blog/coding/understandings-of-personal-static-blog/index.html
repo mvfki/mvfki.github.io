@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+Ion by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+--><html>
+<head>
+<title>Understandings of Personal Static Blog - WYC's Blog</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="" name="description"/>
+<meta content="" name="keywords"/>
+<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/skel-layers.min.js"></script>
+<script src="/js/init.js"></script>
+<script src="/js/posts.js"></script>
+<link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
+<link href="/prettify/prettify.css" rel="stylesheet" type="text/css"/>
+<script src="/prettify/prettify.js" type="text/javascript"></script>
+<noscript>
+<link href="/css/skel.css" rel="stylesheet"/>
+<link href="/css/style.css" rel="stylesheet"/>
+<link href="/css/style-xlarge.css" rel="stylesheet"/>
+</noscript>
+<style>
+header.major {
+	text-align: center;
+	margin: 0 0 4em 0;
+	background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.4)), url(/blog/coding/images/banner.png);
+	padding: 6em 0 4em 0;
+	background-position: left center;
+	background-size: cover;
+	opacity: 0.8;
+}
+	header.major h2 {
+		color: white;
+	}
+	header.major p {
+		color: white;
+	}
+.wrapper {
+	padding: 0 0 0 0;
+}
+		#building-a-blog-is-generating-some-webpages:hover #anchor-building-a-blog-is-generating-some-webpages i {
+	visibility: visible;
+}
+#who-generates-the-pages:hover #anchor-who-generates-the-pages i {
+	visibility: visible;
+}
+#when-and-where-the-pages-are-deployed:hover #anchor-when-and-where-the-pages-are-deployed i {
+	visibility: visible;
+}
+</style>
+</head>
+<body id="top">
+<!-- Header -->
+<header class="skel-layers-fixed" id="header">
+<h1><a href="/">WYC - Home Page</a></h1>
+<nav id="nav">
+<ul>
+<!--<li>Select Month</li>
+					<li>
+						<select id="selMonth" name="selMonth" onchange="showMonth();">
+							<option selected="" value="all">All</option>
+						</select>
+					</li>-->
+<li><a href="/">Home</a></li>
+<li class="dropdown" id="blogMenu">
+<a href="/blog">Blog</a>
+<ul class="dropdownContent" id="dropdownContent">
+<li><a href="/blog/coding">Coding</a></li>
+<li><a href="/blog/music">Music</a></li>
+<li><a href="/blog/anime">Anime</a></li>
+<li><a href="/blog/cooking">Cooking</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/mvfki">GitHub</a></li>
+<li><a href="https://bangumi.tv/user/541876">Bangumi</a></li>
+</ul>
+</nav>
+</header>
+<!-- Main -->
+<section class="wrapper style1" id="main">
+<header class="major">
+<h2>Yichen's Coding Notes</h2>
+<p>Some experience and complains ;D</p>
+</header>
+<div class="container">
+<a href="/blog">Blog</a><span>  /  </span><a href="/blog/coding">Coding</a>
+</div>
+<div class="container" id="articleDiv">
+<!-- Articles -->
+<section><div class="image post"><h1 id="understandings-of-personal-static-blog">Understandings of Personal Static Blog</h1><p>My own personal blog has been established for a month. Everyday I've been considering: what else is worth improving. All the way until now, I would really like to write something down to draw myself some conclusions, for how a personal blog is working.  </p><p>I'm definitely not professional at this and I might make mistakes in what I write below, but still let me share some information.  </p><ul>
+<li>This site is hosted on <a href="https://pages.github.com/">GitHub Pages</a>, but is not employing any third-party deployer, such as <a href="https://jekyllrb.com/">Jekyll</a>. </li>
+<li>The HTML framework (i.e. color, font theme and page layout) is modified from a free theme called <a href="https://templated.co/ion">ION</a> from <a href="https://templated.co/">Templated</a>, which is distributed under CC license. </li>
+<li>Everything else you cannot find from the ION's demo page is manually added and debugged by myself. </li>
+<li>New posts are deployed locally using my own script.</li>
+</ul><h3 id="building-a-blog-is-generating-some-webpages"><a class="anchor" href="#building-a-blog-is-generating-some-webpages" id="anchor-building-a-blog-is-generating-some-webpages"><i aria-hidden="true" class="icon fa-link"></i></a>Building a Blog IS Generating some webpages</h3><p>This is straight forward. The blog, can even be only one page written with: <code>&lt;html&gt;&lt;body&gt;&lt;p&gt;Hi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</code> as long as you think it is passing what you want.  </p><p>Of course, everyone interested in having a blog has something (s)he wants to show the world. Then how satisfying webpages are generated becomes the key to discuss.  </p><h3 id="who-generates-the-pages"><a class="anchor" href="#who-generates-the-pages" id="anchor-who-generates-the-pages"><i aria-hidden="true" class="icon fa-link"></i></a>Who Generates the Pages</h3><p>There are various ways to generate webpages. The first key difference I want to mention is how much is written by yourself and how much is written by automated programs. If you are planning to have a blog where you want to update new posts like a diary, this would mean that there will be an unknown number of pages to generate, and this number is hopefully to be quite large. Thus you don't want to manually type the HTML script letter by letter every time you want to update, because that will be way more than what is there in the "dry" content of your articles.  </p><p>I would say, the baseline is:  </p><blockquote>
+<p>Every time you post something new, you only write the article itself. And then let something else to insert the text into a template of the post page. And you should not do any further modification on the outcome. 
+Being clear of this point, then the discussion goes to who generate the other parts than the dry articles.  </p>
+</blockquote><p>Jekyll as an example, is a widely used user friendly deployer. I tried it at first. How it works is you write your articles in <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a> format, push them to the Git repository of your blog, and it will then generate a page for each of your post, using the theme and other configuration which you specified in advance. What you only need to worry about is, writing articles of good quality and choosing a theme that looks the best to you.  </p><p>My own blog, as mentiond in the beginning, is deployed by my own script. My script also read my Markdown posts and generate pages for them. One of the differences is, the template page I use can be freely designed. I might have also achieve something similar with the Jekyll solution, but directly debugging on my local limits me less, which makes me, as a DIY player, feel much better.  </p><h3 id="when-and-where-the-pages-are-deployed"><a class="anchor" href="#when-and-where-the-pages-are-deployed" id="anchor-when-and-where-the-pages-are-deployed"><i aria-hidden="true" class="icon fa-link"></i></a>When And Where the Pages Are Deployed</h3><p>Since GitHub Pages hosts only static web sites, so it is impossible to generate any web page on server side.  </p><blockquote>
+<p>Processing web pages on server side is something like:<br/>
+You call a URL in your browser and your machine will send a request to a remote server. A program on the server parses the request you send, dynamically generates a webpage according to your request as well as other conditions, and THEN the generated webpage is sent back to your local.  </p>
+</blockquote><p>Usually, the content of a static site is all prepared before they are ready for your request. That is to say, you have to submit the thing that the server-side program returns, because the server does not allow any program to be run.  </p><p>With using GitHub Pages, there can be four stages:  </p><ol>
+<li>Before you submit your content to the host (i.e. GitHub)</li>
+<li>After you submit your content, but before the site is ready to be requested</li>
+<li>After the site is ready, but before some one requests</li>
+<li>After the site is requested</li>
+</ol><blockquote>
+<p>Note that everything you can literally see is displayed by your browser, who reads the HTML, JavaScript and CSS requested from remote to finally presents the fonts, colors and geometric patterns. Through anyway this would only be completed in the 4th stage. So this process will not be discussed. </p>
+</blockquote><p>Most of the solutions you can find on the Internet will tell you that a static site is finished within the first two stages. As you might have already understood, my blog pages are finished in the 1st stage. Websites deployed by Jekyll is finished in the 2nd stage. According to the definition of a static site, nothing can happen in the 3rd stage. But what about the 4th? <del>It is worth being discussed, otherwise I don't list it there.</del> </p><p>Yes, before the version of my blog you can see now, I actually did have a "wicked" implementation - the pages are finished in the 4th stage. During that version, I submit Markdown files and post templates - HTML document that has everything but the article content. When my site is requested, the client side (the browser that recieves a webpage) only recieves the template. After this, some JavaScripts embeded with the template starts working . These JavaScript codes again send request to the server, secretly, for the dry article contents. And finally the JavaScript codes arrange the contents and insert them to the template already there.  </p><p>The reason I abandoned this strategy is that, since there are no content on cloud, my site cannot be found by Google search.  </p><p>Jul, 11th, 2020</p></div></section></div>
+<hr/>
+<div class="container operation" id="lowerOperation">
+<!--Last  &  Next-->
+<a class="operation button" href="../create-colormap-cmap-for-matplotlib" id="lastBtn">Last</a>
+<a class="operation button right disabled" id="nextBtn">Next</a>
+</div>
+<script>
+PR.prettyPrint();
+			</script>
+</section>
+<div class="corner">
+<i class="fa fa-angle-double-up fa-4x"></i>
+</div>
+<!-- Footer -->
+<footer id="footer">
+<div class="container">
+<ul class="copyright">
+<li>© WYC. All rights reserved.</li>
+<li>Design:	<a href="http://templated.co">TEMPLATED</a></li>
+</ul>
+</div>
+</footer>
+</body>
+</html>
