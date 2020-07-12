@@ -27,10 +27,7 @@ IMG_URL_REGEX = re.compile(r'\(.*?\)')
 
 ANCHOR = BeautifulSoup('<i aria-hidden="true" class="icon fa-link"></i>', 
                        features='lxml').i
-ANCHOR_STYLE = '''#%s:hover #anchor-%s i {
-	visibility: visible;
-}
-'''
+
 class myPost():
     def __init__(self, filename, topic, template, insertID='articleDiv'):
         if not os.path.isfile(filename):
@@ -93,7 +90,6 @@ class myPost():
                                                    'href': '#'+headerID})
                 anchorA.append(copy.copy(ANCHOR))
                 header.insert(0, anchorA)
-                soup.style.string += ANCHOR_STYLE % (headerID, headerID)
             except KeyError:
                 continue
         self.soup = soup
