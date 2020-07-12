@@ -74,11 +74,14 @@ class myPost():
             postdiv.append(i)
         sec.append(postdiv)
         ad.append(sec)
+        timeSpan = BeautifulSoup(f'<span>{time.strftime("%Y-%m-%d", self.strptime)}</span>', 
+                                 features='lxml').span
         ## Code block settings
         pres = soup.findAll('pre')
         for i in pres:
             i.attrs['class'] = 'prettyprint'
         titleHTML = ad.findAll('h1')[0]
+        titleHTML.insert_before(timeSpan)
         soup.title.string = re.sub(r'<.*?>', '', str(titleHTML)) + ' - WYC\'s Blog'
         
         allHeaders = ad.find_all(re.compile('^h[1-6]$'))
@@ -221,12 +224,14 @@ def rewriteAll():
         except:
             pass
     allAllPosts = sorted(allAllPosts, key=lambda x: x.strptime)
+
+    # Update blog root latest preview
     latest = allAllPosts[-1]
     latestArtBlock = latest.soup.find('div', id="articleDiv")
     blogSoup = BeautifulSoup(open('blog/index.html', 'r', encoding='UTF-8').read(), features='lxml')
     blogSoup.find('a', id='viewAll').attrs['href'] = latest.topic+'/'+latest.ID
     preview = BeautifulSoup('<section><div class="image post"></div></section>', features='lxml')
-    for i in list(latestArtBlock.div.children)[:4]:
+    for i in list(latestArtBlock.div.children)[:5]:
         preview.div.append(i)
     blogSoup.find('div', id="articleDiv").section.replace_with(preview.section)
     

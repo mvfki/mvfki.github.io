@@ -83,7 +83,7 @@ header.major {
 </div>
 <div class="container" id="articleDiv">
 <!-- Articles -->
-<section><div class="image post"><h1 id="create-colormap-cmap-for-matplotlib">Create Colormap (cmap) for Matplotlib</h1><p>When plotting, people definitely care about the color of the dots in there scatter plots. </p><pre class="prettyprint"><code class="python">import matplotlib.pyplot as plt
+<section><div class="image post"><span>2020-07-01</span><h1 id="create-colormap-cmap-for-matplotlib">Create Colormap (cmap) for Matplotlib</h1><p>When plotting, people definitely care about the color of the dots in there scatter plots. </p><pre class="prettyprint"><code class="python">import matplotlib.pyplot as plt
 # For example, the 2-D data we want to plot comes this way
 x, y = list(range(100)), list(range(100))
 </code></pre><p>Usually there are two ways to set this feature:  </p><h2 id="set-with-exact-color-label-for-each-point"><a class="anchor" href="#set-with-exact-color-label-for-each-point" id="anchor-set-with-exact-color-label-for-each-point"><i aria-hidden="true" class="icon fa-link"></i></a>Set with exact color label for each point</h2><p>Know the exact color representation of each dot and give it to <code>color</code> argument</p><pre class="prettyprint"><code class="python">plt.scatter(x, y, color=['red', 'blue']*50)

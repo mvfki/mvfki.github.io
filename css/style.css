@@ -538,9 +538,6 @@
 				margin: 0 0 1.5em 0;
 				padding-left: 2em;
 			}
-				.image.post ul li {
-					padding-left: 0;
-				}
 			.image.post blockquote {
 				padding: 1em 1em 1em 2.5em;
 				margin: 2em 0;
@@ -580,10 +577,6 @@
 		list-style: disc;
 		margin: 0 0 2em 0;
 	}
-
-		ul li {
-			padding-left: 1.5em;
-		}
 
 		ul.alt {
 			list-style: none;
@@ -1191,13 +1184,11 @@
 			list-style: none;
 			margin-right: 1em;
 			width: 100%;
+			padding-left: 1.5em;
 		}
 			.dropdownContent li:hover {
 				background-color: #e9f0f5;
 			}
-	#selMonth {
-		width: 140px;
-	}
 }
 @media (max-width: 980px) {
 	.dropdownContent {
@@ -1298,6 +1289,7 @@ div.content-top {
 		float: right;
 	}
 
+/* In article link anchor for headers */
 a.anchor {
     padding-right: 0.2em;
     line-height: 0.5;
@@ -1311,10 +1303,13 @@ a.anchor {
 span.bold  {
 	font-weight: bold;
 }
+
+/* Subtitles on homepage */
 a.title {
 	text-decoration: none;
 }
 
+/* back-to-top */
 div.corner {
 	display: none;
 	color: #a9acad;
