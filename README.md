@@ -1,9 +1,12 @@
-# mvfki.github.io
+# Home Page - Yichen Wang
+→ [Have a look here](https://mvfki.github.io/)  
 This repository is for my home page. It's all because I suddenly got interested in owning a home page... 
 
-## HTML template
+## HTML, CSS and JS template
 The template used for the web pages is called [Ion](https://templated.co/ion), designed [TEMPLATED](https://templated.co/). 
 The template provides the most basic layouts and widges styles and colorings.  
+
+The comment regions below article pages are powered by [Disqus](https://disqus.com/).
 ## Design
 The substructure of this web site is the simplest tree style:
 ```
@@ -23,10 +26,10 @@ The substructure of this web site is the simplest tree style:
                       |----<images>
                       |----template.html
 ```
-Though the [Jekyll](https://jekyllrb.com/) solution for distributing a static blog is really convenient, I still prefer a customized HTML layout. 
-So I write my customized deployment code, which simply works by convert Markdown files to HTML script and insert to the proper `<div>` in `template.html`.
+Though the [Jekyll](https://jekyllrb.com/) solution for deploying a static blog is really convenient, I still prefer a deeply customized HTML layout. 
+So I wrote my own deployment code, which simply works by convert Markdown files to HTML content and insert to the proper `<div>` in `template.html`.
 
-## Dependency
+## Deployer Dependency
 The article page deployments are done specially with: [markdown](https://python-markdown.github.io/) and [BeautifulSoup4](http://www.crummy.com/software/BeautifulSoup/).
 ```
 pip install markdown beautifulsoup4
