@@ -18,6 +18,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
 <link href="/prettify/prettify.css" rel="stylesheet" type="text/css"/>
 <script src="/prettify/prettify.js" type="text/javascript"></script>
+<script async="" id="dsq-count-scr" src="//mvfki.disqus.com/count.js"></script>
 <noscript>
 <link href="/css/skel.css" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
@@ -97,16 +98,37 @@ Changes to be committed:
 
 Finished
 </code></pre><p>Well, I'm still afraid of making mistakes so I leave myself a chance to have a look at the local HTML pages. However, as how this site is designed, all post are loaded from a Git URL instead of a relative path. I cannot have a look at the new post content during this check but the others. I suspect that this should be relavent to the underscore prefix (i.e. <code>_posts/</code>) in the path where I store the posts. So next time I'd like to get this fixed so when I'm opening a local webpage it loads local posts, while loaded from Git Pages, it refers posts in the repository.</p></div></section></div>
-<hr/>
 <div class="container operation" id="lowerOperation">
+<hr/>
 <!--Last  &  Next-->
 <a class="operation button" href="../a-second-round-of-developing-this-page-2" id="lastBtn">Last</a>
 <a class="operation button right" href="../create-colormap-cmap-for-matplotlib" id="nextBtn">Next</a>
+<hr/>
 </div>
 <script>
 PR.prettyPrint();
 			</script>
 </section>
+<div class="container">
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+</div>
+<script id="disqusConfig">
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+var disqus_config = function () {
+	this.page.url = "https://mvfki.github.io/blog/coding/updating-posts-more-easily/";  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = "updating-posts-more-easily"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://mvfki.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+		</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <div class="corner">
 <i class="fa fa-angle-double-up fa-4x"></i>
 </div>

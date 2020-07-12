@@ -18,6 +18,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
 <link href="/prettify/prettify.css" rel="stylesheet" type="text/css"/>
 <script src="/prettify/prettify.js" type="text/javascript"></script>
+<script async="" id="dsq-count-scr" src="//mvfki.disqus.com/count.js"></script>
 <noscript>
 <link href="/css/skel.css" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
@@ -112,16 +113,37 @@ for [ax, cmap] in zip(axs, cms):
 plt.show()
 </code></pre><p><img alt="Customized cmap" src="6.png"/>
 So the point of this function is that, you can set gradients varying from any colors you have in mind, and you can set as many colors as you can identify. Furthermore, the width of the interval of each gradient can also be set by the second argument, which stands for the relative value that each color should occur.  </p><p>Jul. 1st, 2020  </p></div></section></div>
-<hr/>
 <div class="container operation" id="lowerOperation">
+<hr/>
 <!--Last  &  Next-->
 <a class="operation button" href="../updating-posts-more-easily" id="lastBtn">Last</a>
 <a class="operation button right" href="../understandings-of-personal-static-blog" id="nextBtn">Next</a>
+<hr/>
 </div>
 <script>
 PR.prettyPrint();
 			</script>
 </section>
+<div class="container">
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+</div>
+<script id="disqusConfig">
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+var disqus_config = function () {
+	this.page.url = "https://mvfki.github.io/blog/coding/create-colormap-cmap-for-matplotlib/";  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = "create-colormap-cmap-for-matplotlib"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://mvfki.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+		</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <div class="corner">
 <i class="fa fa-angle-double-up fa-4x"></i>
 </div>

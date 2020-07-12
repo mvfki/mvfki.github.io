@@ -97,8 +97,9 @@ class myPost():
             except KeyError:
                 continue
         self.soup = soup
+        disqusConfig = soup.find('script', id='disqusConfig')
+        disqusConfig.string = disqusConfig.string.replace("*POSTVAR*", self.ID)
         
-    
     def addLastPage(self, postID=None):
         lastBtn = self.soup.find('a', id='lastBtn')
         if postID != None:
