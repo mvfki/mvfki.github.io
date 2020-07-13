@@ -1337,8 +1337,8 @@ span.bold  {
 }
 
 /* Subtitles on homepage */
-a.title {
-	text-decoration: none;
+h2.title {
+	cursor: pointer;
 }
 
 /* back-to-top */
