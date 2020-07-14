@@ -118,32 +118,32 @@
 
 	code {
 		white-space: pre-wrap;
-    	padding: 1px 5px;
-    	font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
-    	background-color: #f5f5f5;
-    	border-radius: 4px;
+		padding: 1px 5px;
+		font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+		background-color: #f5f5f5;
+		border-radius: 4px;
 	}
 
 	pre {
 		-webkit-overflow-scrolling: touch;
 		margin-bottom: 1em;
-	    padding: 1em 1em;
-	    width: auto;
-	    max-height: 600px;
-	    overflow: auto;
-	    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
-	    white-space: pre;
-	    font-size: 13px;
-	    background-color: #f5f5f5;
-	    border-radius: 5px;
-	    user-select: text;
-	    -webkit-user-select: text;
+		padding: 1em 1em;
+		width: auto;
+		max-height: 600px;
+		overflow: auto;
+		font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+		white-space: pre;
+		font-size: 13px;
+		background-color: #f5f5f5;
+		border-radius: 5px;
+		user-select: text;
+		-webkit-user-select: text;
 	}
 
 		pre code {
 			white-space: inherit;
-    		padding: 0;
-    		background-color: transparent;
+			padding: 0;
+			background-color: transparent;
 		}
 
 	.align-left {
@@ -1181,8 +1181,8 @@
 		}
 	@media (min-width: 981px) {
 		#footer .left{
-	    	text-align: right;
-	    	padding-right: 2.5em;
+			text-align: right;
+			padding-right: 2.5em;
 		}
 		#footer .right{
 			text-align: left;
@@ -1191,7 +1191,7 @@
 	}
 	@media (min-width: 1281px){
 		#footer .left{
-	    	padding-right: 4em;
+			padding-right: 4em;
 		}
 	}
 /* Dropdown */
@@ -1285,10 +1285,10 @@ div.content {
 		padding: 1em 0;
 	}
 	div.content-top.right {
-	    position: relative;
-	    bottom: 5px;
-	    display: block;
-	    margin-top: 0.5em;
+		position: relative;
+		bottom: 5px;
+		display: block;
+		margin-top: 0.5em;
 	}
 
 }
@@ -1323,8 +1323,8 @@ div.content {
 
 /* In article link anchor for headers */
 a.anchor {
-    padding-right: 0.2em;
-    line-height: 0.5;
+	padding-right: 0.2em;
+	line-height: 0.5;
 }
 .anchor i {
 	color: #555f66;
@@ -1376,4 +1376,11 @@ div.corner {
 
 #disqus_thread {
 	margin-bottom: 2em;
+}
+
+mask {
+    color: #555f66;
+    background: #555f66;
+    user-select: all;
+    -webkit-user-select: all;
 }

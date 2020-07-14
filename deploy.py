@@ -19,7 +19,8 @@ Handler = http.server.SimpleHTTPRequestHandler
 
 EXT = ['markdown.extensions.extra', 
        'markdown.extensions.toc', 
-       'markdown.extensions.tables']
+       'markdown.extensions.tables',
+       'pymdownx.tilde']
 TOPICS = {'coding': 'cd', 'cooking': 'ck', 'music': 'ms', 'anime': 'an'}
 TOPIC_FULLNAMES = list(TOPICS.keys())
 MD_IMG_REGEX = re.compile(r'!\[.*?\]\(.*?\)')

@@ -30,9 +30,9 @@ Though the [Jekyll](https://jekyllrb.com/) solution for deploying a static blog 
 So I wrote my own deployment code, which simply works by convert Markdown files to HTML content and insert to the proper `<div>` in `template.html`.
 
 ## Deployer Dependency
-The article page deployments are done specially with: [markdown](https://python-markdown.github.io/) and [BeautifulSoup4](http://www.crummy.com/software/BeautifulSoup/).
+The article page deployments are done with: [markdown](https://python-markdown.github.io/) and [BeautifulSoup4](http://www.crummy.com/software/BeautifulSoup/). And I really appreciate the third-party extensions from [pymdown-extensions](https://facelessuser.github.io/pymdown-extensions/) by [Isaac Muse](https://github.com/facelessuser).  
 ```
-pip install markdown beautifulsoup4
+pip install markdown beautifulsoup4 pymdown-extensions
 ```
 
 ## How to post
@@ -73,3 +73,5 @@ So feel free to refer to anything here or give me a kind advice in [Issues](http
 
 ## Others
 Before this version, where I use local program to deploy real static pages, I actually was using another weird way, which you can have a look at [this branch](https://github.com/mvfki/mvfki.github.io/tree/clientSideDeploy). In that version, the page a visitor finally see is actually fully deployed on the visitor's browser. A JavaScript code was written to request and parse all the Markdown files in the repo and automatically render them to an empty page already loaded on the client side.  
+
+A customized tag in CSS is defined as `<mask>`, which turns the text background the same as text color, whose content can only be viewed by selection.  
