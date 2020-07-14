@@ -113,7 +113,7 @@
 				width: 100%;
 			}
 
-#dropdownContent {
+#navPanel #dropdownContent {
 	padding-left: 1em;
 }
 #navPanel #dropdownContent li:first-child a:not(.button), #dropdownContent li:first-child span:not(.button) {
