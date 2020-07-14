@@ -1,0 +1,92 @@
+@media screen {
+	.k, .kn, .ow { /* "import", "as", ... */
+		color: #bd6abd;
+	}
+	.k { /* class, def */
+		font-style: italic;
+	}
+	.o { /* "=" */
+		color: #f56a42;
+	}
+	.sd { /* triple quote comment */
+		color: #74ae49;
+	}
+	.c1 { /* hash comment */
+		color: #ababab;		
+	}
+	.mi, .mf { /* integers, floats */
+		color: #c14700;
+	}
+	.nb, .nd { /* callables, "@property" */
+		color: #3b73ab;
+		font-style: italic;
+	}
+	.p { /* "," */
+		color: #a0573c;
+	}
+	.s1, .s2, .si { /* str */
+		color: #7bb974;
+	}
+	.bp { /* "self" */
+		color: #ec6066;
+	}
+	.nc { /* name of class */
+		color: #f5992e;
+ 	}
+	.fm { /* __init__ */
+		color: #3a72ab;
+	}
+	.nf { /* name of function */
+		color: #44b1b1;
+	}
+	.sa { /* f"" */ 
+		color: #bd6abd;
+		font-style: italic;
+	}
+}
+@media print, projection {
+	.k, .kn, .ow { /* "import", "as", ... */
+		color: #bd6abd;
+	}
+	.k { /* class, def */
+		font-style: italic;
+	}
+	.o { /* "=" */
+		color: #f56a42;
+	}
+	.sd { /* triple quote comment */
+		color: #74ae49;
+	}
+	.c1 { /* hash comment */
+		color: #ababab;		
+	}
+	.mi, .mf { /* integers, floats */
+		color: #c14700;
+	}
+	.nb, .nd { /* callables, "@property" */
+		color: #3b73ab;
+		font-style: italic;
+	}
+	.p { /* "," */
+		color: #a0573c;
+	}
+	.s1, .s2, .si { /* str */
+		color: #7bb974;
+	}
+	.bp { /* "self" */
+		color: #ec6066;
+	}
+	.nc { /* name of class */
+		color: #f5992e;
+ 	}
+	.fm { /* __init__ */
+		color: #3a72ab;
+	}
+	.nf { /* name of function */
+		color: #44b1b1;
+	}
+	.sa { /* f"" */ 
+		color: #bd6abd;
+		font-style: italic;
+	}
+}

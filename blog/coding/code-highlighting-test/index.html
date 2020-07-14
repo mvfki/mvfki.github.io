@@ -1,160 +1,87 @@
 <!DOCTYPE HTML>
 <!--
-	Ion by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
---><!--
-  This HTML document will be dynamically modified by /deploy.py, 
+Ion by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 --><html>
 <head>
-<title>
-   WYC - Blog
-  </title>
+<title>Code Highlighting Test - WYC's Blog</title>
 <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
 <meta content="" name="description"/>
 <meta content="" name="keywords"/>
-<!--[if lte IE 8]><script src="https://raw.githubusercontent.com/mvfki/mvfki.github.io/master/js/html5shiv.js"></script><![endif]-->
-<script src="/js/jquery.min.js">
-</script>
-<script src="/js/skel.min.js">
-</script>
-<script src="/js/skel-layers.min.js">
-</script>
-<script src="/js/init.js">
-</script>
-<script src="/js/posts.js">
-</script>
+<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/skel-layers.min.js"></script>
+<script src="/js/init.js"></script>
+<script src="/js/posts.js"></script>
 <link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
 <link href="/css/highlight.css" rel="stylesheet" type="text/css"/>
+<script async="" id="dsq-count-scr" src="//mvfki.disqus.com/count.js"></script>
+<noscript>
+<link href="/css/skel.css" rel="stylesheet"/>
+<link href="/css/style.css" rel="stylesheet"/>
+<link href="/css/style-xlarge.css" rel="stylesheet"/>
+</noscript>
 <style>
-   header.major {
-  margin: 0 0 4em 0;
-  padding: 6em 0 4em 0;
-  background-position: left center;
-  background-color: #171d23;
-  background-size: cover;
-  opacity: 0.8;
+header.major {
+	text-align: center;
+	margin: 0 0 4em 0;
+	background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.4)), url(/blog/coding/images/banner.png);
+	padding: 6em 0 4em 0;
+	background-position: left center;
+	background-size: cover;
+	opacity: 0.8;
 }
-  header.major h2 {
-    color: white;
-  }
-  /*header.major p {
-    color: white;
-  }*/
+	header.major h2 {
+		color: white;
+	}
+	header.major p {
+		color: white;
+	}
 .wrapper {
-  padding: 0 0 4em 0;
+	padding: 0 0 0 0;
 }
-
-  </style>
+		</style>
 </head>
 <body id="top">
 <!-- Header -->
 <header class="skel-layers-fixed" id="header">
-<h1>
-<a href="/">
-     WYC - Home Page
-    </a>
-</h1>
+<h1><a href="/">WYC - Home Page</a></h1>
 <nav id="nav">
 <ul>
-<li>
-<a href="/">
-       Home
-      </a>
-</li>
+<!--<li>Select Month</li>
+					<li>
+						<select id="selMonth" name="selMonth" onchange="showMonth();">
+							<option selected="" value="all">All</option>
+						</select>
+					</li>-->
+<li><a href="/">Home</a></li>
 <li class="dropdown" id="blogMenu">
-<a href="#">
-       Blog
-      </a>
+<a href="/blog">Blog</a>
 <ul class="dropdownContent" id="dropdownContent">
-<li>
-<a href="coding">
-         Coding
-        </a>
-</li>
-<li>
-<a href="music">
-         Music
-        </a>
-</li>
-<li>
-<a href="anime">
-         Anime
-        </a>
-</li>
-<li>
-<a href="cooking">
-         Cooking
-        </a>
-</li>
+<li><a href="/blog/coding">Coding</a></li>
+<li><a href="/blog/music">Music</a></li>
+<li><a href="/blog/anime">Anime</a></li>
+<li><a href="/blog/cooking">Cooking</a></li>
 </ul>
 </li>
-<li>
-<a href="https://github.com/mvfki">
-       GitHub
-      </a>
-</li>
-<li>
-<a href="https://bangumi.tv/user/541876">
-       Bangumi
-      </a>
-</li>
+<li><a href="https://github.com/mvfki">GitHub</a></li>
+<li><a href="https://bangumi.tv/user/541876">Bangumi</a></li>
 </ul>
 </nav>
 </header>
 <!-- Main -->
 <section class="wrapper style1" id="main">
 <header class="major">
-<h2>
-     Yichen's Blog
-    </h2>
-<p>
-     Hopefully I might update these someday?
-    </p>
+<h2>Yichen's Coding Notes</h2>
+<p>Some experience and complains ;D</p>
 </header>
 <div class="container">
-<div class="row">
-<div class="3u">
-<section>
-<h3>
-        Intro
-      </h3>
-<p>
-        This is a static blog where new posts are updated from time to time. 
-        Most articles will be related to my hobbies including listed below. 
-        Hope you can know more about me or even find something useful.
-       </p>
-<h3>
-        Topics
-       </h3>
-<ul class="alt">
-<li>
-<a href="coding">
-          Coding Notes
-         </a>
-</li>
-<li>
-<a href="music">
-          Music Shares
-         </a>
-</li>
-<li>
-<a href="anime">
-          Anime Tears
-         </a>
-</li>
-<li>
-<a href="cooking">
-          Cooking Recipes
-         </a>
-</li>
-</ul>
-</section>
+<a href="/blog">Blog</a><span>  /  </span><a href="/blog/coding">Coding</a>
 </div>
-<div class="8u skel-cell-important" id="articleDiv">
-<h1>
-Latest Update
-</h1>
+<div class="container" id="articleDiv">
+<!-- Articles -->
 <section><div class="image post"><span>2020-07-14</span><h1 id="code-highlighting-test">Code Highlighting Test</h1><p>Code highlighting is powered by <a href="https://facelessuser.github.io/pymdown-extensions/">pymdown-extensions</a>. The color scheme used is a contrast enhanced version of Sublime's "Breakers", which you can refer at <a href="/css/highlight.css">This CSS</a>.</p><h2 id="python3"><a class="anchor" href="#python3" id="anchor-python3"><i aria-hidden="true" class="icon fa-link"></i></a>Python3</h2><div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">docstring</span>
 <span class="sd">"""</span>
@@ -199,12 +126,41 @@ Latest Update
     <span class="nb">print</span><span class="p">(</span><span class="s2">"and formated </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"string"</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"and formated </span><span class="si">{</span><span class="mi">2333</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"and </span><span class="si">%s</span><span class="s2"> like </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"something"</span><span class="p">,</span> <span class="s2">"this"</span><span class="p">))</span>
-</code></pre></div></div></section>
-<a href="coding/code-highlighting-test" id="viewAll">View all...</a>
-</div>
-</div>
+</code></pre></div><h2 id="bash"><a class="anchor" href="#bash" id="anchor-bash"><i aria-hidden="true" class="icon fa-link"></i></a>Bash</h2><div class="highlight"><pre><span></span><code><span class="nv">V1</span><span class="o">=</span>Hello
+<span class="nv">V2</span><span class="o">=</span>World
+<span class="nb">echo</span> V1<span class="s1">' '</span>V2 &gt; a
+mv a b
+grep -n <span class="s2">"Hello"</span> b <span class="p">|</span> less
+awk <span class="s1">'{print $2}'</span> b
+</code></pre></div><p>This extension is actually using <a href="https://pygments.org/">Pygments</a> implementation, which is much better than Google's <a href="https://github.com/googlearchive/code-prettify">code-prettify</a> that I adopted previously. However, none of these beats Sublime's highlighting strategy, where the latter identifies more types of elements within one languange syntax. The next step for me will be to find a way to highlight the code as Sublime does.  </p><p>(Will be updated for other languages if needed in the future)</p></div></section></div>
+<div class="container operation" id="lowerOperation">
+<hr/>
+<!--Last  &  Next-->
+<a class="operation button" href="../some-understandings-of-personal-static-blog" id="lastBtn">Last</a>
+<a class="operation button right disabled" id="nextBtn">Next</a>
+<hr/>
 </div>
 </section>
+<div class="container">
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+</div>
+<script id="disqusConfig">
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+var disqus_config = function () {
+	this.page.url = "https://mvfki.github.io/blog/coding/code-highlighting-test/";  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = "code-highlighting-test"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://mvfki.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+		</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <div class="corner">
 <i class="fa fa-angle-double-up fa-4x"></i>
 </div>
@@ -214,13 +170,13 @@ Latest Update
 <div class="copyright row">
 <div class="left">
 <p><span class="bold">What is "mvfki"?</span><br/>
-"mvfki" does not linguistically mean anything.<br/>
-Try type it letter by letter on your keyboard, <br/>
-and you will feel comfortable with it:)</p>
+							"mvfki" does not linguistically mean anything.<br/>
+							Try type it letter by letter on your keyboard, <br/>
+							and you will feel comfortable with it:)</p>
 </div>
 <div class="right">
 <br/><p>© Yichen Wang, 2020.
-<br/>Design: <a href="http://templated.co">TEMPLATED</a></p>
+						<br/>Design: <a href="http://templated.co">TEMPLATED</a></p>
 </div>
 </div>
 </div>

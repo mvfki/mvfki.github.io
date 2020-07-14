@@ -20,7 +20,8 @@ Handler = http.server.SimpleHTTPRequestHandler
 EXT = ['markdown.extensions.extra', 
        'markdown.extensions.toc', 
        'markdown.extensions.tables',
-       'pymdownx.tilde']
+       'pymdownx.tilde',
+       'pymdownx.superfences']
 TOPICS = {'coding': 'cd', 'cooking': 'ck', 'music': 'ms', 'anime': 'an'}
 TOPIC_FULLNAMES = list(TOPICS.keys())
 MD_IMG_REGEX = re.compile(r'!\[.*?\]\(.*?\)')
@@ -78,9 +79,9 @@ class myPost():
         timeSpan = BeautifulSoup(f'<span>{time.strftime("%Y-%m-%d", self.strptime)}</span>', 
                                  features='lxml').span
         ## Code block settings
-        pres = soup.findAll('pre')
-        for i in pres:
-            i.attrs['class'] = 'prettyprint'
+        #pres = soup.findAll('pre')
+        #for i in pres:
+        #    i.attrs['class'] = 'prettyprint'
         titleHTML = ad.findAll('h1')[0]
         titleHTML.insert_before(timeSpan)
         soup.title.string = re.sub(r'<.*?>', '', str(titleHTML)) + ' - WYC\'s Blog'

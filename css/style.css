@@ -138,6 +138,7 @@
 		border-radius: 5px;
 		user-select: text;
 		-webkit-user-select: text;
+		line-height: 1.6em;
 	}
 
 		pre code {
