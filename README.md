@@ -32,7 +32,7 @@ So I wrote my own deployment code, which simply works by convert Markdown files 
 ## Deployer Dependency
 The article page deployments are done with: [markdown](https://python-markdown.github.io/) and [BeautifulSoup4](http://www.crummy.com/software/BeautifulSoup/). And I really appreciate the third-party extensions from [pymdown-extensions](https://facelessuser.github.io/pymdown-extensions/) by [Isaac Muse](https://github.com/facelessuser).  
 ```
-pip install markdown beautifulsoup4 pymdown-extensions
+pip install markdown beautifulsoup4 pymdown-extensions Pygments
 ```
 
 ## How to post
