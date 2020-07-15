@@ -1,0 +1,8 @@
+html[color-scheme='dark'] body{
+	background-color: #3f4041;
+	color: #c5c7c8
+}
+html[color-scheme='dark'] .wrapper.style1 {
+    background: #3f4041;
+    color: #c5c7c8;
+}
