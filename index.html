@@ -58,7 +58,11 @@
 									'blog/cooking/images/banner.jpg', 
 									'blog/anime/images/banner.jpg'];
 						var img = imgs[Math.floor(Math.random()*imgs.length)];
-						banner.style.backgroundImage = "url('" + img + "')";
+						if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+							banner.style.background = "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" + img + "')";
+						} else {
+							banner.style.backgroundImage = "url('" + img + "')";
+						}
 						setTimeout(changeBG, 5000);
 					}
 					changeBG();

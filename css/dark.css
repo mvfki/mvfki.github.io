@@ -1,7 +1,7 @@
 
 html[color-scheme='dark'] body{
-	background: #121212;
-    color: #e1e1e1;
+	background: #19191b;
+    color: #c3c3c3;
 }
 
 html[color-scheme='dark'] #header {
@@ -12,6 +12,9 @@ html[color-scheme='dark'] #header {
 	html[color-scheme='dark'] #header h1 {
 		color: #8f8f8f;
 	}
+		html[color-scheme='dark'] #header h1 a {
+			color: #8f8f8f;
+		}
 
 	html[color-scheme='dark'] #header nav > ul > li a {
 		color: #8f8f8f;
@@ -37,30 +40,42 @@ html[color-scheme='dark'] #footer {
 
 
 html[color-scheme='dark'] .wrapper.style1 {
-    background: #121212;
-    color: #e1e1e1;
+    background: #19191b;
+    color: #c3c3c3;
 }
 
 html[color-scheme='dark'] .wrapper.style2 {
-    background: #121212;
-    color: #e1e1e1;
+    background: #1d2223;
+    color: #c3c3c3;
 }
+	html[color-scheme='dark'] .style2 section.special.box:hover {
+		background: #202427;
+	}
+	html[color-scheme='dark'] .wrapper.style2 h2 {
+		color: #c5c5c5;
+	}
 
+html[color-scheme='dark'] #banner h2 {
+	color: #d6d6d6;
+}
+html[color-scheme='dark'] #banner p {
+	color: #c5c5c5;
+}
 html[color-scheme='dark'] h1, h2, h3, h4, h5, h6 {
 	color: #c5c5c5;
 }
 
 html[color-scheme='dark'] .content ul li{
-	border: solid 1px #292929;
+	border: solid 1px #1c1d1f;
 }
 	html[color-scheme='dark'] .content ul li:hover {
-		background: #313131;
+		background: #252629;
 	}
 		html[color-scheme='dark'] .content ul li:nth-child(odd) {
-			background-color: #292929;
+			background-color: #1c1d1f;
 		}
 			html[color-scheme='dark'] .content ul li:nth-child(odd):hover {
-				background-color: #313131;
+				background-color: #252629;
 			}
 
 html[color-scheme='dark'] blockquote {
@@ -74,6 +89,24 @@ html[color-scheme='dark'] code {
 }
 
 html[color-scheme='dark'] body.home-drawer {
-	background: #121212;
-    color: #e1e1e1;
+	background: #19191b;
+    color: #c3c3c3;
+}
+
+html[color-scheme='dark'] .content-top input[type="month"] {
+	background-color: #1c1d1f;
+    color: #c3c3c3;
+    border: none;
+}
+
+html[color-scheme='dark'] .button {
+	background-color: #193d58;
+}
+
+html[color-scheme='dark'] img {
+	filter: brightness(80%);
+}
+
+html[color-scheme='dark'] a {
+	color: #67b0f1;
 }
