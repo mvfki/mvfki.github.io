@@ -59,7 +59,8 @@
 									'blog/anime/images/banner.jpg'];
 						var img = imgs[Math.floor(Math.random()*imgs.length)];
 						if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-							banner.style.background = "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" + img + "')";
+							banner.style.background = "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" + img + "'), no-repeat, center, center";
+							banner.style.backgroundSize = "cover"
 						} else {
 							banner.style.backgroundImage = "url('" + img + "')";
 						}

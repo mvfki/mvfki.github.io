@@ -1287,6 +1287,9 @@ div.content-top {
 		margin-left: 1em;
 	}
 	.content-top input[type="month"] {
+		-webkit-appearance: none;
+		height: 3.3em;
+		width: 12em;
 		border-radius: 10px;
 		font-size: 0.7em;
 		vertical-align: middle;
