@@ -1,3 +1,4 @@
+/* MISC
 function insertQRCode(id) {
     var qrcode = new QRCode(document.getElementById(id), {
                             width : 100,
@@ -29,6 +30,7 @@ $(document).mouseup(function (e) {
         $(".shareContent").hide();
     }
 });
+*/
 
 $(document).ready(function () {
 

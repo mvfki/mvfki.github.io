@@ -1,8 +1,79 @@
+
 html[color-scheme='dark'] body{
-	background-color: #3f4041;
-	color: #c5c7c8
+	background: #121212;
+    color: #e1e1e1;
 }
+
+html[color-scheme='dark'] #header {
+	background-color: #292929;
+	color: #8f8f8f;
+}
+
+	html[color-scheme='dark'] #header h1 {
+		color: #8f8f8f;
+	}
+
+	html[color-scheme='dark'] #header nav > ul > li a {
+		color: #8f8f8f;
+	}
+
+@media (min-width: 981px) {
+	html[color-scheme='dark'] .dropdownContent {
+		background-color: #292929;
+	}
+		html[color-scheme='dark'] .dropdownContent li:hover {
+			background-color: #313131;
+		}
+}
+
+html[color-scheme='dark'] #footer {
+	background-color: #1f1f1f;
+	color: #949799;
+}
+
+	html[color-scheme='dark'] #footer .copyright {
+		color: #676d73;
+	}
+
+
 html[color-scheme='dark'] .wrapper.style1 {
-    background: #3f4041;
-    color: #c5c7c8;
+    background: #121212;
+    color: #e1e1e1;
+}
+
+html[color-scheme='dark'] .wrapper.style2 {
+    background: #121212;
+    color: #e1e1e1;
+}
+
+html[color-scheme='dark'] h1, h2, h3, h4, h5, h6 {
+	color: #c5c5c5;
+}
+
+html[color-scheme='dark'] .content ul li{
+	border: solid 1px #292929;
+}
+	html[color-scheme='dark'] .content ul li:hover {
+		background: #313131;
+	}
+		html[color-scheme='dark'] .content ul li:nth-child(odd) {
+			background-color: #292929;
+		}
+			html[color-scheme='dark'] .content ul li:nth-child(odd):hover {
+				background-color: #313131;
+			}
+
+html[color-scheme='dark'] blockquote {
+	background-color: #282923;
+}
+html[color-scheme='dark'] pre {
+	background-color: #282923;
+}
+html[color-scheme='dark'] code {
+	background-color: #282923;
+}
+
+html[color-scheme='dark'] body.home-drawer {
+	background: #121212;
+    color: #e1e1e1;
 }
