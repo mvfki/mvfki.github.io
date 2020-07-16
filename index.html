@@ -11,14 +11,17 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta name="google-site-verification" content="-kDQ_ahQWeocVGm0D8Vt1tcDDwLyufhkA3GKMNeDWEc" />
-		<script data-ad-client="ca-pub-2141237863114832" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<style type="text/css">
+			.hidden {display:none;}
+		</style>
 		<script src="/js/jquery.min.js"></script>
+		<script type="text/javascript">
+		$('html').addClass('hidden');
+		</script>
 		<script src="/js/skel.min.js"></script>
 		<script src="/js/skel-layers.min.js"></script>
 		<script src="/js/init.js"></script>
-		<script src="/js/utils.js"></script>
-		<script src="/js/smoothscroll.min.js"></script>
+		
 		<link rel="shortcut icon" type="image/png" href="/images/icon.png">
 		<link rel="stylesheet" href="/css/dark.css" />
 		<noscript>
@@ -50,24 +53,6 @@
 		</header>
 		<!-- Banner -->
 			<section id="banner">
-				<script>
-					function changeBG() {
-						var banner = document.getElementById('banner');
-						var imgs = ['blog/music/images/banner.png', 
-									'blog/coding/images/banner.png', 
-									'blog/cooking/images/banner.jpg', 
-									'blog/anime/images/banner.jpg'];
-						var img = imgs[Math.floor(Math.random()*imgs.length)];
-						if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-							banner.style.background = "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" + img + "'), no-repeat, center, center";
-							banner.style.backgroundSize = "cover"
-						} else {
-							banner.style.backgroundImage = "url('" + img + "')";
-						}
-						setTimeout(changeBG, 5000);
-					}
-					changeBG();
-				</script>
 				<div class="inner">
 					<h2>Yichen's Homepage</h2>
 					<p>Call me 三土 if you like</p>
@@ -87,9 +72,8 @@
 							</div>
 						</div>
 						<div class="3u">
-							<!--<p><span class='bold'>Name</span><br/>王一尘<br/>Yichen Wang</p>-->
 							<span class='bold'><i class='fa fa-music'></i>  Name</span>
-							<p>王一尘 = Yichen Wang<br/>
+							<p>王一尘 (Yichen Wang)<br/>
 							Nickname: 三土 (Santu)</p>
 							<span class='bold'><i class='fa fa-home'></i>  Place</span>
 							<p>From: Chengdu, Sichuan, China<br/>
@@ -157,33 +141,6 @@
 					</div>
 				</div>
 			</section>
-			
-		<!-- Two -->
-		<!--
-			<section id="two" class="wrapper style1">
-				<header class="major">
-					<h2>Recent updates</h2>
-				</header>
-				<div class="container">
-					<div class="row">
-						<div class="6u">
-							<section class="special">
-								<a href="blog/music/one-of-my-favorite-songs" class="image fit"><img src="blog/music/one-of-my-favorite-songs/1.jpg" alt="" /></a>
-								<h3>Song?</h3>
-								<p>The Story You'll Never Know. One of my favorite songs.</p>
-							</section>
-						</div>
-						<div class="6u">
-							<section class="special">
-								<a href="blog/coding/stupid-script-wasted-one-week" class="image fit"><img src="blog/coding/stupid-script-wasted-one-week/1.jpg" alt="" /></a>
-								<h3>Code?</h3>
-								<p>I shall never have told my roommate that I "built a cool UI"</p>
-							</section>
-						</div>
-					</div>
-				</div>
-			</section>
-			-->
 		<!-- Footer -->
 			<div class='corner'>
 				<i class="fa fa-angle-double-up fa-4x"></i>
@@ -204,5 +161,8 @@
 					</div>
 				</div>
 			</footer>
+		<script data-ad-client="ca-pub-2141237863114832" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script src="/js/utils.js"></script>
+		<script src="/js/smoothscroll.min.js"></script>
 	</body>
 </html>

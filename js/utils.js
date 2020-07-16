@@ -94,4 +94,28 @@ $(document).ready(function () {
             $('.corner').fadeOut();
         }
     });
-})
+
+    if ($('#banner').length != 0) {
+        var imgs = ['/blog/music/images/banner.png', 
+                    '/blog/coding/images/banner.png', 
+                    '/blog/cooking/images/banner.jpg', 
+                    '/blog/anime/images/banner.jpg'];
+        var img = imgs[Math.floor(Math.random()*imgs.length)];
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            $('#banner').css('background', "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" + img + "'), no-repeat, center, center");
+            $('#banner').css('background-size', "cover");
+        } else {
+            $('#banner').css('background-image', "url('" + img + "')");
+        }
+        setInterval(function () {
+            var img = imgs[Math.floor(Math.random()*imgs.length)];
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                $('#banner').css('background', "linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('" + img + "'), no-repeat, center, center");
+                $('#banner').css('background-size', "cover");
+            } else {
+                $('#banner').css('background-image', "url('" + img + "')");
+            }   
+        }, 5000)
+    }
+    $('html').removeClass('hidden');
+});
