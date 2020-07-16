@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Roboto:500,300");
 
 /*
@@ -14,7 +13,7 @@
 	}
 
 	body {
-		background: #fff;
+		background: #fafafa;
 	}
 
 	body, input, select, textarea {
@@ -109,19 +108,31 @@
 		}
 
 	blockquote {
-		border-left: solid 4px rgba(144, 144, 144, 0.25);
+		border-left: none;
 		font-style: italic;
-		margin: 0 0 2em 0;
-		padding: 0.5em 0 0.5em 2em;
-		background-color: #fafafa;
+		margin: 2em 0;
+		padding: 1em 2em 0.1em 2.5em;
+		background-color: inherit;
+		color: inherit;
 		border-radius: 12px;
+		quotes: "\f10d" "\f10e";
+	}
+	blockquote:before {
+		color: rgba(144, 144, 144, 0.25);
+		font-family: FontAwesome;
+		content: open-quote;
+		font-size: 2.5em;
+		position: relative;
+		line-height: 0;
+		left: -1em;
+		display: inherit;
 	}
 
 	code {
 		white-space: pre-wrap;
 		padding: 1px 5px;
 		font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
-		background-color: #f5f5f5;
+		background-color: #f2f2f2;
 		border-radius: 4px;
 	}
 
@@ -135,7 +146,7 @@
 		font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
 		white-space: pre;
 		font-size: 13px;
-		background-color: #fafafa;
+		background-color: #f2f2f2;
 		border-radius: 12px;
 		user-select: text;
 		-webkit-user-select: text;
@@ -517,6 +528,7 @@
 				display: block;
 				max-width: 80%;
 				margin: 3em auto;
+				box-shadow: 10px 10px 21px -3px;
 			}
 			@media (max-width: 980px) {
 				.image.post img {
@@ -539,28 +551,6 @@
 			.image.post ul {
 				margin: 0 0 1.5em 0;
 				padding-left: 2em;
-			}
-			.image.post blockquote {
-				padding: 1em 1em 1em 2.5em;
-				margin: 2em 0;
-				quotes: "\f10d" "\f10e";
-				border-left: none;
-			}
-			.image.post blockquote:before {
-				color: rgba(144, 144, 144, 0.25);
-				font-family: FontAwesome;
-				content: open-quote;
-				font-size: 2.5em;
-				position: absolute;
-				line-height: 0.1em;
-				left: 0em;
-			}
-				.image.post blockquote p {
-					display: inline;
-					margin: 0;
-				}
-			.image.post p {
-				margin: 0 0 1em 0;
 			}
 
 /* List */
@@ -918,7 +908,7 @@
 	}
 
 		.wrapper.style1 {
-			background: #fff;
+			background: #fafafa;
 			color: #555f66;
 		}
 
@@ -928,7 +918,7 @@
 		}
 
 			.wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #ffffff;
+				color: #efefef;
 			}
 
 			.wrapper.style2 header p {
@@ -974,7 +964,7 @@
 		top: 0;
 		width: 100%;
 		z-index: 10000;
-		box-shadow: 0 0 0.1em 0 rgba(0, 0, 0, 0.25);
+		box-shadow: 0 5px 16px 0px rgba(0,0,0,0.2);
 	}
 
 		#header h1 {
@@ -1140,7 +1130,7 @@
 /* Footer */
 
 	#footer {
-		background: #f8f8f8;
+		background: #f2f2f2;
 		padding: 2em 0 4em 0;
 	}
 
@@ -1209,7 +1199,7 @@
 		position: absolute;
 		display: none;
 		z-index: 1;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		box-shadow: 2px 5px 16px 0px rgba(0,0,0,0.2);
 		margin-left: -2em;
 		padding-left: 0;
 		background-color: #ffffff
@@ -1244,17 +1234,17 @@
 			margin: 0;
 			padding: 10px 14px 10px 14px;
 			cursor: pointer;
-			border: solid 1px #f8f8f8;
+			border: solid 1px #f2f2f2;
 			border-radius: 17px;
 		}
 		.content ul li:hover {
-			background: #efefef;
+			background: #ececec;
 		}
 		.content ul li:nth-child(odd) {
-			background-color: #f8f8f8;
+			background-color: #f2f2f2;
 		}
 		.content ul li:nth-child(odd):hover {
-			background-color: #efefef;
+			background-color: #ececec;
 		}
 	.content h1 {
 		font-size: x-large;
@@ -1409,4 +1399,55 @@ mask {
     background: #555f66;
     user-select: all;
     -webkit-user-select: all;
+}
+
+.recommHead {
+	margin-top: 0;
+	padding-top: 0;
+}
+	.recommHead h2 {
+		margin-bottom: 1em;
+	}
+	/* colors */
+	.style2 .recommLinks a {
+		color: #efefef;
+	}
+	.style1 .recommLinks a {
+		color: #555f66;
+	}
+	.style2 img.svgIcon {
+		filter: invert(99%) sepia(2%) saturate(1746%) hue-rotate(221deg) brightness(118%) contrast(87%);
+	}
+	.style1 img.svgIcon {
+		filter: invert(35%) sepia(19%) saturate(278%) hue-rotate(162deg) brightness(95%) contrast(87%);
+	}
+	/* positions */
+	.recommHead.recommLinks i {
+		vertical-align: middle;
+		padding-right: 10px;
+	}
+
+	.recommHead.recommLinks img {
+		display: inline-block;
+		height: 2em;
+		vertical-align: middle;
+		padding-right: 10px;
+	}
+
+	.recommHead.recommLinks span {
+		vertical-align: middle;
+		padding-right: 1em;
+	}
+
+figure img {
+	margin: 0;
+}
+figure figcaption {
+	text-align: center;
+}
+
+@media (max-width: 736px) {
+	.recommHead.recommLinks a {
+		display: block;
+		margin: 0.2em 0;
 }

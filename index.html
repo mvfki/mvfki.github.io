@@ -15,13 +15,11 @@
 			.hidden {display:none;}
 		</style>
 		<script src="/js/jquery.min.js"></script>
-		<script type="text/javascript">
-		$('html').addClass('hidden');
-		</script>
+		<script type="text/javascript">$('html').addClass('hidden');</script>
 		<script src="/js/skel.min.js"></script>
 		<script src="/js/skel-layers.min.js"></script>
 		<script src="/js/init.js"></script>
-		
+		<script src="https://kit.fontawesome.com/6168edb86f.js" crossorigin="anonymous"></script>
 		<link rel="shortcut icon" type="image/png" href="/images/icon.png">
 		<link rel="stylesheet" href="/css/dark.css" />
 		<noscript>
@@ -108,7 +106,47 @@
 			</section>
 
 		<!-- One -->
-			<section id="more" class="wrapper style2">
+			<section id="recommend" class="wrapper style2">
+				<header class="major">
+					<h2 class='title' id="recommendTitle">Recnet Recommandation  <i class="fa fa-angle-double-down"></i></h2>
+				</header>
+				<div class="container">
+					<div class="row">
+						<div class="3u">
+							<img class="image fit" src="https://img1.ak.crunchyroll.com/i/spire2/6f56e4bdd5113cf6ef57a6c2ba49761c1557807160_full.jpg" />
+						</div>
+						<div class="9u">
+							<div class="recommHead">
+								<h2>ハチミツとクローバー // Honey And Clover // 蜂蜜与四叶草</h2>
+								<div class="recommHead recommLinks">
+									<span class="bold">Links: </span>
+									<a href="https://www.imdb.com/title/tt0478838/" target="_blank">
+										<i class="fab fa-imdb fa-2x"></i>
+										<span>IMDb 7.9/10</span>
+									</a>
+									<a href="https://www.crunchyroll.com/honey-and-clover" target="_blank">
+										<img class="style2 svgIcon" src="/images/icons8-crunchyroll.svg"></img>
+										<span>Crunchyroll 9.4/10</span>
+									</a>
+									<a href="https://www.bilibili.com/bangumi/media/md3317" target="_blank">
+										<img class="style2 svgIcon" src="/images/bilibili_1188649_easyicon.net.svg"></img>
+										<span>Bilibili 9.7/10</span>
+									</a>
+								</div>
+							</div>
+							<blockquote>
+								<p>Yuuta Takemoto, a sophomore at an arts college, shares a cheap apartment with two seniors—the eccentric Shinobu Morita, who keeps failing to graduate due to his absenteeism, and the sensible Takumi Mayama, who acts as a proper senior to Takemoto, often looking out for him.</p>
+								<p>Takemoto had not given much thought to his future until one fine spring day, when he meets the endearing Hagumi Hanamoto and falls in love at first sight. Incredibly gifted in the arts, Hagumi enrolls in Takemoto's university and soon befriends the popular pottery student Ayumi Yamada. Ayumi is already well acquainted with the three flatmates and secretly harbors deep feelings for one of them.</p>
+								<p>Hachimitsu to Clover is a heartwarming tale of youth, love, soul-searching, and self-discovery, intricately woven through the complex relationships between five dear friends.</p>
+								<p>- Written by MAL Rewrite on <a href="http://myanimelist.net/anime/16/Hachimitsu_to_Clover">MyAnimeList</a></p>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="more" class="wrapper style1">
 				<header class="major">
 					<h2 class="title" id="moreTitle">More  <i class="fa fa-angle-double-down"></i></h2>
 				</header>
@@ -164,5 +202,32 @@
 		<script data-ad-client="ca-pub-2141237863114832" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<script src="/js/utils.js"></script>
 		<script src="/js/smoothscroll.min.js"></script>
+		<script type="text/javascript">
+$(document).ready(function() {
+	$("#aboutTitle").click(function() {
+		window.scroll({
+			top: $('#about-me').offset().top, 
+			left: 0, 
+			behavior: 'smooth', 
+		});
+	});
+
+	$("#recommendTitle").click(function() {
+		window.scroll({
+			top: $('#recommend').offset().top, 
+			left: 0, 
+			behavior: 'smooth', 
+		});
+	});
+
+	$("#moreTitle").click(function() {
+		window.scroll({
+			top: $('#more').offset().top, 
+			left: 0, 
+			behavior: 'smooth', 
+		});
+	});
+})
+		</script>
 	</body>
 </html>

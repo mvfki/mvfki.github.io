@@ -83,6 +83,12 @@ html[color-scheme='dark'] .content ul li{
 html[color-scheme='dark'] blockquote {
 	background-color: #282923;
 }
+html[color-scheme='dark'] .wrapper.style1 blockquote {
+	background: inherit;
+}
+html[color-scheme='dark'] .wrapper.style2 blockquote {
+	background: inherit;
+}
 html[color-scheme='dark'] pre {
 	background-color: #282923;
 }
@@ -111,4 +117,19 @@ html[color-scheme='dark'] img {
 
 html[color-scheme='dark'] a {
 	color: #67b0f1;
+}
+
+@media (prefers-color-scheme: dark) {
+	.style2 .recommLinks a {
+		color: #c3c3c3;
+	}
+	.style1 .recommLinks a {
+		color: #c3c3c3;
+	}
+	.style2 img.svgIcon {
+		filter: invert(89%) sepia(12%) saturate(4%) hue-rotate(348deg) brightness(84%) contrast(97%);
+	}
+	.style1 img.svgIcon {
+		filter: invert(89%) sepia(12%) saturate(4%) hue-rotate(348deg) brightness(84%) contrast(97%);
+	}
 }

@@ -60,22 +60,6 @@ $(document).ready(function () {
         });
     });
 
-    $("#aboutTitle").click(function() {
-        window.scroll({
-            top: $('#about-me').offset().top, 
-            left: 0, 
-            behavior: 'smooth', 
-        });
-    });
-
-    $("#moreTitle").click(function() {
-        window.scroll({
-            top: $('#more').offset().top, 
-            left: 0, 
-            behavior: 'smooth', 
-        });
-    });
-
     $('#clearMonth').click(function() {
         $('#monthSelect').val('');
         $('.cItem').show();
