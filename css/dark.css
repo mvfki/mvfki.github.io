@@ -61,8 +61,10 @@ html[color-scheme='dark'] #banner h2 {
 html[color-scheme='dark'] #banner p {
 	color: #c5c5c5;
 }
-html[color-scheme='dark'] h1, h2, h3, h4, h5, h6 {
-	color: #c5c5c5;
+@media (prefers-color-scheme: dark) {
+    h1, h2, h3, h4, h5, h6 {
+        color: #c5c5c5;
+    }
 }
 
 html[color-scheme='dark'] .content ul li{

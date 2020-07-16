@@ -158,52 +158,12 @@
 <h1>
 Latest Update
 </h1>
-<section><div class="image post"><span>2020-07-14</span><h1 id="code-highlighting-test">Code Highlighting Test</h1><p>Code highlighting is powered by <a href="https://facelessuser.github.io/pymdown-extensions/">pymdown-extensions</a>. The color scheme used is a contrast enhanced version of Sublime's "Breakers", which you can refer at <a href="/css/highlight.css">This CSS</a>.</p><h2 id="python3"><a class="anchor" href="#python3" id="anchor-python3"><i aria-hidden="true" class="icon fa-link"></i></a>Python3</h2><div class="highlight"><pre><span></span><code><span class="sd">"""</span>
-<span class="sd">docstring</span>
-<span class="sd">"""</span>
-<span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">foo</span>
-<span class="kn">import</span> <span class="nn">bar2</span> <span class="k">as</span> <span class="nn">b2</span>
-
-<span class="k">class</span> <span class="nc">myClass1</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    class docstring</span>
-<span class="sd">    """</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">var3</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-        <span class="sd">"""Initialize"""</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">var1</span> <span class="o">=</span> <span class="n">var1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">var2</span> <span class="o">=</span> <span class="n">var2</span>
-        <span class="c1"># random hash comment</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">var3</span> <span class="o">=</span> <span class="n">var3</span>
-
-    <span class="k">def</span> <span class="nf">classMethod1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        Returns self.var2 + 1</span>
-<span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var2</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">Var3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">"""</span>
-<span class="sd">        get self.var3</span>
-<span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var3</span>
-
-<span class="k">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
-        <span class="n">a</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">a</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">mc</span> <span class="o">=</span> <span class="n">myClass1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">classMethod1</span><span class="p">()</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">myFun</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">Var3</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Forget to test a float"</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"and formated </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"string"</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"and formated </span><span class="si">{</span><span class="mi">2333</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"and </span><span class="si">%s</span><span class="s2"> like </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"something"</span><span class="p">,</span> <span class="s2">"this"</span><span class="p">))</span>
-</code></pre></div></div></section>
-<a href="coding/code-highlighting-test" id="viewAll">View all...</a>
+<section><div class="image post"><span>2020-07-15</span><h1 id="simple-way-to-enable-dark-mode-theme">Simple Way to Enable Dark Mode Theme</h1><p>Since the start of using my iPhone, I have found the "dark mode" feature of iOS has been really user friendly. However, this is not a feature that works with all websites because developers all have their detailed color schemes, and the OS is not going to change the prescribed themes by itself. Therefore, if we want our own sites to have the same feature, then it is our task to have a dark theme prepared and make it accessible at the best timing.  </p><p>I have seen three popular strategies so far: </p><ol>
+<li>Show a small button and embed some functions within to switch between the themes.</li>
+<li><span id="st2" style="padding-top: 4em;">Detect the dark/light status of the requesting device and keep the theme consistant. </span></li>
+<li>Automatically display the correct theme depending on local time. (<em>i.e.</em> If in the evening, dark)</li>
+</ol></div></section>
+<a href="coding/simple-way-to-enable-dark-mode-theme" id="viewAll">View all...</a>
 </div>
 </div>
 </div>

@@ -27,11 +27,11 @@
 
 	a {
 		color: #629DD1;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 		a:hover {
-			text-decoration: none;
+			text-decoration: underline;
 		}
 
 	strong, b {
@@ -516,7 +516,7 @@
 			.image.post img {
 				display: block;
 				max-width: 80%;
-				margin: 30px auto;
+				margin: 3em auto;
 			}
 			@media (max-width: 980px) {
 				.image.post img {

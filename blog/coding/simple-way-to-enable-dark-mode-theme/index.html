@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+Ion by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+--><html>
+<head>
+<title>Simple Way to Enable Dark Mode Theme - WYC's Blog</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="" name="description"/>
+<meta content="" name="keywords"/>
+<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/skel-layers.min.js"></script>
+<script src="/js/init.js"></script>
+<script src="/js/utils.js"></script>
+<link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
+<link href="/css/highlight.css" rel="stylesheet" type="text/css"/>
+<script src="/js/smoothscroll.min.js"></script>
+<script async="" id="dsq-count-scr" src="//mvfki.disqus.com/count.js"></script>
+<link href="/css/dark.css" rel="stylesheet"/>
+<noscript>
+<link href="/css/skel.css" rel="stylesheet"/>
+<link href="/css/style.css" rel="stylesheet"/>
+<link href="/css/style-xlarge.css" rel="stylesheet"/>
+</noscript>
+<style>
+header.major {
+	text-align: center;
+	margin: 0 0 4em 0;
+	background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.4)), url(/blog/coding/images/banner.png);
+	padding: 6em 0 4em 0;
+	background-position: left center;
+	background-size: cover;
+	opacity: 0.8;
+}
+	header.major h2 {
+		color: white;
+	}
+	header.major p {
+		color: white;
+	}
+.wrapper {
+	padding: 0 0 0 0;
+}
+		</style>
+</head>
+<body id="top">
+<!-- Header -->
+<header class="skel-layers-fixed" id="header">
+<h1><a href="/">WYC - Home Page</a></h1>
+<nav id="nav">
+<ul>
+<!--<li>Select Month</li>
+					<li>
+						<select id="selMonth" name="selMonth" onchange="showMonth();">
+							<option selected="" value="all">All</option>
+						</select>
+					</li>-->
+<li><a href="/">Home</a></li>
+<li class="dropdown" id="blogMenu">
+<a href="/blog">Blog</a>
+<ul class="dropdownContent" id="dropdownContent">
+<li><a href="/blog/coding">Coding</a></li>
+<li><a href="/blog/music">Music</a></li>
+<li><a href="/blog/anime">Anime</a></li>
+<li><a href="/blog/cooking">Cooking</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/mvfki">GitHub</a></li>
+<li><a href="https://bangumi.tv/user/541876">Bangumi</a></li>
+</ul>
+</nav>
+</header>
+<!-- Main -->
+<section class="wrapper style1" id="main">
+<header class="major">
+<h2>Yichen's Coding Notes</h2>
+<p>Some experience and complains ;D</p>
+</header>
+<div class="container">
+<a href="/blog">Blog</a><span>  /  </span><a href="/blog/coding">Coding</a>
+</div>
+<div class="container" id="articleDiv">
+<!-- Articles -->
+<section><div class="image post"><span>2020-07-15</span><h1 id="simple-way-to-enable-dark-mode-theme">Simple Way to Enable Dark Mode Theme</h1><p>Since the start of using my iPhone, I have found the "dark mode" feature of iOS has been really user friendly. However, this is not a feature that works with all websites because developers all have their detailed color schemes, and the OS is not going to change the prescribed themes by itself. Therefore, if we want our own sites to have the same feature, then it is our task to have a dark theme prepared and make it accessible at the best timing.  </p><p>I have seen three popular strategies so far: </p><ol>
+<li>Show a small button and embed some functions within to switch between the themes.</li>
+<li><span id="st2" style="padding-top: 4em;">Detect the dark/light status of the requesting device and keep the theme consistant. </span></li>
+<li>Automatically display the correct theme depending on local time. (<em>i.e.</em> If in the evening, dark)</li>
+</ol><p>Let's skip the first one because more user operations, less user friendly.  </p><h2 id="detection-of-device-darklight-theme"><a class="anchor" href="#detection-of-device-darklight-theme" id="anchor-detection-of-device-darklight-theme"><i aria-hidden="true" class="icon fa-link"></i></a>Detection of Device Dark/Light Theme</h2><p>This can be one of the easiest questions that you can find an answer from "stackoverflow". I recommend <a href="https://stackoverflow.com/questions/50840168/how-to-detect-if-the-os-is-in-dark-mode-in-browsers">this thread</a> to have a look.  Two simple ways in conclusion:  </p><p>In CSS, device preference is detected by <code>prefers-color-scheme</code>.</p><div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">light</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nt">body</span> <span class="p">{</span> <span class="c">/* light styles */</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+        <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">dark</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nt">body</span> <span class="p">{</span> <span class="c">/* dark styles */</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+        <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>In JavaScript, device preference is detected with <code>window.matchMedia</code>.</p><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span> <span class="o">&amp;&amp;</span> <span class="c1">//See if "matchMedia" supported</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">'(prefers-color-scheme: dark)'</span><span class="p">).</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do some thing to start dark mode</span>
+<span class="p">}</span>
+</code></pre></div><p>The first CSS solution works perfectly if only CSS style changes are needed. In case I might also want any other complex operations bundled with the theme change, I implemented my own dark theme with the JavaScript approach.  </p><h2 id="switch-to-dark-mode-via-javascript"><a class="anchor" href="#switch-to-dark-mode-via-javascript" id="anchor-switch-to-dark-mode-via-javascript"><i aria-hidden="true" class="icon fa-link"></i></a>Switch to Dark Mode via JavaScript</h2><p>My idea to implement this is to switch the active CSS setting to a different set when the condition above equals to true. So I've got a separate <a href="/css/dark.css">dark mode CSS</a> only for colors, included in <code>&lt;head&gt;&lt;/head&gt;</code>. Then the key is how do these settings override the default theme, which is a light mode. After exploring some sites that have already had this feature working, that is likely to be implemented by <a href="#st2">strategy 2</a>, I came up with my solution:</p><blockquote>
+<p>Leave the styles in <code>dark.css</code> with a tag attribute selector prefix (i.e. a condition), and add the special attribute to <code>&lt;html&gt;</code> tag so conditions are matched.  </p>
+</blockquote><h3 id="example"><a class="anchor" href="#example" id="anchor-example"><i aria-hidden="true" class="icon fa-link"></i></a>Example:</h3><p>In JavaScript:  </p><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span> <span class="o">&amp;&amp;</span> 
+    <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">'(prefers-color-scheme: dark)'</span><span class="p">).</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"html"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"color-scheme"</span><span class="p">,</span> <span class="s2">"dark"</span><span class="p">);</span>
+    <span class="c1">// "color-scheme" is not a standard attribute</span>
+<span class="p">}</span>
+</code></pre></div><p>In CSS:</p><div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="p">{</span>
+    <span class="k">background</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="err">//</span> <span class="err">plenty</span> <span class="err">of</span> <span class="err">other</span> <span class="err">stuff</span> <span class="err">...</span>
+<span class="p">}</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">color-scheme</span><span class="o">=</span><span class="s1">'dark'</span><span class="o">]</span> <span class="nt">body</span><span class="p">{</span>
+    <span class="k">background</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>As an effect, the output HTML should look like this when in light mode:</p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p>While if your device is in a dark mode, the loaded page will look like this:</p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">color-scheme</span><span class="o">=</span><span class="s">"dark"</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p>With example framework above, your site can already be loaded with a dark theme if your device is already dark.  </p><p><img alt="How my blog looks" src="lightAndDark.png"/></p><p>However, it is still not perfect. <strong>WHAT IF</strong>, the system theme is changed while you are browsing the site? The answer is, with the example above, the theme of your site won't be synchronized with the system in time. You need to add a event listener that monitors the changes in the device theme, to the JS code:</p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">darkModeMediaQuery</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">'(prefers-color-scheme: dark)'</span><span class="p">);</span>
+<span class="nx">darkModeMediaQuery</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"html"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"color-scheme"</span><span class="p">,</span> <span class="s2">"dark"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"html"</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">"color-scheme"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div><p>Now you can test on your Windows machine or iOS device: With your website open, switch between light and dark theme in system settings.  </p><p>Finally, have fun selecting colors!  </p><p>Jul, 15, 2020</p></div></section></div>
+<div class="container operation" id="lowerOperation">
+<hr/>
+<!--Last  &  Next-->
+<a class="operation button" href="../code-highlighting-test" id="lastBtn">Last</a>
+<a class="operation button right disabled" id="nextBtn">Next</a>
+<hr/>
+</div>
+</section>
+<div class="container">
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+</div>
+<script id="disqusConfig">
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+var disqus_config = function () {
+	this.page.url = "https://mvfki.github.io/blog/coding/simple-way-to-enable-dark-mode-theme/";  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = "simple-way-to-enable-dark-mode-theme"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://mvfki.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+		</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<div class="corner">
+<i class="fa fa-angle-double-up fa-4x"></i>
+</div>
+<!-- Footer -->
+<footer id="footer">
+<div class="container">
+<div class="copyright row">
+<div class="left">
+<p><span class="bold">What is "mvfki"?</span><br/>
+							"mvfki" does not linguistically mean anything.<br/>
+							Try type it letter by letter on your keyboard, <br/>
+							and you will feel comfortable with it:)</p>
+</div>
+<div class="right">
+<br/><p>© Yichen Wang, 2020.
+						<br/>Design: <a href="http://templated.co">TEMPLATED</a></p>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

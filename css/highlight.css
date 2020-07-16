@@ -1,245 +1,90 @@
 /* Breakers */
-@media screen {
-	.k, .kn, .ow { /* "import", "as", ... */
-		color: #bd6abd;
-	}
-	.k { /* class, def */
-		font-style: italic;
-	}
-	.o { /* "=" */
-		color: #f56a42;
-	}
-	.sd { /* triple quote comment */
-		color: #74ae49;
-	}
-	.c1 { /* hash comment */
-		color: #ababab;		
-	}
-	.mi, .mf { /* integers, floats */
-		color: #c14700;
-	}
-	.nb, .nd { /* callables, "@property" */
-		color: #3b73ab;
-		font-style: italic;
-	}
-	.p { /* "," */
-		color: #a0573c;
-	}
-	.s1, .s2, .si { /* str */
-		color: #41a936;
-	}
-	.bp { /* "self" */
-		color: #ec6066;
-	}
-	.nc { /* name of class */
-		color: #da8727;
- 	}
-	.fm { /* __init__ */
-		color: #3a72ab;
-	}
-	.nf { /* name of function */
-		color: #20b3b3;
-	}
-	.sa { /* f"" */ 
-		color: #bd6abd;
-		font-style: italic;
-	}
+.k, .kn, .ow, .na, .kd { /* "import", "as", ... */
+	color: #bd6abd;
 }
-@media print, projection {
-	.k, .kn, .ow { /* "import", "as", ... */
-		color: #bd6abd;
-	}
-	.k { /* class, def */
-		font-style: italic;
-	}
-	.o { /* "=" */
-		color: #f56a42;
-	}
-	.sd { /* triple quote comment */
-		color: #74ae49;
-	}
-	.c1 { /* hash comment */
-		color: #ababab;		
-	}
-	.mi, .mf { /* integers, floats */
-		color: #c14700;
-	}
-	.nb, .nd { /* callables, "@property" */
-		color: #3b73ab;
-		font-style: italic;
-	}
-	.p { /* "," */
-		color: #a0573c;
-	}
-	.s1, .s2, .si { /* str */
-		color: #41a936;
-	}
-	.bp { /* "self" */
-		color: #ec6066;
-	}
-	.nc { /* name of class */
-		color: #da8727;
- 	}
-	.fm { /* __init__ */
-		color: #3a72ab;
-	}
-	.nf { /* name of function */
-		color: #20b3b3;
-	}
-	.sa { /* f"" */ 
-		color: #bd6abd;
-		font-style: italic;
-	}
+.k, .kd { /* class, def */
+	font-style: italic;
 }
-
-
+.o { /* "=" */
+	color: #f56a42;
+}
+.sd { /* triple quote comment */
+	color: #74ae49;
+}
+.c1, .c { /* hash comment */
+	color: #ababab;		
+}
+.mi, .mf { /* integers, floats */
+	color: #c14700;
+}
+.nb, .nd { /* callables, "@property" */
+	color: #3b73ab;
+	font-style: italic;
+}
+.p { /* "," */
+	color: #a0573c;
+}
+.s, .s1, .s2, .si { /* str */
+	color: #41a936;
+}
+.bp, .nt { /* "self", htmlTag */
+	color: #ec6066;
+}
+.nc { /* name of class */
+	color: #da8727;
+	}
+.fm { /* __init__ */
+	color: #3a72ab;
+}
+.nf { /* name of function */
+	color: #20b3b3;
+}
+.sa { /* f"" */ 
+	color: #bd6abd;
+	font-style: italic;
+}
 
 /* Monokai for dark mode*/
-@media screen {
-	html[color-scheme='dark'] .n { /* normal names */
+@media (prefers-color-scheme: dark) {
+	.n, .p { /* normal names */
 		color: #f8f8f2;
 	}
-	html[color-scheme='dark'] .kn { /* "import", "as", ... */
+	.kn, .ow { /* "import", "as", ... */
 		color: #f92b50;
 		font-weight: bold;
 	}
-	html[color-scheme='dark'] .ow { /* "import", "as", ... */
-		color: #f92b50;
-		font-weight: bold;
-	}
-	html[color-scheme='dark'] .k { /* class, def */
+	.k, .nb, .nd, .kd { /* class, def */
 		color: #67d8da;
 		font-style: italic
 	}
-	html[color-scheme='dark'] .nb { /* class, def */
+	.kc {
 		color: #67d8da;
-		font-style: italic
 	}
-	html[color-scheme='dark'] .nd { /* class, def */
-		color: #67d8da;
-		font-style: italic
-	}
-	html[color-scheme='dark'] .o { /* "=" */
+	.o, .nt { /* "=" ; htmlTag; $*/
 		color: #f92472;
 	}
-	html[color-scheme='dark'] .sd { /* triple quote comment */
+	.sd, .c1, .err, .c { /* hash comment */
 		color: #747053;
 	}
-	html[color-scheme='dark'] .c1 { /* hash comment */
-		color: #747053;		
-	}
-	html[color-scheme='dark'] .mi { /* integers, floats */
+	.mi, .mf { /* integers, floats */
 		color: #ac80ff;
 	}
-	html[color-scheme='dark'] .mf { /* integers, floats */
-		color: #ac80ff;
-	}
-	html[color-scheme='dark'] .nb { /* callables */
+	.nb, .nd { /* callables; "@property" */
 		font-style: italic;
 	}
-	html[color-scheme='dark'] .nd { /* "@property" */
-		font-style: italic;
-	}
-	html[color-scheme='dark'] .p { /* "," */
-		color: #f8f8f2;
-	}
-	html[color-scheme='dark'] .s1 { /* str */
+	.s, .s1, .s2, .si { /* str */
 		color: #e7db74;
 	}
-	html[color-scheme='dark'] .s2 { /* str */
-		color: #e7db74;
-	}
-	html[color-scheme='dark'] .si { /* str */
-		color: #e7db74;
-	}
-	html[color-scheme='dark'] .bp { /* "self" */
+	.bp { /* "self" */
 		color: #fd7e2f;
 	}
-	html[color-scheme='dark'] .nc { /* name of class */
+	.nc, .nf, .na { /* name of class; function; htmlTagAttribute */
 		color: #a6e22f;
  	}
- 	html[color-scheme='dark'] .nf { /* name of function */
-		color: #a6e22f;
- 	}
-	html[color-scheme='dark'] .fm { /* __init__ */
+	.fm, .sa { /* __init__ */
 		color: #67d8da;
 	}
-	html[color-scheme='dark'] .sa { /* f"" */ 
-		color: #67d8da;
-		font-style: italic;
-	}
-}
-@media print, projection {
-	html[color-scheme='dark'] .n { /* normal names */
-		color: #f8f8f2;
-	}
-	html[color-scheme='dark'] .kn { /* "import", "as", ... */
-		color: #f92b50;
-		font-weight: bold;
-	}
-	html[color-scheme='dark'] .ow { /* "import", "as", ... */
-		color: #f92b50;
-		font-weight: bold;
-	}
-	html[color-scheme='dark'] .k { /* class, def */
-		color: #67d8da;
-		font-style: italic
-	}
-	html[color-scheme='dark'] .nb { /* class, def */
-		color: #67d8da;
-		font-style: italic
-	}
-	html[color-scheme='dark'] .nd { /* class, def */
-		color: #67d8da;
-		font-style: italic
-	}
-	html[color-scheme='dark'] .o { /* "=" */
-		color: #f92472;
-	}
-	html[color-scheme='dark'] .sd { /* triple quote comment */
-		color: #747053;
-	}
-	html[color-scheme='dark'] .c1 { /* hash comment */
-		color: #747053;		
-	}
-	html[color-scheme='dark'] .mi { /* integers, floats */
-		color: #ac80ff;
-	}
-	html[color-scheme='dark'] .mf { /* integers, floats */
-		color: #ac80ff;
-	}
-	html[color-scheme='dark'] .nb { /* callables */
-		font-style: italic;
-	}
-	html[color-scheme='dark'] .nd { /* "@property" */
-		font-style: italic;
-	}
-	html[color-scheme='dark'] .p { /* "," */
-		color: #f8f8f2;
-	}
-	html[color-scheme='dark'] .s1 { /* str */
-		color: #e7db74;
-	}
-	html[color-scheme='dark'] .s2 { /* str */
-		color: #e7db74;
-	}
-	html[color-scheme='dark'] .si { /* str */
-		color: #e7db74;
-	}
-	html[color-scheme='dark'] .bp { /* "self" */
-		color: #fd7e2f;
-	}
-	html[color-scheme='dark'] .nc { /* name of class */
-		color: #a6e22f;
- 	}
- 	html[color-scheme='dark'] .nf { /* name of function */
-		color: #a6e22f;
- 	}
-	html[color-scheme='dark'] .fm { /* __init__ */
-		color: #67d8da;
-	}
-	html[color-scheme='dark'] .sa { /* f"" */ 
-		color: #67d8da;
+	.sa { /* f"" */ 
 		font-style: italic;
 	}
 }
