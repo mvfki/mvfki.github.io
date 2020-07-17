@@ -11,7 +11,7 @@
 .sd { /* triple quote comment */
 	color: #74ae49;
 }
-.c1, .c { /* hash comment */
+.c1, .c, .cp { /* hash comment */
 	color: #ababab;		
 }
 .mi, .mf { /* integers, floats */
@@ -63,7 +63,7 @@
 	.o, .nt { /* "=" ; htmlTag; $*/
 		color: #f92472;
 	}
-	.sd, .c1, .err, .c { /* hash comment */
+	.sd, .c1, .err, .c, .cp { /* hash comment */
 		color: #747053;
 	}
 	.mi, .mf { /* integers, floats */

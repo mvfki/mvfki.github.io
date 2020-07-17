@@ -27,7 +27,7 @@ TOPIC_FULLNAMES = list(TOPICS.keys())
 MD_IMG_REGEX = re.compile(r'!\[.*?\]\(.*?\)')
 IMG_URL_REGEX = re.compile(r'\(.*?\)')
 
-ANCHOR = BeautifulSoup('<i aria-hidden="true" class="icon fa-link"></i>', 
+ANCHOR = BeautifulSoup('<i aria-hidden="true" class="fas fa-link"></i>', 
                        features='lxml').i
 
 class myPost():

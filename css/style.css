@@ -43,7 +43,8 @@
 	}
 
 	p {
-		margin: 0 0 1em 0;
+		margin: 0 0 1.5em 0;
+		line-height: 2em;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -110,7 +111,7 @@
 	blockquote {
 		border-left: none;
 		font-style: italic;
-		margin: 2em 0;
+		margin: 1.5em 0;
 		padding: 1em 2em 0.1em 2.5em;
 		background-color: inherit;
 		color: inherit;
@@ -138,7 +139,7 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		margin-bottom: 1em;
+		margin: 2em 0;
 		padding: 1em 1em;
 		width: auto;
 		max-height: 600px;
@@ -159,6 +160,20 @@
 			background-color: transparent;
 		}
 
+	figure img {
+		margin: 0;
+	}
+	figure figcaption {
+		text-align: center;
+	}
+
+	mask {
+	    color: #555f66;
+	    background: #555f66;
+	    user-select: all;
+	    -webkit-user-select: all;
+	}
+
 	.align-left {
 		text-align: left;
 	}
@@ -171,11 +186,14 @@
 		text-align: right;
 	}
 
+	.bold  {
+		font-weight: 500;
+	}
+
 /* Section/Article */
 
 	section.special, article.special {
 		text-align: center;
-		cursor: pointer;
 	}
 
 	header p {
@@ -439,52 +457,17 @@
 			padding: 0;
 		}
 
-/* Icon */
-
-	.icon {
-		text-decoration: none;
-		border-bottom: none;
-		position: relative;
-	}
-
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
-			font-style: normal;
-			font-weight: normal;
-			text-transform: none !important;
-		}
-
-		.icon > .label {
-			display: none;
-		}
-
-		.icon.major {
-			display: inline-block;
-			margin: 0 0 1.25em 0;
-			color: #ffffff;
-			background: #629DD1;
-			width: 3em;
-			height: 3em;
-			font-size: 2em;
-			text-align: center;
-			line-height: 3em;
-			border-radius: 100%;
-			box-shadow: 0 0 0 10px #fff, 0 0 0 11px rgba(144, 144, 144, 0.25);
-		}
-
 /* Image */
 
 	.image {
-		border-radius: 6px;
+		border-radius: 15px;
 		border: 0;
 		display: inline-block;
 		position: relative;
 	}
 
 		.image img {
-			border-radius: 6px;
+			border-radius: 15px;
 			display: block;
 		}
 
@@ -510,47 +493,45 @@
 				display: block;
 				width: 100%;
 			}
-		.image.post {
-			margin: 0 0 2em 0;
-			width: 100%;
+
+/* post  */
+	div.post, div.comment {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.post {
 			display: block;
 			user-select: none;
 			-webkit-user-select: none;
 		}
-			.image.post iframe {
-				display: block;
-				max-width: 80%;
-				max-height: Calc(100vw *9/16);
-				margin: 0 auto;
-				margin-bottom: 30px;
-			}
-			.image.post img {
+			.post iframe, .post img {
 				display: block;
 				max-width: 80%;
 				margin: 3em auto;
+			}
+			.post iframe {
+				max-height: Calc(100vw *9/16);
+			}
+			.post img {
 				box-shadow: 10px 10px 21px -3px;
 			}
 			@media (max-width: 980px) {
-				.image.post img {
-					max-width: 100%;
-				}
-				.image.post iframe {
+				.post iframe, .post img {
 					max-width: 100%;
 				}
 			}
-			.image.post h1 {
+			.post h1 {
 				font-size: 2em;
 				line-height: 1.5em;
 				font-weight: 400;
 				border-bottom: solid 1px #e0e0e0;
 			}
-			.image.post h2, h3, h4, h5, h6 {
-				padding-top: 70px;
-				margin-top: -50px;
+			.post h2, .post h3, .post h4, .post h5, .post h6 {
+				padding-top: 4.5em;
+				margin-top: -3em;
 			}
-			.image.post ul {
-				margin: 0 0 1.5em 0;
-				padding-left: 2em;
+			.post ul {
+				line-height: 2em;
 			}
 
 /* List */
@@ -563,12 +544,13 @@
 
 		ol li {
 			padding-left: 0.25em;
+			line-height: 2em;
 		}
 
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
-		padding-left: 1em;
+		padding-left: 1.25em;
 	}
 
 		ul.alt {
@@ -760,7 +742,7 @@
 		-o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #192024;
+		background-color: #2b9ce6;
 		border-radius: 6px;
 		border: 0;
 		color: #ffffff !important;
@@ -783,7 +765,7 @@
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			background-color: #232d33;
+			background-color: #4780a5;
 		}
 
 		input[type="submit"]:active,
@@ -907,6 +889,10 @@
 		padding: 7.5em 0;
 	}
 
+		.wrapper section.special.box {
+			cursor: pointer;
+		}
+
 		.wrapper.style1 {
 			background: #fafafa;
 			color: #555f66;
@@ -941,12 +927,14 @@
 				.wrapper.style2 .button.alt.icon:before {
 					color: #a3a5a7;
 				}
-#main {
-	min-height: 614px;
-}
-.style2 section.special.box:hover {
-	background: #24282b;
-}
+
+			.wrapper.style2 section.special.box:hover {
+				background: #24282b;
+			}
+			.wrapper.style1 section.special.box:hover {
+				background: #e5f3ff80;
+			}
+
 /* Header */
 
 	#skel-layers-wrapper {
@@ -1200,9 +1188,9 @@
 		display: none;
 		z-index: 1;
 		box-shadow: 2px 5px 16px 0px rgba(0,0,0,0.2);
-		margin-left: -2em;
 		padding-left: 0;
-		background-color: #ffffff
+		background-color: #ffffff;
+		left: -2em;
 	}
 		.dropdownContent li {
 			list-style: none;
@@ -1222,9 +1210,11 @@
 }
 
 /* Content List */
-.content {
-	display: block;
-	margin-bottom: 30px;
+div.content {
+	max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 4em;
+    min-height: 140px;
 }
 	.content ul {
 		list-style: none;
@@ -1246,9 +1236,7 @@
 		.content ul li:nth-child(odd):hover {
 			background-color: #ececec;
 		}
-	.content h1 {
-		font-size: x-large;
-	}
+
 	.content.cItem {
 		margin: 0;
 	}
@@ -1263,9 +1251,9 @@ div.content-top {
 	margin-bottom: 1em;
 }
 	.content-top h1 {
+		font-size: 2em;
 		display: inline;
 		vertical-align: middle;
-		margin-left: 0.5em;
 	}
 	div.content-top.right {
 		vertical-align: middle;
@@ -1286,9 +1274,7 @@ div.content-top {
 		padding: 0.6em 1em;
 		border: solid 1px #8b9297;
 	}
-div.content {
-	margin-bottom: 4em;
-}
+
 
 @media (max-width: 736px) {
 	.content.cItem {
@@ -1296,9 +1282,6 @@ div.content {
 	}
 	.content.cItem.cTitle {
 		padding: 1em 0;
-	}
-	.content-top h1 {
-		margin-left: 0;
 	}
 	div.content-top.right {
 		position: relative;
@@ -1348,9 +1331,7 @@ a.anchor {
     vertical-align: middle;
 }
 
-span.bold  {
-	font-weight: bold;
-}
+
 
 /* Subtitles on homepage */
 h2.title {
@@ -1394,12 +1375,6 @@ div.corner {
 	margin-bottom: 2em;
 }
 
-mask {
-    color: #555f66;
-    background: #555f66;
-    user-select: all;
-    -webkit-user-select: all;
-}
 
 .recommHead {
 	margin-top: 0;
@@ -1438,13 +1413,6 @@ mask {
 		vertical-align: middle;
 		padding-right: 1em;
 	}
-
-figure img {
-	margin: 0;
-}
-figure figcaption {
-	text-align: center;
-}
 
 @media (max-width: 736px) {
 	.recommHead.recommLinks a {

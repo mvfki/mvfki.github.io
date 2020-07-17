@@ -14,17 +14,14 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 			.hidden {display:none;}
 		</style>
 <script src="/js/jquery.min.js"></script>
-<script type="text/javascript">
-			$('html').addClass('hidden');
-		</script>
 <script src="/js/skel.min.js"></script>
 <script src="/js/skel-layers.min.js"></script>
 <script src="/js/init.js"></script>
-<script src="/js/utils.js"></script>
 <link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
 <link href="/css/highlight.css" rel="stylesheet" type="text/css"/>
 <script src="/js/smoothscroll.min.js"></script>
 <script async="" id="dsq-count-scr" src="//mvfki.disqus.com/count.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 <script crossorigin="anonymous" src="https://kit.fontawesome.com/6168edb86f.js"></script>
 <link href="/css/dark.css" rel="stylesheet"/>
 <noscript>
@@ -52,7 +49,7 @@ header.major {
 }
 		</style>
 </head>
-<body id="top">
+<body class="hidden" id="top">
 <!-- Header -->
 <header class="skel-layers-fixed" id="header">
 <h1><a href="/">WYC - Home Page</a></h1>
@@ -85,13 +82,13 @@ header.major {
 <h2>Yichen's Music Shares</h2>
 <p>Yes, I love playing the drums in the air.</p>
 </header>
-<div class="container">
+<div class="container post">
 <a href="/blog">Blog</a><span>  /  </span><a href="/blog/music">Music</a>
 </div>
 <div class="container" id="articleDiv">
 <!-- Articles -->
 <section><div class="image post"><span>2020-06-19</span><h1 id="pianist-animenzzzs-latest-the-everlasting-guilty-crown">Pianist Animenzzz's Latest - <em>The Everlasting Guilty Crown</em></h1><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315px" src="https://www.youtube.com/embed/ozDObIWJ4NA" width="560px"></iframe><p><a href="https://www.youtube.com/user/Animenzzz/featured">Animenzzz</a> is a pianist that is known for his classical piano arrangement for Anime songs. My top favorites are <em>My Dearest</em>, <em>Euterpe</em>, out of his nearly one hundred of pieces. Interestingly, these two songs and the one I'm talking about today all came from the same TV Anime series - <em>Guilty Crown</em>. Well, as you can tell, the series did came with a bunch of enduring original songs, as <a href="https://www.youtube.com/channel/UCbJM_Y06iuUOl3hVPqYcvng">Hiroyuki Sawano</a> and <a href="https://www.youtube.com/channel/UCy9UVm-UjHqcktvxg-sS4qQ">Ryo (Supercell)</a> carried it out.  </p><p>The original song of the cover released just now, <em>The Everlasting Guilty Crown</em>, is the second openning theme song for <em>Guilty Crown</em>. Honestly, the first time I listened to it, I did not give a damn about it, because the drum pattern is not varying at all and is quite noisy for me. Years later, I accidentally came back to this song, with Japanese reading skill improved, and found the lyrics are actually touching me. Also, this time I could tell that the vocalist, <a href="https://www.youtube.com/channel/UCchlf66z1NueAv8xY117Lmw">Egoist</a>, cooperated with the instrumental so well that the meaning of the lyrics was passed to me so clearly.  </p><p>Animenzzz arranged so many tricky skills in this covering this time. I am not saying that the fancier, the better. But the meaning and the emotions from the original song need appropriate design to be reproduced on a single instrument, rather than from a band. Overall, This covering is satisfying.  </p><p>-Jun, 19, 2020</p></div></section></div>
-<div class="container operation" id="lowerOperation">
+<div class="container post operation" id="lowerOperation">
 <hr/>
 <!--Last  &  Next-->
 <a class="operation button" href="../one-of-my-favorite-songs" id="lastBtn">Last</a>
@@ -99,7 +96,7 @@ header.major {
 <hr/>
 </div>
 </section>
-<div class="container">
+<div class="container comment">
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 </div>
@@ -139,5 +136,6 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
 </div>
 </footer>
+<script src="/js/utils.js"></script>
 </body>
 </html>

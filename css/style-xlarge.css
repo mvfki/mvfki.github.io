@@ -15,3 +15,7 @@
 	#banner {
 		padding: 9em 0;
 	}
+
+div.content {
+	min-height: 201px;
+}

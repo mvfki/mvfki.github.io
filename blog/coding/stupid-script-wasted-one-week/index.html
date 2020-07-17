@@ -14,13 +14,9 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 			.hidden {display:none;}
 		</style>
 <script src="/js/jquery.min.js"></script>
-<script type="text/javascript">
-			$('html').addClass('hidden');
-		</script>
 <script src="/js/skel.min.js"></script>
 <script src="/js/skel-layers.min.js"></script>
 <script src="/js/init.js"></script>
-<script src="/js/utils.js"></script>
 <link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
 <link href="/css/highlight.css" rel="stylesheet" type="text/css"/>
 <script src="/js/smoothscroll.min.js"></script>
@@ -53,7 +49,7 @@ header.major {
 }
 		</style>
 </head>
-<body id="top">
+<body class="hidden" id="top">
 <!-- Header -->
 <header class="skel-layers-fixed" id="header">
 <h1><a href="/">WYC - Home Page</a></h1>
@@ -86,14 +82,14 @@ header.major {
 <h2>Yichen's Coding Notes</h2>
 <p>Some experience and complains ;D</p>
 </header>
-<div class="container">
+<div class="container post">
 <a href="/blog">Blog</a><span>  /  </span><a href="/blog/coding">Coding</a>
 </div>
 <div class="container" id="articleDiv">
 <!-- Articles -->
 <section><div class="image post"><span>2020-06-13</span><h1 id="stupid-script-wasted-one-week">Stupid Script Wasted One Week</h1><p><img alt="Watch Button" src="1.jpg"/>
 Since I'm working with a large coding project that is contributed by a lot of lab members, merging newly accepted pull requests from upstream Git repository is quite a big deal. if I don't want to mess things up when resolving the conflicts. Then I came up with a project, where the goal is to notify developers (myself) when new commits arrive in the upstream repository. I designed a UI, with a pretty looking (at least I think so) panel, a system tray that restore the closed window, and a background running loop which periodically check the number of commits... And three days after I thought I was good with it, I found there is a "Watch" button at the upper right corner of the main page of every repository.  </p><p>Anyway, these codes are still nice practice, hopefully.  </p><p>Jun. 13, 2020</p></div></section></div>
-<div class="container operation" id="lowerOperation">
+<div class="container post operation" id="lowerOperation">
 <hr/>
 <!--Last  &  Next-->
 <a class="operation button disabled" id="lastBtn">Last</a>
@@ -101,7 +97,7 @@ Since I'm working with a large coding project that is contributed by a lot of la
 <hr/>
 </div>
 </section>
-<div class="container">
+<div class="container comment">
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 </div>
@@ -141,5 +137,6 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
 </div>
 </footer>
+<script src="/js/utils.js"></script>
 </body>
 </html>

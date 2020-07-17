@@ -14,13 +14,9 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 			.hidden {display:none;}
 		</style>
 <script src="/js/jquery.min.js"></script>
-<script type="text/javascript">
-			$('html').addClass('hidden');
-		</script>
 <script src="/js/skel.min.js"></script>
 <script src="/js/skel-layers.min.js"></script>
 <script src="/js/init.js"></script>
-<script src="/js/utils.js"></script>
 <link href="/images/icon.png" rel="shortcut icon" type="image/png"/>
 <link href="/css/highlight.css" rel="stylesheet" type="text/css"/>
 <script src="/js/smoothscroll.min.js"></script>
@@ -53,7 +49,7 @@ header.major {
 }
 		</style>
 </head>
-<body id="top">
+<body class="hidden" id="top">
 <!-- Header -->
 <header class="skel-layers-fixed" id="header">
 <h1><a href="/">WYC - Home Page</a></h1>
@@ -86,12 +82,12 @@ header.major {
 <h2>Yichen's Coding Notes</h2>
 <p>Some experience and complains ;D</p>
 </header>
-<div class="container">
+<div class="container post">
 <a href="/blog">Blog</a><span>  /  </span><a href="/blog/coding">Coding</a>
 </div>
 <div class="container" id="articleDiv">
 <!-- Articles -->
-<section><div class="image post"><span>2020-07-14</span><h1 id="code-highlighting-test">Code Highlighting Test</h1><p>Code highlighting is powered by <a href="https://facelessuser.github.io/pymdown-extensions/">pymdown-extensions</a>. The color scheme used is a contrast enhanced version of Sublime's "Breakers", which you can refer at <a href="/css/highlight.css">This CSS</a>.</p><h2 id="python3"><a class="anchor" href="#python3" id="anchor-python3"><i aria-hidden="true" class="icon fa-link"></i></a>Python3</h2><div class="highlight"><pre><span></span><code><span class="sd">"""</span>
+<section><div class="image post"><span>2020-07-14</span><h1 id="code-highlighting-test">Code Highlighting Test</h1><p>Code highlighting is powered by <a href="https://facelessuser.github.io/pymdown-extensions/">pymdown-extensions</a>. The color scheme used is a contrast enhanced version of Sublime's "Breakers", which you can refer at <a href="/css/highlight.css">This CSS</a>.</p><h2 id="python3"><a class="anchor" href="#python3" id="anchor-python3"><i aria-hidden="true" class="fas fa-link"></i></a>Python3</h2><div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">docstring</span>
 <span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">foo</span>
@@ -135,14 +131,14 @@ header.major {
     <span class="nb">print</span><span class="p">(</span><span class="s2">"and formated </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"string"</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"and formated </span><span class="si">{</span><span class="mi">2333</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"and </span><span class="si">%s</span><span class="s2"> like </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"something"</span><span class="p">,</span> <span class="s2">"this"</span><span class="p">))</span>
-</code></pre></div><h2 id="bash"><a class="anchor" href="#bash" id="anchor-bash"><i aria-hidden="true" class="icon fa-link"></i></a>Bash</h2><div class="highlight"><pre><span></span><code><span class="nv">V1</span><span class="o">=</span>Hello
+</code></pre></div><h2 id="bash"><a class="anchor" href="#bash" id="anchor-bash"><i aria-hidden="true" class="fas fa-link"></i></a>Bash</h2><div class="highlight"><pre><span></span><code><span class="nv">V1</span><span class="o">=</span>Hello
 <span class="nv">V2</span><span class="o">=</span>World
 <span class="nb">echo</span> V1<span class="s1">' '</span>V2 &gt; a
 mv a b
 grep -n <span class="s2">"Hello"</span> b <span class="p">|</span> less
 awk <span class="s1">'{print $2}'</span> b
 </code></pre></div><p>This extension is actually using <a href="https://pygments.org/">Pygments</a> implementation, which is much better than Google's <a href="https://github.com/googlearchive/code-prettify">code-prettify</a> that I adopted previously. However, none of these beats Sublime's highlighting strategy, where the latter identifies more types of elements within one languange syntax. The next step for me will be to find a way to highlight the code as Sublime does.  </p><p>(Will be updated for other languages if needed in the future)</p></div></section></div>
-<div class="container operation" id="lowerOperation">
+<div class="container post operation" id="lowerOperation">
 <hr/>
 <!--Last  &  Next-->
 <a class="operation button" href="../some-understandings-of-personal-static-blog" id="lastBtn">Last</a>
@@ -150,7 +146,7 @@ awk <span class="s1">'{print $2}'</span> b
 <hr/>
 </div>
 </section>
-<div class="container">
+<div class="container comment">
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 </div>
@@ -190,5 +186,6 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
 </div>
 </footer>
+<script src="/js/utils.js"></script>
 </body>
 </html>

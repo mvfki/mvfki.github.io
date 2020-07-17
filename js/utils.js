@@ -101,5 +101,11 @@ $(document).ready(function () {
             }   
         }, 5000)
     }
-    $('html').removeClass('hidden');
+    
+    
+     
 });
+
+$(window).on('load', function () {
+    $('body').removeClass('hidden');
+})
