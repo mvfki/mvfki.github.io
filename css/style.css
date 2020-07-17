@@ -534,6 +534,10 @@
 				line-height: 2em;
 			}
 
+	#articleDiv {
+		margin-bottom: 2em;
+	}
+
 /* List */
 
 	ol {
