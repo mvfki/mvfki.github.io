@@ -55,12 +55,6 @@ header.major {
 <h1><a href="/">WYC - Home Page</a></h1>
 <nav id="nav">
 <ul>
-<!--<li>Select Month</li>
-					<li>
-						<select id="selMonth" name="selMonth" onchange="showMonth();">
-							<option selected="" value="all">All</option>
-						</select>
-					</li>-->
 <li><a href="/">Home</a></li>
 <li class="dropdown" id="blogMenu">
 <a href="/blog">Blog</a>
@@ -82,12 +76,13 @@ header.major {
 <h2>Yichen's Coding Notes</h2>
 <p>Some experience and complains ;D</p>
 </header>
+<nav id="content-nav"><ul><li class="tag-h1"><a href="#stupid-script-wasted-one-week">Stupid Script Wasted One Week</a></li></ul></nav>
 <div class="container post">
 <a href="/blog">Blog</a><span>  /  </span><a href="/blog/coding">Coding</a>
 </div>
 <div class="container" id="articleDiv">
 <!-- Articles -->
-<section><div class="image post"><span>2020-06-13</span><h1 id="stupid-script-wasted-one-week">Stupid Script Wasted One Week</h1><p><img alt="Watch Button" src="1.jpg"/>
+<section><div class="post"><span>2020-06-13</span><h1 id="stupid-script-wasted-one-week">Stupid Script Wasted One Week</h1><p><img alt="Watch Button" src="1.jpg"/>
 Since I'm working with a large coding project that is contributed by a lot of lab members, merging newly accepted pull requests from upstream Git repository is quite a big deal. if I don't want to mess things up when resolving the conflicts. Then I came up with a project, where the goal is to notify developers (myself) when new commits arrive in the upstream repository. I designed a UI, with a pretty looking (at least I think so) panel, a system tray that restore the closed window, and a background running loop which periodically check the number of commits... And three days after I thought I was good with it, I found there is a "Watch" button at the upper right corner of the main page of every repository.  </p><p>Anyway, these codes are still nice practice, hopefully.  </p><p>Jun. 13, 2020</p></div></section></div>
 <div class="container post operation" id="lowerOperation">
 <hr/>

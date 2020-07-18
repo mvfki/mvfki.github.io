@@ -125,6 +125,14 @@
 		box-shadow: none;
 		border: solid 5px rgba(66, 68, 72, 0.5);
 	}
+
+	nav#content-nav ul li:hover {
+		background-color: #313131;
+	}
+	nav#content-nav ul li a {
+		color: #c3c3c3;
+	}
+
 }
 
 

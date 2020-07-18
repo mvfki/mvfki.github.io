@@ -55,12 +55,6 @@ header.major {
 <h1><a href="/">WYC - Home Page</a></h1>
 <nav id="nav">
 <ul>
-<!--<li>Select Month</li>
-					<li>
-						<select id="selMonth" name="selMonth" onchange="showMonth();">
-							<option selected="" value="all">All</option>
-						</select>
-					</li>-->
 <li><a href="/">Home</a></li>
 <li class="dropdown" id="blogMenu">
 <a href="/blog">Blog</a>
@@ -82,12 +76,13 @@ header.major {
 <h2>Yichen's Coding Notes</h2>
 <p>Some experience and complains ;D</p>
 </header>
+<nav id="content-nav"><ul><li class="tag-h1"><a href="#create-colormap-cmap-for-matplotlib">Create Colormap (cmap) for Matplotlib</a></li><li class="tag-h2"><a href="#set-with-exact-color-label-for-each-point">Set with exact color label for each point</a></li><li class="tag-h2"><a href="#project-continuous-values-to-cmap">Project continuous values to <code>cmap</code></a></li><li class="tag-h2"><a href="#implementation-of-more-flexible-cmap">Implementation of more flexible <code>cmap</code></a></li></ul></nav>
 <div class="container post">
 <a href="/blog">Blog</a><span>  /  </span><a href="/blog/coding">Coding</a>
 </div>
 <div class="container" id="articleDiv">
 <!-- Articles -->
-<section><div class="image post"><span>2020-07-01</span><h1 id="create-colormap-cmap-for-matplotlib">Create Colormap (cmap) for Matplotlib</h1><p>When plotting, people definitely care about the color of the dots in there scatter plots. </p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<section><div class="post"><span>2020-07-01</span><h1 id="create-colormap-cmap-for-matplotlib">Create Colormap (cmap) for Matplotlib</h1><p>When plotting, people definitely care about the color of the dots in there scatter plots. </p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="c1"># For example, the 2-D data we want to plot comes this way</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 </code></pre></div><p>Usually there are two ways to set this feature:  </p><h2 id="set-with-exact-color-label-for-each-point"><a class="anchor" href="#set-with-exact-color-label-for-each-point" id="anchor-set-with-exact-color-label-for-each-point"><i aria-hidden="true" class="fas fa-link"></i></a>Set with exact color label for each point</h2><p>Know the exact color representation of each dot and give it to <code>color</code> argument</p><div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">]</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>

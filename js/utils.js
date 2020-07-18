@@ -70,15 +70,6 @@ $(document).ready(function () {
         $('.' + $(this).val()).show();
     });
 
-    $(window).scroll(function() {
-        var y = $(this).scrollTop();
-        if (y > 350) {
-            $('.corner').fadeIn();
-        } else {
-            $('.corner').fadeOut();
-        }
-    });
-
     if ($('#banner').length != 0) {
         var imgs = ['/blog/music/images/banner.png', 
                     '/blog/coding/images/banner.png', 
@@ -108,4 +99,34 @@ $(document).ready(function () {
 
 $(window).on('load', function () {
     $('body').removeClass('hidden');
+})
+
+$(window).scroll(function() {
+    var y = $(this).scrollTop();
+    var w = window.innerWidth;
+    if (y > 350) {
+        $('.corner').fadeIn(200);
+    } else {
+        $('.corner').fadeOut(200);
+    };
+
+    if (window.innerWidth > 1420) {
+        if (y > 400) {
+            $('#content-nav').fadeIn(200);
+        } else {
+            $('#content-nav').fadeOut(200);
+        };
+    }
+});
+
+$(window).resize(function() {
+    var y = $(this).scrollTop();
+    var w = window.innerWidth;
+    if (y > 400) {
+        if (w > 1420) {
+            $('#content-nav').fadeIn(200);
+        } else {
+            $('#content-nav').fadeOut(200);
+        }
+    }
 })

@@ -188,7 +188,7 @@
 
 	.bold  {
 		font-weight: 500;
-	}
+	}	
 
 /* Section/Article */
 
@@ -496,7 +496,7 @@
 
 /* post  */
 	div.post, div.comment {
-		max-width: 960px;
+		max-width: 800px;
 		margin: 0 auto;
 	}
 	.post {
@@ -525,6 +525,8 @@
 				line-height: 1.5em;
 				font-weight: 400;
 				border-bottom: solid 1px #e0e0e0;
+				padding-top: 3em;
+    			margin-top: -3em;
 			}
 			.post h2, .post h3, .post h4, .post h5, .post h6 {
 				padding-top: 4.5em;
@@ -1215,7 +1217,7 @@
 
 /* Content List */
 div.content {
-	max-width: 960px;
+	max-width: 800px;
     margin: 0 auto;
     margin-bottom: 4em;
     min-height: 140px;
@@ -1360,9 +1362,6 @@ div.corner {
 	will-change: transfrom;
 	-webkit-transition: height .2s ease;
 	transition: height .2s ease;
-	/*display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;*/
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -1422,4 +1421,54 @@ div.corner {
 	.recommHead.recommLinks a {
 		display: block;
 		margin: 0.2em 0;
+	}
+}
+
+
+
+nav#content-nav {
+	width: 300px;
+	position: fixed;
+	top: 8em;
+	left: 50%;
+	margin-left: -730px;
+	text-align: right;
+	display: none;
+}
+	nav#content-nav ul {
+		list-style: none;
+		list-style-image: none;
+		border-right: solid 2px;
+	}
+		nav#content-nav ul li {
+			padding-right: 1em;
+		}
+			nav#content-nav ul li:hover {
+				background-color: #e9f0f5;
+			}
+			nav#content-nav ul li a {
+				color: #555f66;
+			}
+
+@media (max-width: 1420px) {
+	nav#content-nav {
+		display: none;
+	}
+}
+li.tag-h1 {
+	font-size: 17px;
+    font-weight: 400;
+}
+	.tag-h1 a {
+		border-bottom: solid 1px;
+	}
+
+li.tag-h2 {
+	font-size: 17px;
+	margin-top: 1em;
+	list-style: inside;
+}
+
+li.tag-h3 {
+	font-size: 15px;
 }

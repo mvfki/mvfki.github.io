@@ -64,6 +64,7 @@ class myPost():
         self.deploy(template)
     
     def deploy(self, template):
+        # First insert main stuff
         templateHtml = open(template, 'r').read()
         html = markdown.markdown(self.markdown, extensions=EXT)
         innerHTML = BeautifulSoup(html, features='lxml')
@@ -71,25 +72,44 @@ class myPost():
         ad = soup.find('div', id=self.insertID)
         sec = soup.new_tag('section')
         postdiv = soup.new_tag('div')
-        postdiv.attrs['class'] = 'image post'
+        postdiv.attrs['class'] = 'post'
         for i in innerHTML.html.body.children:
             postdiv.append(i)
         sec.append(postdiv)
         ad.append(sec)
+
+        # Add time decoration above title
         timeSpan = BeautifulSoup(f'<span>{time.strftime("%Y-%m-%d", self.strptime)}</span>', 
                                  features='lxml').span
-        ## Code block settings
-        #pres = soup.findAll('pre')
-        #for i in pres:
-        #    i.attrs['class'] = 'prettyprint'
         titleHTML = ad.findAll('h1')[0]
         titleHTML.insert_before(timeSpan)
+
+        # Change page head title
         soup.title.string = re.sub(r'<.*?>', '', str(titleHTML)) + ' - WYC\'s Blog'
         
+        # Add anchors for <h?> headers
+        ## h1 header to left nav bar
+        navBar = soup.find('nav', id='content-nav')
+        nav_li1 = soup.new_tag('li', attrs={'class': 'tag-h1'})
+        nav_li1_a = BeautifulSoup(re.findall(r'<h.*?>(.*?)</h[0-9]>', str(titleHTML))[0], features='lxml').p
+        nav_li1_a.name = 'a'
+        nav_li1_a.attrs['href'] = '#'+titleHTML.attrs['id']
+        nav_li1.append(nav_li1_a)
+        navBar.ul.append(nav_li1)
+
         allHeaders = ad.find_all(re.compile('^h[1-6]$'))
         for header in allHeaders[1:]:
             try:
                 headerID = header.attrs['id']
+                headerText = re.findall(r'<h.*?>(.*?)</h[0-9]>', str(header))[0]
+                ## Insert sub headers to navBar
+                nav_li = soup.new_tag('li', attrs={'class': 'tag-'+header.name})
+                nav_li_a = BeautifulSoup(headerText, features='lxml').p
+                nav_li_a.name = 'a'
+                nav_li_a.attrs['href'] = '#' + header.attrs['id']
+                nav_li.append(nav_li_a)
+                navBar.ul.append(nav_li)
+                ## Add Anchors next to header
                 anchorA = soup.new_tag('a', attrs={'id': 'anchor-'+headerID, 
                                                    'class': 'anchor', 
                                                    'href': '#'+headerID})
@@ -97,9 +117,13 @@ class myPost():
                 header.insert(0, anchorA)
             except KeyError:
                 continue
+        
+        # Add DISQUS module
         self.soup = soup
         disqusConfig = soup.find('script', id='disqusConfig')
         disqusConfig.string = disqusConfig.string.replace("*POSTVAR*", self.ID)
+
+        
         
     def addLastPage(self, postID=None):
         lastBtn = self.soup.find('a', id='lastBtn')
