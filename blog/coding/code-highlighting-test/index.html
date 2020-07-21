@@ -88,42 +88,42 @@ header.major {
 <span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">foo</span>
 <span class="kn">import</span> <span class="nn">bar2</span> <span class="k">as</span> <span class="nn">b2</span>
 
-<span class="k">class</span> <span class="nc">myClass1</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="kd">class</span> <span class="nc">myClass1</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    class docstring</span>
 <span class="sd">    """</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">var3</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="kd">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="ka">self</span><span class="p">,</span> <span class="ka">var1</span><span class="p">,</span> <span class="ka">var2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="ka">var3</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="sd">"""Initialize"""</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">var1</span> <span class="o">=</span> <span class="n">var1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">var2</span> <span class="o">=</span> <span class="n">var2</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">var1</span> <span class="o">=</span> <span class="n">var1</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">var2</span> <span class="o">=</span> <span class="n">var2</span>
         <span class="c1"># random hash comment</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">var3</span> <span class="o">=</span> <span class="n">var3</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">var3</span> <span class="o">=</span> <span class="n">var3</span>
 
-    <span class="k">def</span> <span class="nf">classMethod1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="kd">def</span> <span class="nf">classMethod1</span><span class="p">(</span><span class="ka">self</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Returns self.var2 + 1</span>
 <span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var2</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">var2</span> <span class="o">+</span> <span class="mi">1</span>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">Var3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">@</span><span class="nd">property</span>
+    <span class="kd">def</span> <span class="nf">Var3</span><span class="p">(</span><span class="ka">self</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        get self.var3</span>
 <span class="sd">        """</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var3</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">var3</span>
 
-<span class="k">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<span class="kd">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="ka">a</span><span class="err">:</span> <span class="ka">str</span><span class="p">,</span> <span class="ka">b</span><span class="err">:</span> <span class="ka">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
-        <span class="n">a</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">+=</span> <span class="kt">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">a</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">mc</span> <span class="o">=</span> <span class="n">myClass1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">classMethod1</span><span class="p">()</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">myFun</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">Var3</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">mc</span> <span class="o">=</span> <span class="nfc">myClass1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">mc</span><span class="p">.</span><span class="nfc">classMethod1</span><span class="p">()</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nfc">myFun</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="n">mc</span><span class="p">.</span><span class="n">Var3</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Forget to test a float"</span><span class="p">,</span> <span class="mf">1.23</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"and formated </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">"string"</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"and formated </span><span class="si">{}</span><span class="s2">"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="s2">"string"</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"and formated </span><span class="si">{</span><span class="mi">2333</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"and </span><span class="si">%s</span><span class="s2"> like </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"something"</span><span class="p">,</span> <span class="s2">"this"</span><span class="p">))</span>
 </code></pre></div><h3 id="bash"><a class="anchor" href="#bash" id="anchor-bash"><i aria-hidden="true" class="fas fa-link"></i></a>Bash</h3><div class="highlight"><pre><span></span><code><span class="nv">V1</span><span class="o">=</span>Hello
@@ -142,18 +142,18 @@ rm -rf / <span class="c1"># DON'T REALLY RUN THIS</span>
 <span class="c1"># features, such as inserting an "id" attribute to header elements. </span>
 <span class="n">EXT</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pymdownx.superfences'</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">md_to_HTML</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="kd">def</span> <span class="nf">md_to_HTML</span><span class="p">(</span><span class="ka">filename</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    Reads a Markdown file directly and returns HTML text</span>
 <span class="sd">    '''</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">raw_MD_text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">html</span> <span class="o">=</span> <span class="n">markdown</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">raw_MD_text</span><span class="p">,</span> <span class="n">extensions</span><span class="o">=</span><span class="n">EXT</span><span class="p">)</span>
+        <span class="n">raw_MD_text</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nfc">read</span><span class="p">()</span>
+    <span class="n">f</span><span class="p">.</span><span class="nfc">close</span><span class="p">()</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">markdown</span><span class="p">.</span><span class="nfc">markdown</span><span class="p">(</span><span class="n">raw_MD_text</span><span class="p">,</span> <span class="ka">extensions</span><span class="o">=</span><span class="n">EXT</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">html</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-    <span class="n">HTML</span> <span class="o">=</span> <span class="n">md_to_HTML</span><span class="p">(</span><span class="s1">'my_post.md'</span><span class="p">)</span>
+    <span class="n">HTML</span> <span class="o">=</span> <span class="nfc">md_to_HTML</span><span class="p">(</span><span class="s1">'my_post.md'</span><span class="p">)</span>
     <span class="c1"># And then you will insert this HTML element into a template document. </span>
     <span class="c1"># BeautifulSoup4 is recommended. </span>
 </code></pre></div></div></section></div>
