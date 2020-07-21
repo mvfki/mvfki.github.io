@@ -1,78 +1,84 @@
-/* Breakers */
-.k, .kn, .ow, .na, .kd { /* "import", "as", ... */
+/* Breakers for light mode */
+.kn, .kd, .k, .ow, .na, .si, .sa, .se { /*import; def,class; for in */
 	color: #bd6abd;
 }
-.k, .kd { /* class, def */
+.sa, .kd, .na {
 	font-style: italic;
 }
-.o { /* "=" */
+.o, .bp, .nt, .sr { /* "=" ; self */
 	color: #f56a42;
 }
-.sd { /* triple quote comment */
-	color: #74ae49;
+.bp {
+	font-style: italic;
 }
-.c1, .c, .cp { /* hash comment */
+.sd, .c1, .c, .cp { /* all comment */
 	color: #ababab;		
 }
-.mi, .mf { /* integers, floats */
-	color: #c14700;
+.nf, .nci, .srb {
+	color: #20b3b3;
 }
-.nb, .nd { /* callables, "@property" */
+.nci {
+	font-style: italic;
+}
+.ka, .nc, .mi, .mf {
+	color: #ff8200
+}
+.nb, .nd, .kt { /* builtin, "@property", type */
 	color: #3b73ab;
 	font-style: italic;
 }
 .p { /* "," */
 	color: #a0573c;
 }
-.s, .s1, .s2, .si { /* str */
+.s, .s1, .s2 { /* str */
 	color: #41a936;
 }
-.bp, .nt { /* "self", htmlTag */
-	color: #ec6066;
-}
-.nc { /* name of class */
-	color: #da8727;
-	}
 .fm { /* __init__ */
 	color: #3a72ab;
-}
-.nf { /* name of function */
-	color: #20b3b3;
-}
-.sa { /* f"" */ 
-	color: #bd6abd;
 	font-style: italic;
 }
+
 
 /* Monokai for dark mode*/
 @media (prefers-color-scheme: dark) {
 	.n, .nn, .p, .vm { /* normal names */
 		color: #f8f8f2; /* white */
+		font-style: none;
 	}
 	.k, .kn, .o, .ow, .sr, .nt { /* normal keyword; "import", "as"; operator.word; special regex */
-		color: #f92b50; /* red */
+		color: #f92472; /* red */
+		font-style: none;
+		font-weight: bold;
 	}
 	.kd, .kt, .ne, .sa {/* "class" and "def"; type; exception; r'' */
 		color: #67d8da; /* blue */
 		font-style: italic
 	}
 	.nd, .nb, .nfc, .fm { /* decorator; builtins; function called */
-	 	color: #67d8da; /* blue */
+	 	color: #67d8ef; /* blue */
+	 	font-style: none;
 	 }
 	.sd, .c1, .err, .c, .cp { /* hash comment */
-		color: #747053; /* grey */
+		color: #74705d; /* grey */
+		font-style: none;
 	}
 	.mi, .mf, .kc, .se, .si, .srb { /* integers, floats, constant keyword, string.escape */
 		color: #ac80ff; /* purple */
+		font-style: none;
 	}
 	.s, .s1, .s2 { /* str */
 		color: #e7db74; /* yellow */
+		font-style: none;
 	}
 	.bp, .ka { /* "self", keyword arguments */
-		color: #fd7e2f; /* orange */
+		color: #fd9622; /* orange */
 		font-style: italic;
 	}
-	.nc, .nf, .na { /* name of class; function; htmlTagAttribute */
-		color: #a6e22f; /* green */
+	.nc, .nci, .nf, .na { /* name of class; function; htmlTagAttribute */
+		color: #a6e22b; /* green */
+		font-style: none;
+	}
+	.nci {
+		font-style: italic;
 	}
 }
