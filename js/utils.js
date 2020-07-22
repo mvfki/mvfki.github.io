@@ -112,7 +112,7 @@ $(window).scroll(function() {
 
     if (window.innerWidth > 1420) {
         if (y > 400) {
-            $('#content-nav').fadeIn(200);
+            $('#content-nav').slideDown(200);
         } else {
             $('#content-nav').fadeOut(200);
         };
@@ -124,7 +124,7 @@ $(window).resize(function() {
     var w = window.innerWidth;
     if (y > 400) {
         if (w > 1420) {
-            $('#content-nav').fadeIn(200);
+            $('#content-nav').slideDown(200);
         } else {
             $('#content-nav').fadeOut(200);
         }

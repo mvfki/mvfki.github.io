@@ -39,46 +39,58 @@
 }
 
 
-/* Monokai for dark mode*/
+/* Monokai for dark mode */
 @media (prefers-color-scheme: dark) {
-	.n, .nn, .p, .vm { /* normal names */
+	.n, .nn, .p, .vm, .go, .nv { /* normal names */
 		color: #f8f8f2; /* white */
-		font-style: none;
+		font-style: unset;
 	}
-	.k, .kn, .o, .ow, .sr, .nt { /* normal keyword; "import", "as"; operator.word; special regex */
-		color: #f92472; /* red */
-		font-style: none;
-		font-weight: bold;
+	.k, .kn, .o, .ow, .sr, .nt, .gr { /* normal keyword; "import", "as"; operator.word; special regex */
+		color: #f92b50; /* red */
+		font-style: unset;
 	}
-	.kd, .kt, .ne, .sa {/* "class" and "def"; type; exception; r'' */
+	.gr {
+		font-style: italic;
+	}
+	.kd, .kt, .ne, .sa, .kl, .gt {/* "class" and "def"; type; exception; r''; lambda */
 		color: #67d8da; /* blue */
 		font-style: italic
 	}
 	.nd, .nb, .nfc, .fm { /* decorator; builtins; function called */
-	 	color: #67d8ef; /* blue */
-	 	font-style: none;
+	 	color: #67d8da; /* blue */
+	 	font-style: unset;
 	 }
-	.sd, .c1, .err, .c, .cp { /* hash comment */
-		color: #74705d; /* grey */
-		font-style: none;
+	.sd, .c1, .c, .cp, .gp { /* hash comment */
+		color: #747053; /* grey */
+		font-style: unset;
 	}
-	.mi, .mf, .kc, .se, .si, .srb { /* integers, floats, constant keyword, string.escape */
+	.m, .mi, .mf, .kc, .se, .si, .srb { /* integers, floats, constant keyword, string.escape */
 		color: #ac80ff; /* purple */
-		font-style: none;
+		font-style: unset;
 	}
 	.s, .s1, .s2 { /* str */
 		color: #e7db74; /* yellow */
-		font-style: none;
+		font-style: unset;
+	}
+	.n.n-File {
+		color: #e7db74; /* yellow */	
+		font-style: unset;
 	}
 	.bp, .ka { /* "self", keyword arguments */
-		color: #fd9622; /* orange */
+		color: #fd7e2f; /* orange */
 		font-style: italic;
 	}
-	.nc, .nci, .nf, .na { /* name of class; function; htmlTagAttribute */
-		color: #a6e22b; /* green */
-		font-style: none;
+	.nc, .nf, .na { /* name of class; function; htmlTagAttribute */
+		color: #a6e22f; /* green */
+		font-style: unset;
 	}
 	.nci {
+		color: #a6e22f; /* green */
 		font-style: italic;
+	}
+	.err {
+		background: #f92b50;
+		color: #f8f8f2;
+		font-style: unset;
 	}
 }
