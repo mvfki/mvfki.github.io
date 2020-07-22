@@ -86,16 +86,16 @@ header.major {
 <li>Show a small button and embed some functions within to switch between the themes.</li>
 <li><span id="st2" style="padding-top: 4em;">Detect the dark/light status of the requesting device and keep the theme consistant. </span></li>
 <li>Automatically display the correct theme depending on local time. (<em>i.e.</em> If in the evening, dark)</li>
-</ol><p>Let's skip the first one because more user operations, less user friendly.  </p><h2 id="detection-of-device-darklight-theme"><a class="anchor" href="#detection-of-device-darklight-theme" id="anchor-detection-of-device-darklight-theme"><i aria-hidden="true" class="fas fa-link"></i></a>Detection of Device Dark/Light Theme</h2><p>This can be one of the easiest questions that you can find an answer from "stackoverflow". I recommend <a href="https://stackoverflow.com/questions/50840168/how-to-detect-if-the-os-is-in-dark-mode-in-browsers">this thread</a> to have a look.  Two simple ways in conclusion:  </p><p>In CSS, device preference is detected by <code>prefers-color-scheme</code>.</p><div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">light</span><span class="o">)</span> <span class="p">{</span>
+</ol><p>Let's skip the first one because more user operations, less user friendly.  </p><h2 id="detection-of-device-darklight-theme"><a class="anchor" href="#detection-of-device-darklight-theme" id="anchor-detection-of-device-darklight-theme"><i aria-hidden="true" class="fas fa-link"></i></a>Detection of Device Dark/Light Theme</h2><p>This can be one of the easiest questions that you can find an answer from "stackoverflow". I recommend <a href="https://stackoverflow.com/questions/50840168/how-to-detect-if-the-os-is-in-dark-mode-in-browsers">this thread</a> to have a look.  Two simple ways in conclusion:  </p><p>In CSS, device preference is detected by <code>prefers-color-scheme</code>.</p><div class="highlight"><pre><span></span><code><span class="o">@</span><span class="k">media</span> <span class="p">(</span><span class="kt">prefers-color-scheme</span><span class="p">:</span> <span class="n">light</span><span class="p">)</span> <span class="p">{</span>
     <span class="nt">body</span> <span class="p">{</span> <span class="c">/* light styles */</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
-        <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+        <span class="kt">background-color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+        <span class="kt">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">dark</span><span class="o">)</span> <span class="p">{</span>
+<span class="o">@</span><span class="k">media</span> <span class="p">(</span><span class="kt">prefers-color-scheme</span><span class="p">:</span> <span class="n">dark</span><span class="p">)</span> <span class="p">{</span>
     <span class="nt">body</span> <span class="p">{</span> <span class="c">/* dark styles */</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
-        <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+        <span class="kt">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+        <span class="kt">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><p>In JavaScript, device preference is detected with <code>window.matchMedia</code>.</p><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span> <span class="o">&amp;&amp;</span> <span class="c1">//See if "matchMedia" supported</span>
@@ -110,13 +110,13 @@ header.major {
     <span class="c1">// "color-scheme" is not a standard attribute</span>
 <span class="p">}</span>
 </code></pre></div><p>In CSS:</p><div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="p">{</span>
-    <span class="k">background</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
-    <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
-    <span class="err">//</span> <span class="err">plenty</span> <span class="err">of</span> <span class="err">other</span> <span class="err">stuff</span> <span class="err">...</span>
+    <span class="kt">background</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+    <span class="kt">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="c">/* plenty of other stuff ... */</span>
 <span class="p">}</span>
-<span class="nt">html</span><span class="o">[</span><span class="nt">color-scheme</span><span class="o">=</span><span class="s1">'dark'</span><span class="o">]</span> <span class="nt">body</span><span class="p">{</span>
-    <span class="k">background</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
-    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="nt">html</span><span class="p">[</span><span class="nc">color-scheme</span><span class="o">=</span><span class="s">'dark'</span><span class="p">]</span> <span class="nt">body</span><span class="p">{</span>
+    <span class="kt">background</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="kt">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><p>As an effect, the output HTML should look like this when in light mode:</p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div><p>While if your device is in a dark mode, the loaded page will look like this:</p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">color-scheme</span><span class="o">=</span><span class="s">"dark"</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -128,17 +128,17 @@ header.major {
         <span class="nx">$</span><span class="p">(</span><span class="s2">"html"</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">"color-scheme"</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div><p>Now you can test on your Windows machine or iOS device: With your website open, switch between light and dark theme in system settings.  </p><p>Finally, have fun selecting colors!  </p><p>Jul, 15, 2020</p><hr/><p>Updates Jul, 17, 2020</p><h2 id="eliminating-flash-of-unstyled-content-fouc-while-in-dark-theme"><a class="anchor" href="#eliminating-flash-of-unstyled-content-fouc-while-in-dark-theme" id="anchor-eliminating-flash-of-unstyled-content-fouc-while-in-dark-theme"><i aria-hidden="true" class="fas fa-link"></i></a>Eliminating Flash of Unstyled Content (FOUC) While in Dark Theme</h2><p>When I'm working on eliminating the Flash of Unstyled Content (FOUC), with the strategy of "hiding everything until styled", I found it also important to set a dark background color for <code>&lt;html&gt;</code> tag. Otherwise, when visitors are waiting for the content to be loaded, they will see a flash of WHITE screen, which is definitely harmful under a "dark mode" scenario.  </p><p>Solution:  </p><p>In <code>dark.css</code> </p><div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">dark</span><span class="o">)</span> <span class="p">{</span>
+</code></pre></div><p>Now you can test on your Windows machine or iOS device: With your website open, switch between light and dark theme in system settings.  </p><p>Finally, have fun selecting colors!  </p><p>Jul, 15, 2020</p><hr/><p>Updates Jul, 17, 2020</p><h2 id="eliminating-flash-of-unstyled-content-fouc-while-in-dark-theme"><a class="anchor" href="#eliminating-flash-of-unstyled-content-fouc-while-in-dark-theme" id="anchor-eliminating-flash-of-unstyled-content-fouc-while-in-dark-theme"><i aria-hidden="true" class="fas fa-link"></i></a>Eliminating Flash of Unstyled Content (FOUC) While in Dark Theme</h2><p>When I'm working on eliminating the Flash of Unstyled Content (FOUC), with the strategy of "hiding everything until styled", I found it also important to set a dark background color for <code>&lt;html&gt;</code> tag. Otherwise, when visitors are waiting for the content to be loaded, they will see a flash of WHITE screen, which is definitely harmful under a "dark mode" scenario.  </p><p>Solution:  </p><p>In <code>dark.css</code> </p><div class="highlight"><pre><span></span><code><span class="o">@</span><span class="k">media</span> <span class="p">(</span><span class="kt">prefers-color-scheme</span><span class="p">:</span> <span class="n">dark</span><span class="p">)</span> <span class="p">{</span>
     <span class="nt">html</span> <span class="p">{</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
-        <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+        <span class="kt">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+        <span class="kt">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><p>In <code>index.html</code></p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="c">&lt;!-- METAS --&gt;</span>
         <span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
-            <span class="p">.</span><span class="nc">hidden</span> <span class="p">{</span><span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;}</span>
+            <span class="nc">.hidden</span> <span class="p">{</span><span class="kt">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;}</span>
         <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
         <span class="c">&lt;!-- CSS // scripts --&gt;</span>
         <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"&lt;PATH&gt;/dark.css"</span> <span class="p">/&gt;</span>

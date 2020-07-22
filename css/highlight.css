@@ -41,7 +41,7 @@
 
 /* Monokai for dark mode */
 @media (prefers-color-scheme: dark) {
-	.n, .nn, .p, .vm, .go, .nv { /* normal names */
+	.n, .nn, .p, .vm, .go { /* normal names */
 		color: #f8f8f2; /* white */
 		font-style: unset;
 	}
@@ -50,6 +50,7 @@
 		font-style: unset;
 	}
 	.gr {
+		color: #f92b50; /* red */
 		font-style: italic;
 	}
 	.kd, .kt, .ne, .sa, .kl, .gt {/* "class" and "def"; type; exception; r''; lambda */
@@ -60,11 +61,11 @@
 	 	color: #67d8da; /* blue */
 	 	font-style: unset;
 	 }
-	.sd, .c1, .c, .cp, .gp { /* hash comment */
+	.sd, .c1, .c, .cp, .gp, .ch { /* hash comment */
 		color: #747053; /* grey */
 		font-style: unset;
 	}
-	.m, .mi, .mf, .kc, .se, .si, .srb { /* integers, floats, constant keyword, string.escape */
+	.m, .mi, .mf, .mh, .kc, .se, .si, .srb { /* integers, floats, constant keyword, string.escape */
 		color: #ac80ff; /* purple */
 		font-style: unset;
 	}
@@ -73,7 +74,7 @@
 		font-style: unset;
 	}
 	.n.n-File {
-		color: #e7db74; /* yellow */	
+		color: #e7db74; /* yellow */
 		font-style: unset;
 	}
 	.bp, .ka { /* "self", keyword arguments */
@@ -91,6 +92,5 @@
 	.err {
 		background: #f92b50;
 		color: #f8f8f2;
-		font-style: unset;
 	}
 }
