@@ -60,6 +60,10 @@
 			color: inherit;
 			text-decoration: none;
 		}
+		h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+			color: inherit;
+			text-transform: none;
+		}
 
 	h2 {
 		font-size: 1.3em;
@@ -529,8 +533,11 @@
     			margin-top: -3em;
 			}
 			.post h2, .post h3, .post h4, .post h5, .post h6 {
-				padding-top: 4.5em;
+				padding-top: 3.5em;
 				margin-top: -3em;
+			}
+			.post h3, .post h4, .post h5, .post h6 {
+				text-transform: unset;
 			}
 			.post ul {
 				line-height: 2em;
