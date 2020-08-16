@@ -253,11 +253,17 @@ def rewriteAll():
 
     # Update blog root latest preview
     latest = allAllPosts[-1]
+    latest_topic = latest.topic
+    latest_id = latest.ID
     latestArtBlock = latest.soup.find('div', id="articleDiv")
     blogSoup = BeautifulSoup(open('blog/index.html', 'r', encoding='UTF-8').read(), features='lxml')
-    blogSoup.find('a', id='viewAll').attrs['href'] = latest.topic+'/'+latest.ID
+    blogSoup.find('a', id='viewAll').attrs['href'] = latest_topic+'/'+latest_id
     preview = BeautifulSoup('<section><div class="image post"></div></section>', features='lxml')
     for i in list(latestArtBlock.div.children)[:5]:
+        if i.find('img'):
+            img = i.find('img')
+            if not img.attrs['src'].startswith('http'):
+                img.attrs['src'] = latest_topic + '/' + latest_id + '/' + img.attrs['src']
         preview.div.append(i)
     blogSoup.find('div', id="articleDiv").section.replace_with(preview.section)
     
