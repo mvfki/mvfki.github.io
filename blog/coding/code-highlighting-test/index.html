@@ -88,53 +88,53 @@ header.major {
 <span class="kn">from</span> <span class="nn">bar</span> <span class="kn">import</span> <span class="n">foo</span>
 <span class="kn">import</span> <span class="nn">bar2</span> <span class="k">as</span> <span class="nn">b2</span>
 
-<span class="kd">class</span> <span class="nc">myClass1</span><span class="p">(</span><span class="nci">object</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">myClass1</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">"""docstring"""</span>
-    <span class="kd">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="ka">self</span><span class="p">,</span> <span class="ka">var1</span><span class="p">,</span> <span class="ka">var2</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">"""Initialize"""</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">var1</span> <span class="o">=</span> <span class="n">var1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var1</span> <span class="o">=</span> <span class="n">var1</span>
         <span class="c1"># random hash comment</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">var2</span> <span class="o">=</span> <span class="n">var2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var2</span> <span class="o">=</span> <span class="n">var2</span>
 
-    <span class="kd">def</span> <span class="nf">classMethod1</span><span class="p">(</span><span class="ka">self</span><span class="p">,</span> <span class="ka">n</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kl">lambda</span> <span class="ka">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
+    <span class="k">def</span> <span class="nf">classMethod1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
 
-    <span class="o">@</span><span class="nb">property</span>
-    <span class="kd">def</span> <span class="nf">Var3</span><span class="p">(</span><span class="ka">self</span><span class="p">,</span> <span class="ka">mat1</span><span class="p">,</span> <span class="ka">mat2</span><span class="p">):</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Var3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mat1</span><span class="p">,</span> <span class="n">mat2</span><span class="p">):</span>
         <span class="n">mat</span> <span class="o">=</span> <span class="n">mat1</span> <span class="o">@</span> <span class="n">mat2</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mat</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="kt">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="sa sa-Debug">r</span><span class="s1 s1-Raw">'</span><span class="sr">(?i)</span><span class="s1 s1-Raw">(</span><span class="se">?&lt;!</span><span class="s1 s1-Raw">a)</span><span class="srb">[.*?!]</span><span class="s1 s1-Raw">mvfk</span><span class="c">(?#Yo)</span><span class="s1 s1-Raw">i</span><span class="sr">{1,2}</span><span class="s1 s1-Raw">}</span><span class="s1">'</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">var1</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">var2</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="sa">r</span><span class="s1">'(?i)(?&lt;!a)[.*?!]mvfk(?#Yo)i{1,2}}'</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">var2</span>
 
-<span class="kd">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="ka">a</span><span class="p">:</span> <span class="kt">str</span><span class="p">,</span> <span class="ka">b</span><span class="p">:</span> <span class="kt">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="kt">str</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">myFun</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="nfc">foo</span><span class="p">()</span>
+        <span class="n">foo</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
         <span class="k">pass</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
-        <span class="n">a</span> <span class="o">+=</span> <span class="kt">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">mc</span> <span class="o">=</span> <span class="nfc">myClass1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">mc</span><span class="p">.</span><span class="nfc">classMethod1</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">33</span><span class="p">)</span> <span class="o">+</span> <span class="n">mc</span><span class="p">.</span><span class="n">Var3</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="nfc">myFun</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="ka">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'fstring</span><span class="si">{</span><span class="mf">1.23</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'Format </span><span class="si">{}</span><span class="s1">.'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">233</span><span class="p">))</span>
+    <span class="n">mc</span> <span class="o">=</span> <span class="n">myClass1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">classMethod1</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">33</span><span class="p">)</span> <span class="o">+</span> <span class="n">mc</span><span class="o">.</span><span class="n">Var3</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">myFun</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'fstring</span><span class="si">{</span><span class="mf">1.23</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'Format </span><span class="si">{}</span><span class="s1">.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">233</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"and </span><span class="si">%s</span><span class="s2"> like </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="s2">"something"</span><span class="p">,</span> <span class="s2">"this"</span><span class="p">))</span>
-</code></pre></div><h3 id="bash"><a class="anchor" href="#bash" id="anchor-bash"><i aria-hidden="true" class="fas fa-link"></i></a>Bash</h3><div class="highlight"><pre><span></span><code><span class="nv">files_list</span><span class="o">=</span><span class="p">(</span> <span class="s2">"a.txt"</span> <span class="s2">"b.txt"</span> <span class="s2">"c and space.txt"</span> <span class="p">)</span>
-<span class="nv">GREETING</span><span class="o">=</span><span class="s">Yoooooo</span>
-<span class="nf">echo_greeting</span><span class="p">()</span> <span class="p">{</span>
+</code></pre></div><h3 id="bash"><a class="anchor" href="#bash" id="anchor-bash"><i aria-hidden="true" class="fas fa-link"></i></a>Bash</h3><div class="highlight"><pre><span></span><code><span class="nv">files_list</span><span class="o">=(</span> <span class="s2">"a.txt"</span> <span class="s2">"b.txt"</span> <span class="s2">"c and space.txt"</span> <span class="o">)</span>
+<span class="nv">GREETING</span><span class="o">=</span>Yoooooo
+echo_greeting<span class="o">()</span> <span class="o">{</span>
     <span class="nb">echo</span> <span class="nv">$1</span>
-<span class="p">}</span>
-<span class="k">for</span> i <span class="k">in</span> <span class="s2">"</span><span class="si">${</span><span class="nv">files_list</span><span class="p">[</span><span class="o">@</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="o">;</span> <span class="k">do</span>
-    <span class="k">if</span> <span class="p">[</span> <span class="ka">-f</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> <span class="p">]</span><span class="o">;</span> <span class="k">then</span>
-        <span class="nb">head</span> <span class="ka">-n5</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> <span class="o">|</span> <span class="nb">grep</span> <span class="nv">$GREETING</span> <span class="o">&gt;&gt;</span> all_greetings.txt
+<span class="o">}</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="s2">"</span><span class="si">${</span><span class="nv">files_list</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        head -n5 <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> <span class="p">|</span> grep <span class="nv">$GREETING</span> &gt;&gt; all_greetings.txt
     <span class="k">else</span> 
         echo_greeting <span class="nv">$GREETING</span>
     <span class="k">fi</span>
 <span class="k">done</span>
-</code></pre></div><p>Pygment highlighting performance is much better than Google's <a href="https://github.com/googlearchive/code-prettify">code-prettify</a> that I adopted previously. However, none of these beats Sublime's highlighting strategy, in terms of syntax detection.  </p><p>Currently, I have already implemented my customized Python syntax detection library, at <a href="https://github.com/mvfki/pyHiliter">pyHiliter</a>, which work as a Pygments plugin, and can be directly adopted by PyMdown Extensions.</p><p>(Will be updated for other languages if needed. It might happen other languages are presented in other articles of mine.)  </p><h2 id="python-markdown-module-with-code-syntax-highlighting"><a class="anchor" href="#python-markdown-module-with-code-syntax-highlighting" id="anchor-python-markdown-module-with-code-syntax-highlighting"><i aria-hidden="true" class="fas fa-link"></i></a>Python Markdown Module with Code Syntax Highlighting</h2><p>First I would like to clarify that, due to the method I implemented this blog site, an almost fully DIY way, this might be hard to work for other deployment tool users.  </p><p>Dependencies needed can be installed with the following command. I tried a few of other alternatives and found these ones most match my expectations. For my customized Python detection, refer to the repo's <a href="https://github.com/mvfki/pyHiliter#pyhiliter---improved-pygments-pythonlexer">README</a>. </p><div class="highlight"><pre><span></span><code><span class="nb">pip</span> install markdown pymdown-extensions Pygments
+</code></pre></div><p>Pygment highlighting performance is much better than Google's <a href="https://github.com/googlearchive/code-prettify">code-prettify</a> that I adopted previously. However, none of these beats Sublime's highlighting strategy, in terms of syntax detection.  </p><p>Currently, I have already implemented my customized Python syntax detection library, at <a href="https://github.com/mvfki/pyHiliter">pyHiliter</a>, which work as a Pygments plugin, and can be directly adopted by PyMdown Extensions.</p><p>(Will be updated for other languages if needed. It might happen other languages are presented in other articles of mine.)  </p><h2 id="python-markdown-module-with-code-syntax-highlighting"><a class="anchor" href="#python-markdown-module-with-code-syntax-highlighting" id="anchor-python-markdown-module-with-code-syntax-highlighting"><i aria-hidden="true" class="fas fa-link"></i></a>Python Markdown Module with Code Syntax Highlighting</h2><p>First I would like to clarify that, due to the method I implemented this blog site, an almost fully DIY way, this might be hard to work for other deployment tool users.  </p><p>Dependencies needed can be installed with the following command. I tried a few of other alternatives and found these ones most match my expectations. For my customized Python detection, refer to the repo's <a href="https://github.com/mvfki/pyHiliter#pyhiliter---improved-pygments-pythonlexer">README</a>. </p><div class="highlight"><pre><span></span><code>pip install markdown pymdown-extensions Pygments
 </code></pre></div><p>In Python3 deployment code:  </p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">markdown</span>
 
 <span class="c1"># Here I only list the extension needed for syntax highlighting</span>
@@ -142,18 +142,18 @@ header.major {
 <span class="c1"># features, such as inserting an "id" attribute to header elements. </span>
 <span class="n">EXT</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pymdownx.superfences'</span><span class="p">]</span>
 
-<span class="kd">def</span> <span class="nf">md_to_HTML</span><span class="p">(</span><span class="ka">filename</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">md_to_HTML</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="sd">'''</span>
 <span class="sd">    Reads a Markdown file directly and returns HTML text</span>
 <span class="sd">    '''</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">raw_MD_text</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nfc">read</span><span class="p">()</span>
-    <span class="n">f</span><span class="p">.</span><span class="nfc">close</span><span class="p">()</span>
-    <span class="n">html</span> <span class="o">=</span> <span class="n">markdown</span><span class="p">.</span><span class="nfc">markdown</span><span class="p">(</span><span class="n">raw_MD_text</span><span class="p">,</span> <span class="ka">extensions</span><span class="o">=</span><span class="n">EXT</span><span class="p">)</span>
+        <span class="n">raw_MD_text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">markdown</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">raw_MD_text</span><span class="p">,</span> <span class="n">extensions</span><span class="o">=</span><span class="n">EXT</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">html</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-    <span class="n">HTML</span> <span class="o">=</span> <span class="nfc">md_to_HTML</span><span class="p">(</span><span class="s1">'my_post.md'</span><span class="p">)</span>
+    <span class="n">HTML</span> <span class="o">=</span> <span class="n">md_to_HTML</span><span class="p">(</span><span class="s1">'my_post.md'</span><span class="p">)</span>
     <span class="c1"># And then you will insert this HTML element into a template document. </span>
     <span class="c1"># BeautifulSoup4 is recommended. </span>
 </code></pre></div></div></section></div>
